@@ -95,8 +95,7 @@ abstract class DevModule {
 
   @j.provides
   @j.singleton
-  static ShowcaseFeature provideShowcaseFeature(DevDependencies dependencies) =>
-      ShowcaseFeature(
+  static ShowcaseFeature provideShowcaseFeature(DevDependencies dependencies) => ShowcaseFeature(
         dependencies: ShowcaseDependencies(
           stringsProvider: dependencies.stringsProvider,
           dialogNavigatorKey: dependencies.navigatorKey,

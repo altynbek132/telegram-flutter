@@ -6,8 +6,7 @@ import 'package:feature_chat_impl/src/widget/chat_message/short_info_factory.dar
 import 'package:flutter/material.dart';
 import 'package:tile/tile.dart';
 
-class MessageAnimatedEmojiTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageAnimatedEmojiTileModel> {
+class MessageAnimatedEmojiTileFactoryDelegate implements ITileFactoryDelegate<MessageAnimatedEmojiTileModel> {
   MessageAnimatedEmojiTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
     required CustomEmojiWidgetFactory customEmojiWidgetFactory,

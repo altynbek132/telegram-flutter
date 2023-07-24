@@ -59,8 +59,7 @@ class GeneratorDelegate {
                 builder.type = refer('Widget', 'package:flutter/widgets.dart');
               }),
             );
-            final String delegateClass =
-                _allocator.allocate(_allocate(delegateClassElement.thisType));
+            final String delegateClass = _allocator.allocate(_allocate(delegateClassElement.thisType));
             builder.optionalParameters.add(
               Parameter((ParameterBuilder builder) {
                 builder.required = true;
@@ -224,8 +223,7 @@ return _Delegate(create.call());
         builder.late = true;
         builder.modifier = FieldModifier.final$;
         builder.type = _allocate(method.returnType);
-        builder.name =
-            '_${method.returnType.getDisplayString(withNullability: false)}';
+        builder.name = '_${method.returnType.getDisplayString(withNullability: false)}';
         builder.assignment = Code('_delegate.${method.name}()');
       },
     );

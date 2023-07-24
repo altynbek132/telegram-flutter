@@ -7,13 +7,10 @@ class FakeChatBackgroundManager implements ChatBackgroundManager {
   final ChatBackground Function()? chatBackgroundFunc;
 
   @override
-  ChatBackground get background =>
-      chatBackgroundFunc?.call() ??
-      (const ChatBackground.solid(color: Colors.amber));
+  ChatBackground get background => chatBackgroundFunc?.call() ?? (const ChatBackground.solid(color: Colors.amber));
 
   @override
-  Stream<ChatBackground> get backgroundStream =>
-      Stream<ChatBackground>.value(background);
+  Stream<ChatBackground> get backgroundStream => Stream<ChatBackground>.value(background);
 
   @override
   void dispose() {}

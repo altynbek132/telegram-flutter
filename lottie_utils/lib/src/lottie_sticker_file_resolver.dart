@@ -11,8 +11,7 @@ class LottieStickerFileResolver {
   Future<File> resolve(String tgsFilePath) async {
     final InputFileStream inputStream = InputFileStream(tgsFilePath);
     final List<int> archive = GZipDecoder().decodeBuffer(inputStream);
-    final Directory directory =
-        Directory('${(await getTemporaryDirectory()).path}/stickers_lottie');
+    final Directory directory = Directory('${(await getTemporaryDirectory()).path}/stickers_lottie');
 
     // todo refactor
     // ignore: avoid_slow_async_io

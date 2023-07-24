@@ -20,11 +20,9 @@ class DevScope extends StatefulWidget {
   @override
   State<DevScope> createState() => _DevScopeState();
 
-  static IDevFeatureRouter getRouter(BuildContext context) =>
-      _InheritedScope.of(context)._router;
+  static IDevFeatureRouter getRouter(BuildContext context) => _InheritedScope.of(context)._router;
 
-  static IEventsProvider getEventsProvider(BuildContext context) =>
-      _InheritedScope.of(context)._eventsProvider;
+  static IEventsProvider getEventsProvider(BuildContext context) => _InheritedScope.of(context)._eventsProvider;
 
   static tg.ConnectionStateWidgetFactory getConnectionStateWidgetFactory(
     BuildContext context,
@@ -37,8 +35,7 @@ class DevScope extends StatefulWidget {
   static ITdFunctionExecutor getTdFunctionExecutor(BuildContext context) =>
       _InheritedScope.of(context)._functionExecutor;
 
-  static IThemeManager getThemeManager(BuildContext context) =>
-      _InheritedScope.of(context)._themeManager;
+  static IThemeManager getThemeManager(BuildContext context) => _InheritedScope.of(context)._themeManager;
 }
 
 class _DevScopeState extends State<DevScope> {
@@ -51,11 +48,9 @@ class _DevScopeState extends State<DevScope> {
   late final tg.ConnectionStateWidgetFactory _connectionStateWidgetFactory =
       _component.getConnectionStateWidgetFactory();
 
-  late final ShowcaseScreenFactory _showcaseScreenFactory =
-      _component.getShowcaseScreenFactory();
+  late final ShowcaseScreenFactory _showcaseScreenFactory = _component.getShowcaseScreenFactory();
 
-  late final ITdFunctionExecutor _functionExecutor =
-      _component.getTdFunctionExecutor();
+  late final ITdFunctionExecutor _functionExecutor = _component.getTdFunctionExecutor();
 
   late final IThemeManager _themeManager = _component.getThemeManager();
 
@@ -77,10 +72,8 @@ class _InheritedScope extends InheritedWidget {
   final _DevScopeState _state;
 
   static _DevScopeState of(BuildContext context) {
-    final _DevScopeState? result = (context
-            .getElementForInheritedWidgetOfExactType<_InheritedScope>()
-            ?.widget as _InheritedScope?)
-        ?._state;
+    final _DevScopeState? result =
+        (context.getElementForInheritedWidgetOfExactType<_InheritedScope>()?.widget as _InheritedScope?)?._state;
     assert(result != null, 'No DevScope found in context');
     return result!;
   }

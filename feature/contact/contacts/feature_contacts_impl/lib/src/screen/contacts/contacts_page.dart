@@ -9,10 +9,8 @@ class ContactsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ContactsViewModel contactsViewModel =
-        ContactsScreenScope.getContactsViewModel(context);
-    final IStringsProvider stringsProvider =
-        ContactsScreenScope.getStringsProvider(context);
+    final ContactsViewModel contactsViewModel = ContactsScreenScope.getContactsViewModel(context);
+    final IStringsProvider stringsProvider = ContactsScreenScope.getStringsProvider(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(stringsProvider.contacts),

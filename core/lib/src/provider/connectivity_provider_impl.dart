@@ -11,24 +11,21 @@ class ConnectivityProviderImpl implements IConnectivityProvider {
     _init();
   }
 
-  final PublishSubject<ConnectivityStatus> _onStatusChangeSubject =
-      PublishSubject<ConnectivityStatus>();
+  final PublishSubject<ConnectivityStatus> _onStatusChangeSubject = PublishSubject<ConnectivityStatus>();
 
   ConnectivityStatus _currentStatus = ConnectivityStatus.none;
 
   StreamSubscription<c.ConnectivityResult>? _connectivityChangedSubscription;
 
   @override
-  Stream<ConnectivityStatus> get onStatusChange =>
-      _onStatusChangeSubject.distinct();
+  Stream<ConnectivityStatus> get onStatusChange => _onStatusChangeSubject.distinct();
 
   @override
   ConnectivityStatus get status => _currentStatus;
 
   void _init() {
     final c.Connectivity connectivity = c.Connectivity();
-    _connectivityChangedSubscription =
-        connectivity.onConnectivityChanged.listen(_dispatchStatus);
+    _connectivityChangedSubscription = connectivity.onConnectivityChanged.listen(_dispatchStatus);
 
     connectivity.checkConnectivity().then((c.ConnectivityResult value) {
       _onStatusChangeSubject.add(value.toConnectivityStatus());

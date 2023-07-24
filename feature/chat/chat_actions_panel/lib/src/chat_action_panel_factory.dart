@@ -15,9 +15,7 @@ class ChatActionPanelFactory {
   Widget create() {
     return ChatActionPanelScope(
       child: const ChatActionPanel(),
-      create: () => JuggerChatActionsPanelComponentBuilder()
-          .dependencies(_dependencies)
-          .build(),
+      create: () => JuggerChatActionsPanelComponentBuilder().dependencies(_dependencies).build(),
     );
   }
 }

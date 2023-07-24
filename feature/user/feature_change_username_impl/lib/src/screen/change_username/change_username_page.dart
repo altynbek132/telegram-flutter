@@ -51,8 +51,7 @@ class _BodyContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final IStringsProvider stringsProvider =
-        ChangeUsernameScreenScope.getStringsProvider(context);
+    final IStringsProvider stringsProvider = ChangeUsernameScreenScope.getStringsProvider(context);
     final ChangeUsernameScreenWidgetModel widgetModel =
         ChangeUsernameScreenScope.getChangeUsernameScreenWidgetModel(context);
 
@@ -80,10 +79,8 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final IStringsProvider stringsProvider =
-        ChangeUsernameScreenScope.getStringsProvider(context);
-    final tg.TgAppBarFactory appBarFactory =
-        ChangeUsernameScreenScope.getTgAppBarFactory(context);
+    final IStringsProvider stringsProvider = ChangeUsernameScreenScope.getStringsProvider(context);
+    final tg.TgAppBarFactory appBarFactory = ChangeUsernameScreenScope.getTgAppBarFactory(context);
 
     final ChangeUsernameScreenWidgetModel widgetModel =
         ChangeUsernameScreenScope.getChangeUsernameScreenWidgetModel(context);

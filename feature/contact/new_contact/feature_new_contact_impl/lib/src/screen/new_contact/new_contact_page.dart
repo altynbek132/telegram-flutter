@@ -30,10 +30,8 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final IStringsProvider stringsProvider =
-        NewContactScreenScope.getStringsProvider(context);
-    final NewContactWidgetModel newContactWidgetModel =
-        NewContactScreenScope.getNewContactWidgetModel(context);
+    final IStringsProvider stringsProvider = NewContactScreenScope.getStringsProvider(context);
+    final NewContactWidgetModel newContactWidgetModel = NewContactScreenScope.getNewContactWidgetModel(context);
 
     return AppBar(
       title: Text(stringsProvider.newContact),
@@ -59,10 +57,8 @@ class _Body extends StatelessWidget {
   Widget build(BuildContext context) {
     NewContactScreenScope.getNewContactViewModel(context);
 
-    final IStringsProvider stringsProvider =
-        NewContactScreenScope.getStringsProvider(context);
-    final NewContactWidgetModel newContactWidgetModel =
-        NewContactScreenScope.getNewContactWidgetModel(context);
+    final IStringsProvider stringsProvider = NewContactScreenScope.getStringsProvider(context);
+    final NewContactWidgetModel newContactWidgetModel = NewContactScreenScope.getNewContactWidgetModel(context);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,8 +99,7 @@ class _Body extends StatelessWidget {
               },
             ),
             Flexible(
-              child:
-                  Text(stringsProvider.sharePhoneNumberWith(<dynamic>['args'])),
+              child: Text(stringsProvider.sharePhoneNumberWith(<dynamic>['args'])),
             )
           ],
         )
@@ -118,8 +113,7 @@ class _UserInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final NewContactWidgetModel newContactWidgetModel =
-        NewContactScreenScope.getNewContactWidgetModel(context);
+    final NewContactWidgetModel newContactWidgetModel = NewContactScreenScope.getNewContactWidgetModel(context);
 
     return StreamListener<NewContactState>(
       stream: newContactWidgetModel.state,
@@ -133,8 +127,7 @@ class _UserInfo extends StatelessWidget {
             return Row(
               children: <Widget>[
                 AvatarWidget(
-                  factory:
-                      NewContactScreenScope.getAvatarWidgetFactory(context),
+                  factory: NewContactScreenScope.getAvatarWidgetFactory(context),
                   avatar: information.avatar,
                   radius: 32,
                 ),

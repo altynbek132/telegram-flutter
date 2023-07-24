@@ -8,8 +8,7 @@ import 'package:localization_api/localization_api.dart';
 import 'package:provider/provider.dart';
 
 class ChooseCountryScreenFactory implements IChooseCountryScreenFactory {
-  ChooseCountryScreenFactory({required CountryFeatureDependencies dependencies})
-      : _dependencies = dependencies;
+  ChooseCountryScreenFactory({required CountryFeatureDependencies dependencies}) : _dependencies = dependencies;
 
   final CountryFeatureDependencies _dependencies;
 

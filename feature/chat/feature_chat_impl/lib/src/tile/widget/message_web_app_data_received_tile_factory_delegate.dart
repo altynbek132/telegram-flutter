@@ -5,8 +5,7 @@ import 'package:tile/tile.dart';
 
 import 'not_implemented.dart';
 
-class MessageWebAppDataReceivedTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageWebAppDataReceivedTileModel> {
+class MessageWebAppDataReceivedTileFactoryDelegate implements ITileFactoryDelegate<MessageWebAppDataReceivedTileModel> {
   MessageWebAppDataReceivedTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
   }) : _chatMessageFactory = chatMessageFactory;

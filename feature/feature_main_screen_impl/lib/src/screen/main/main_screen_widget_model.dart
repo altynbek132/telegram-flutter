@@ -32,25 +32,20 @@ class MainScreenWidgetModel with SubscriptionMixin {
   final MainViewModel _viewModel;
   final IStringsProvider _stringsProvider;
 
-  final ValueNotifier<ScreenState> screenState =
-      ValueNotifier<ScreenState>(ScreenState.chats);
+  final ValueNotifier<ScreenState> screenState = ValueNotifier<ScreenState>(ScreenState.chats);
   final ValueNotifier<bool> floatingButtonState = ValueNotifier<bool>(true);
-  final GlobalSearchScreenController _globalSearchScreenController =
-      GlobalSearchScreenController();
+  final GlobalSearchScreenController _globalSearchScreenController = GlobalSearchScreenController();
 
-  late final Widget globalSearchWidget =
-      _globalSearchScreenFactory.create(_globalSearchScreenController);
+  late final Widget globalSearchWidget = _globalSearchScreenFactory.create(_globalSearchScreenController);
 
-  late final GlobalObjectKey<tg.TgSwitchedAppBarState> appbarKey =
-      AppBarKey(hashCode);
+  late final GlobalObjectKey<tg.TgSwitchedAppBarState> appbarKey = AppBarKey(hashCode);
 
   final FocusNode searchQueryFocusNode = FocusNode();
   final TextEditingController searchQueryController = TextEditingController();
 
   late TabController? _tabController;
 
-  final BehaviorSubject<List<TabInfo>> _tabsInfoSubject =
-      BehaviorSubject<List<TabInfo>>();
+  final BehaviorSubject<List<TabInfo>> _tabsInfoSubject = BehaviorSubject<List<TabInfo>>();
 
   TabController get tabController => _tabController!;
 

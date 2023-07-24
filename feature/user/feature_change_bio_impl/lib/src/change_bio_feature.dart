@@ -11,6 +11,5 @@ class ChangeBioFeature implements IChangeBioFeatureApi {
   final ChangeBioFeatureDependencies _dependencies;
 
   @override
-  late final IChangeBioScreenFactory changeBioScreenFactory =
-      ChangeBioScreenFactory(dependencies: _dependencies);
+  late final IChangeBioScreenFactory changeBioScreenFactory = ChangeBioScreenFactory(dependencies: _dependencies);
 }

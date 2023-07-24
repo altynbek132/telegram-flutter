@@ -10,8 +10,7 @@ abstract class ThemeModule {
 
   @applicationScope
   @j.provides
-  static ThemeDataResolver provideThemeDataResolver() =>
-      const ThemeDataResolver();
+  static ThemeDataResolver provideThemeDataResolver() => const ThemeDataResolver();
 
   @applicationScope
   @j.binds

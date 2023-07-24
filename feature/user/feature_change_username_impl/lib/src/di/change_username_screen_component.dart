@@ -10,16 +10,11 @@ import 'package:user_info/user_info.dart';
 import 'change_username_screen_component_builder.dart';
 
 @j.Component(
-  modules: <Type>[
-    ChangeUsernameScreenModule,
-    TgAppBarModule,
-    ChangeUsernameFeatureDependenciesModule
-  ],
+  modules: <Type>[ChangeUsernameScreenModule, TgAppBarModule, ChangeUsernameFeatureDependenciesModule],
   builder: IChangeUsernameScreenComponentBuilder,
 )
 @j.singleton
-abstract class IChangeUsernameScreenComponent
-    implements IChangeUsernameScreenScopeDelegate {}
+abstract class IChangeUsernameScreenComponent implements IChangeUsernameScreenScopeDelegate {}
 
 @j.module
 abstract class ChangeUsernameScreenModule {

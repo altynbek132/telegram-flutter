@@ -7,7 +7,6 @@ part 'panel_state.freezed.dart';
 class PanelState with _$PanelState {
   const factory PanelState.empty() = EmptyState;
   const factory PanelState.join() = JoinState;
-  const factory PanelState.channelSubscriber({required bool isMuted}) =
-      ChannelSubscriberState;
+  const factory PanelState.channelSubscriber({required bool isMuted}) = ChannelSubscriberState;
   const factory PanelState.writer() = WriterState;
 }

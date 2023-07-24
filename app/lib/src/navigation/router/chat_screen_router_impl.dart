@@ -27,8 +27,7 @@ class ChatScreenRouterImpl implements IChatScreenRouter {
   void toChat(int chatId) => _commonScreenRouter.toChat(chatId);
 
   @override
-  void toChatProfile({required int chatId, required ProfileType type}) =>
-      _commonScreenRouter.toChatProfile(
+  void toChatProfile({required int chatId, required ProfileType type}) => _commonScreenRouter.toChatProfile(
         chatId: chatId,
         type: type,
       );

@@ -20,8 +20,7 @@ class EmptyChatScope extends StatefulWidget {
   static EmptyChatViewModel getEmptyChatViewModel(BuildContext context) =>
       _InheritedScope.of(context)._emptyChatViewModel;
 
-  static IStringsProvider getStringsProvider(BuildContext context) =>
-      _InheritedScope.of(context)._stringsProvider;
+  static IStringsProvider getStringsProvider(BuildContext context) => _InheritedScope.of(context)._stringsProvider;
 }
 
 class _EmptyChatScopeState extends State<EmptyChatScope> {
@@ -55,10 +54,8 @@ class _InheritedScope extends InheritedWidget {
   final _EmptyChatScopeState _state;
 
   static _EmptyChatScopeState of(BuildContext context) {
-    final _EmptyChatScopeState? result = (context
-            .getElementForInheritedWidgetOfExactType<_InheritedScope>()
-            ?.widget as _InheritedScope?)
-        ?._state;
+    final _EmptyChatScopeState? result =
+        (context.getElementForInheritedWidgetOfExactType<_InheritedScope>()?.widget as _InheritedScope?)?._state;
     assert(result != null, 'No EmptyChatScope found in context');
     return result!;
   }

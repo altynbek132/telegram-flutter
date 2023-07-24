@@ -8,8 +8,7 @@ import '../navigation_router.dart';
 import 'chat_administration_router_impl.dart';
 
 @applicationScope
-class ChatAdministrationRouterFactory
-    implements IChatAdministrationRouterFactory {
+class ChatAdministrationRouterFactory implements IChatAdministrationRouterFactory {
   @j.inject
   ChatAdministrationRouterFactory({
     required KeyGenerator keyGenerator,

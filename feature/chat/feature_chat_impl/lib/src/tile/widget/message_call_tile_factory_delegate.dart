@@ -4,8 +4,7 @@ import 'package:feature_chat_impl/src/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:tile/tile.dart';
 
-class MessageCallTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageCallTileModel> {
+class MessageCallTileFactoryDelegate implements ITileFactoryDelegate<MessageCallTileModel> {
   MessageCallTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
     required MessageComponentResolver messageComponentResolver,
@@ -63,9 +62,7 @@ class MessageCallTileFactoryDelegate
                             WidgetSpan(
                               // todo color icon
                               child: Icon(
-                                model.isOutgoing
-                                    ? Icons.call_made
-                                    : Icons.call_received,
+                                model.isOutgoing ? Icons.call_made : Icons.call_received,
                                 size: captionStyle.fontSize,
                               ),
                             ),

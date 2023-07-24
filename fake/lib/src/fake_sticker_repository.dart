@@ -8,8 +8,7 @@ class FakeStickerRepository implements IStickerRepository {
 
   @override
   Future<td.Sticker> getCustomEmoji(int customEmojiId) {
-    final Future<td.Sticker> Function(int customEmojiId)? customEmoji =
-        this.customEmoji;
+    final Future<td.Sticker> Function(int customEmojiId)? customEmoji = this.customEmoji;
     if (customEmoji != null) {
       return customEmoji.call(customEmojiId);
     }

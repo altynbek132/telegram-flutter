@@ -10,8 +10,7 @@ import 'package:rxdart/rxdart.dart';
 part 'media_mixin.freezed.dart';
 
 mixin MediaMixin<Model extends BaseMessageTileModel> on MessageBloc<Model> {
-  final BehaviorSubject<MediaState> _mediaStateSubject =
-      BehaviorSubject<MediaState>.seeded(const MediaState.loading());
+  final BehaviorSubject<MediaState> _mediaStateSubject = BehaviorSubject<MediaState>.seeded(const MediaState.loading());
 
   Stream<MediaState> get mediaState => _mediaStateSubject;
 

@@ -13,6 +13,5 @@ class DataSettingsFeature implements IDataSettingsFeatureApi {
   final DataSettingsFeatureDependencies _dependencies;
 
   @override
-  late final IDataSettingsWidgetFactory screenWidgetFactory =
-      DataSettingsWidgetFactory(dependencies: _dependencies);
+  late final IDataSettingsWidgetFactory screenWidgetFactory = DataSettingsWidgetFactory(dependencies: _dependencies);
 }

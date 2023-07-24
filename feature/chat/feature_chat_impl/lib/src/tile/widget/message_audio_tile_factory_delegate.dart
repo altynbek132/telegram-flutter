@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:rich_text_format/rich_text_format.dart' as rt;
 import 'package:tile/tile.dart';
 
-class MessageAudioTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageAudioTileModel> {
+class MessageAudioTileFactoryDelegate implements ITileFactoryDelegate<MessageAudioTileModel> {
   MessageAudioTileFactoryDelegate({
     required ShortInfoFactory shortInfoFactory,
     required ReplyInfoFactory replyInfoFactory,

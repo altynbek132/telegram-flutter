@@ -19,8 +19,7 @@ class StickerDataSource {
   }
 
   Future<td.StickerSet> getStickersSet(int setId) {
-    return _functionExecutor
-        .send<td.StickerSet>(td.GetStickerSet(setId: setId));
+    return _functionExecutor.send<td.StickerSet>(td.GetStickerSet(setId: setId));
   }
 
   Future<td.Sticker> getCustomEmoji(int customEmojiId) {

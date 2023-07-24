@@ -13,8 +13,7 @@ class ChatForumScreenShowcaseFactory {
   final IStringsProvider _stringsProvider;
 
   Widget create(BuildContext context) {
-    final ChatForumFeatureDependencies dependencies =
-        ChatForumFeatureDependencies(
+    final ChatForumFeatureDependencies dependencies = ChatForumFeatureDependencies(
       router: const _Router(),
       stringsProvider: _stringsProvider,
     );

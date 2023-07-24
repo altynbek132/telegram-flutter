@@ -22,8 +22,7 @@ class ChatMessageFactory {
   }
 
   // todo move to another class for message parts
-  Widget createChatNotificationBubble({required InlineSpan span}) =>
-      _Notification(text: span);
+  Widget createChatNotificationBubble({required InlineSpan span}) => _Notification(text: span);
 
   Widget createChatNotification({
     required int id,
@@ -141,13 +140,10 @@ class _Bubble extends StatelessWidget {
   Widget build(BuildContext context) {
     final ChatThemeData theme = TgTheme.of(context).themeOf();
     return Bubble(
-      borderColor: isOutgoing
-          ? theme.bubbleOutgoingBorderColor
-          : theme.bubbleIncomingBorderColor,
+      borderColor: isOutgoing ? theme.bubbleOutgoingBorderColor : theme.bubbleIncomingBorderColor,
       radius: 10,
       child: ColoredBox(
-        color:
-            isOutgoing ? theme.bubbleOutgoingColor : theme.bubbleIncomingColor,
+        color: isOutgoing ? theme.bubbleOutgoingColor : theme.bubbleIncomingColor,
         child: child,
       ),
     );
@@ -169,10 +165,7 @@ class _Notification extends StatelessWidget {
       child: Text.rich(
         text,
         textAlign: TextAlign.center,
-        style: Theme.of(context)
-            .textTheme
-            .bodyMedium
-            ?.copyWith(color: chatTheme.notificationTextColor),
+        style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: chatTheme.notificationTextColor),
       ),
     );
   }

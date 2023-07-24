@@ -18,8 +18,7 @@ class AvatarViewModel {
 
   final IFileDownloader _fileDownloader;
   Avatar _avatar;
-  late final BehaviorSubject<AvatarState> _stateSubject =
-      BehaviorSubject<AvatarState>.seeded(_getLoadingState());
+  late final BehaviorSubject<AvatarState> _stateSubject = BehaviorSubject<AvatarState>.seeded(_getLoadingState());
   StreamSubscription<FileDownloadState>? _fileDownloadStateSubscription;
 
   Stream<AvatarState> get state => _stateSubject.distinct();
@@ -41,9 +40,7 @@ class AvatarViewModel {
       ) {
         if (imageFileId != null) {
           _fileDownloader.startDownloadFile(imageFileId);
-          _fileDownloadStateSubscription = _fileDownloader
-              .getFileDownloadStateStream(imageFileId)
-              .listen(_onNewState);
+          _fileDownloadStateSubscription = _fileDownloader.getFileDownloadStateStream(imageFileId).listen(_onNewState);
         }
       },
       savedMessages: () {},

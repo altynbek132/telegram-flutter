@@ -11,6 +11,5 @@ class ChatForumFeature implements IChatForumFeatureApi {
   final ChatForumFeatureDependencies _dependencies;
 
   @override
-  late final IChatForumScreenFactory chatForumScreenFactory =
-      ChatForumScreenFactory(dependencies: _dependencies);
+  late final IChatForumScreenFactory chatForumScreenFactory = ChatForumScreenFactory(dependencies: _dependencies);
 }

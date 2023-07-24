@@ -15,23 +15,19 @@ class ChannelSubscriber extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final IStringsProvider stringsProvider =
-        ChatActionPanelScope.getStringsProvider(context);
+    final IStringsProvider stringsProvider = ChatActionPanelScope.getStringsProvider(context);
 
     return TextButton(
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(double.infinity, kPanelHeight),
       ),
       onPressed: () {
-        ChatActionPanelScope.getChatActionsPanelViewModel(context)
-            .onToggleMuteState(
+        ChatActionPanelScope.getChatActionsPanelViewModel(context).onToggleMuteState(
           newState: !state.isMuted,
         );
       },
       child: Text(
-        state.isMuted
-            ? stringsProvider.channelUnmute
-            : stringsProvider.channelMute,
+        state.isMuted ? stringsProvider.channelUnmute : stringsProvider.channelMute,
       ),
     );
   }

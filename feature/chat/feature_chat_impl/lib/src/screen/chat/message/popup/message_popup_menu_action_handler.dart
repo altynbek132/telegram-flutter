@@ -48,8 +48,7 @@ class MessagePopupMenuActionHandler with SubscriptionMixin {
           text: _stringsProvider.delete,
           type: d.ActionType.attention,
           callback: (d.IDismissible dismissible) {
-            final CancelableOperation<void> operation =
-                _messageRepository.deleteMessages(
+            final CancelableOperation<void> operation = _messageRepository.deleteMessages(
               chatId: _chatId,
               messageIds: <int>[messageId],
             ).toCancelableOperation();

@@ -27,8 +27,7 @@ class HeaderViewModel extends BaseViewModel {
   final UserInfoResolver _userInfoResolver;
   final OptionsManager _optionsManager;
 
-  final BehaviorSubject<HeaderState> _stateSubject =
-      BehaviorSubject<HeaderState>.seeded(const HeaderState.loading());
+  final BehaviorSubject<HeaderState> _stateSubject = BehaviorSubject<HeaderState>.seeded(const HeaderState.loading());
 
   Stream<HeaderState> get state => _stateSubject;
 
@@ -48,13 +47,10 @@ class HeaderViewModel extends BaseViewModel {
   }
 
   void _init() {
-    final Stream<UserInfo> userInfoStream = _optionsManager
-        .getMyId()
-        .asStream()
-        .flatMap(_userInfoResolver.resolveAsStream);
+    final Stream<UserInfo> userInfoStream =
+        _optionsManager.getMyId().asStream().flatMap(_userInfoResolver.resolveAsStream);
 
-    final Stream<HeaderState> flatMap =
-        Rx.combineLatest2<UserInfo, Theme, Tuple2<UserInfo, Theme>>(
+    final Stream<HeaderState> flatMap = Rx.combineLatest2<UserInfo, Theme, Tuple2<UserInfo, Theme>>(
       userInfoStream,
       _themeManager.themeStream,
       Tuple2<UserInfo, Theme>.new,
@@ -72,9 +68,8 @@ class HeaderViewModel extends BaseViewModel {
             objectId: info.user.id,
             imageFileId: info.user.profilePhoto?.small.id,
           ),
-          name: <String>[info.user.firstName, info.user.lastName]
-              .where((String element) => element.isNotEmpty)
-              .join(' '),
+          name:
+              <String>[info.user.firstName, info.user.lastName].where((String element) => element.isNotEmpty).join(' '),
           // todo format
           phoneNumberFormatted: info.user.phoneNumber,
         );

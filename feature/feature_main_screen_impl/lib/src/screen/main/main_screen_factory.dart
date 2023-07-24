@@ -17,9 +17,7 @@ class MainScreenFactory implements IMainScreenFactory {
   Widget create() {
     return MainScreenScope(
       child: const MainPage(),
-      create: () => JuggerMainScreenComponentBuilder()
-          .dependencies(_dependencies)
-          .build(),
+      create: () => JuggerMainScreenComponentBuilder().dependencies(_dependencies).build(),
     );
   }
 }

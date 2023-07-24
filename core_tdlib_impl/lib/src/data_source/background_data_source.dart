@@ -14,8 +14,8 @@ class BackgroundDataSource {
       .then((td.Backgrounds value) => value.backgrounds);
 
   Future<td.Background> getBackground(int id) async {
-    final td.Background? background = (await backgrounds)
-        .firstWhereOrNull((td.Background background) => background.id == id);
+    final td.Background? background =
+        (await backgrounds).firstWhereOrNull((td.Background background) => background.id == id);
     // TODO : check nullable background
     return background!;
   }

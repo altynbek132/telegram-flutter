@@ -26,8 +26,7 @@ import 'search_settings_screen_component_builder.dart';
   builder: ISearchSettingsScreenComponentBuilder,
 )
 @j.singleton
-abstract class ISettingsSearchScreenComponent
-    implements ISettingsSearchScreenScopeDelegate {}
+abstract class ISettingsSearchScreenComponent implements ISettingsSearchScreenScopeDelegate {}
 
 @j.module
 abstract class SettingsSearchScreenModule {

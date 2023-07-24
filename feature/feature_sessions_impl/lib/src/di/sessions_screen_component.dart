@@ -19,8 +19,7 @@ import 'sessions_screen_component_builder.dart';
   builder: ISessionsScreenComponentBuilder,
 )
 @j.singleton
-abstract class ISessionsScreenComponent
-    implements ISessionsScreenScopeDelegate {}
+abstract class ISessionsScreenComponent implements ISessionsScreenScopeDelegate {}
 
 @j.module
 abstract class SessionsScreenModule {

@@ -17,9 +17,7 @@ class ChangeUsernameScreenFactory implements IChangeUsernameScreenFactory {
   Widget create() {
     return ChangeUsernameScreenScope(
       child: const ChangeUsernamePage(),
-      create: () => JuggerChangeUsernameScreenComponentBuilder()
-          .dependencies(_dependencies)
-          .build(),
+      create: () => JuggerChangeUsernameScreenComponentBuilder().dependencies(_dependencies).build(),
     );
   }
 }

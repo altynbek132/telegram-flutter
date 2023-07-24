@@ -14,11 +14,9 @@ class FakeChatMessageRepository implements IChatMessageRepository {
     required int fromMessageId,
     required int limit,
   }) async {
-    List<td.Message> messages =
-        fakeMessages?.take(limit).toList() ?? <td.Message>[];
+    List<td.Message> messages = fakeMessages?.take(limit).toList() ?? <td.Message>[];
 
-    messages +=
-        fakeMessages?.take(limit - messages.length).toList() ?? <td.Message>[];
+    messages += fakeMessages?.take(limit - messages.length).toList() ?? <td.Message>[];
 
     return messages;
   }

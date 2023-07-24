@@ -5,8 +5,7 @@ import 'package:tile/tile.dart';
 
 import 'not_implemented.dart';
 
-class MessageVenueTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageVenueTileModel> {
+class MessageVenueTileFactoryDelegate implements ITileFactoryDelegate<MessageVenueTileModel> {
   MessageVenueTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
   }) : _chatMessageFactory = chatMessageFactory;

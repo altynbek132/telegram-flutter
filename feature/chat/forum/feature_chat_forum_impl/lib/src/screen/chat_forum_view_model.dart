@@ -18,10 +18,7 @@ class ChatForumViewModel extends BaseViewModel {
     BodyState.content(
       topics: List<ITileModel>.generate(20, (_) => const TopicTileModel()),
     ),
-  )
-      .delay(const Duration(seconds: 1))
-      .startWith(const BodyState.loading())
-      .asBroadcastStream();
+  ).delay(const Duration(seconds: 1)).startWith(const BodyState.loading()).asBroadcastStream();
 
   Stream<BodyState> get state => _state;
 

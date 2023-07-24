@@ -47,11 +47,9 @@ class ChatAdministrationViewModel extends BaseViewModel {
   final IErrorTransformer _errorTransformer;
   final int _chatId;
 
-  final BehaviorSubject<AvailableActionsState> _availableActionsStateSubject =
-      BehaviorSubject<AvailableActionsState>();
+  final BehaviorSubject<AvailableActionsState> _availableActionsStateSubject = BehaviorSubject<AvailableActionsState>();
 
-  Stream<AvailableActionsState> get availableActionsState =>
-      _availableActionsStateSubject;
+  Stream<AvailableActionsState> get availableActionsState => _availableActionsStateSubject;
 
   @override
   void dispose() {
@@ -78,8 +76,7 @@ class ChatAdministrationViewModel extends BaseViewModel {
 
   void _deleteChat() {
     _blockInteractionManager.setState(active: true);
-    final CancelableOperation<void> operation =
-        _chatManager.delete(_chatId).toCancelableOperation().onTerminate(() {
+    final CancelableOperation<void> operation = _chatManager.delete(_chatId).toCancelableOperation().onTerminate(() {
       _blockInteractionManager.setState(active: false);
     }).onError((Object error) {
       _router.toDialog(

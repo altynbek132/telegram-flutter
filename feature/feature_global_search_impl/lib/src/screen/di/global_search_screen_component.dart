@@ -13,5 +13,4 @@ import 'global_search_screen_module.dart';
   builder: IGlobalSearchScreenComponentBuilder,
 )
 @j.singleton
-abstract class IGlobalSearchScreenComponent
-    implements IGlobalSearchScreenScopeDelegate {}
+abstract class IGlobalSearchScreenComponent implements IGlobalSearchScreenScopeDelegate {}

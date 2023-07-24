@@ -6,28 +6,23 @@ import 'widget/factory/notifications_settings_widget_factory.dart';
 
 export 'notifications_settings_screen_router.dart';
 
-class NotificationsSettingsFeatureApi
-    implements INotificationsSettingsFeatureApi {
+class NotificationsSettingsFeatureApi implements INotificationsSettingsFeatureApi {
   NotificationsSettingsFeatureApi({
     required NotificationsSettingsFeatureDependencies dependencies,
-  })  : _settingsWidgetFactory =
-            NotificationsSettingsWidgetFactory(dependencies: dependencies),
+  })  : _settingsWidgetFactory = NotificationsSettingsWidgetFactory(dependencies: dependencies),
         _dependencies = dependencies;
 
   final NotificationsSettingsFeatureDependencies _dependencies;
   final INotificationsSettingsWidgetFactory _settingsWidgetFactory;
-  QuickNotificationSettingsScreenFactory?
-      _quickNotificationSettingsScreenFactory;
+  QuickNotificationSettingsScreenFactory? _quickNotificationSettingsScreenFactory;
 
   @override
-  INotificationsSettingsWidgetFactory get screenWidgetFactory =>
-      _settingsWidgetFactory;
+  INotificationsSettingsWidgetFactory get screenWidgetFactory => _settingsWidgetFactory;
 
   @override
-  IQuickNotificationSettingsScreenFactory
-      get quickNotificationSettingsScreenFactory =>
-          _quickNotificationSettingsScreenFactory ??
-          QuickNotificationSettingsScreenFactory(
-            dependencies: _dependencies,
-          );
+  IQuickNotificationSettingsScreenFactory get quickNotificationSettingsScreenFactory =>
+      _quickNotificationSettingsScreenFactory ??
+      QuickNotificationSettingsScreenFactory(
+        dependencies: _dependencies,
+      );
 }

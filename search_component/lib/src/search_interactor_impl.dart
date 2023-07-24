@@ -25,8 +25,7 @@ class SearchInteractor<T, R> implements ISearchInteractor<R> {
           _resultSubject.add(SearchState<R>.loading());
         })
         .switchMap((String query) {
-          return Stream<T>.fromFuture(_resultFetcher.call(query))
-              .asyncMap((T result) async {
+          return Stream<T>.fromFuture(_resultFetcher.call(query)).asyncMap((T result) async {
             if (_emptyTest.call(result)) {
               return SearchState<R>.empty();
             }
@@ -42,11 +41,9 @@ class SearchInteractor<T, R> implements ISearchInteractor<R> {
 
   StreamSubscription<SearchState<R>>? _queryResultSubscription;
 
-  final BehaviorSubject<String> _querySubject =
-      BehaviorSubject<String>.seeded('');
+  final BehaviorSubject<String> _querySubject = BehaviorSubject<String>.seeded('');
 
-  final BehaviorSubject<SearchState<R>> _resultSubject =
-      BehaviorSubject<SearchState<R>>.seeded(SearchState<R>.def());
+  final BehaviorSubject<SearchState<R>> _resultSubject = BehaviorSubject<SearchState<R>>.seeded(SearchState<R>.def());
 
   @override
   Stream<SearchState<R>> get result => _resultSubject;

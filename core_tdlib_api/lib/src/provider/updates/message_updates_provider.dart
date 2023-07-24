@@ -10,14 +10,11 @@ extension ChatMessageUpdatesExtensions on td.Update {
     required void Function(td.UpdateMessageContent value) content,
     required void Function(td.UpdateMessageContentOpened value) contentOpened,
     required void Function(td.UpdateMessageEdited value) edited,
-    required void Function(td.UpdateMessageInteractionInfo value)
-        interactionInfo,
+    required void Function(td.UpdateMessageInteractionInfo value) interactionInfo,
     required void Function(td.UpdateMessageIsPinned value) isPinned,
-    required void Function(td.UpdateMessageLiveLocationViewed value)
-        liveLocationViewed,
+    required void Function(td.UpdateMessageLiveLocationViewed value) liveLocationViewed,
     required void Function(td.UpdateMessageMentionRead value) mentionRead,
-    required void Function(td.UpdateMessageSendAcknowledged value)
-        sendAcknowledged,
+    required void Function(td.UpdateMessageSendAcknowledged value) sendAcknowledged,
     // required void Function(td.UpdateMessageSendFailed value) sendFailed,
     // required void Function(td.UpdateMessageSendSucceeded value) sendSucceeded,
     required void Function(td.UpdateNewMessage value) newMessage,

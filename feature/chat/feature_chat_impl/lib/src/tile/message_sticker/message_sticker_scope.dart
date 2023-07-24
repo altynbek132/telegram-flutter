@@ -20,8 +20,7 @@ class MessageStickerScope extends StatefulWidget {
   @override
   State<MessageStickerScope> createState() => _MessageStickerScopeState();
 
-  static MessageStickerBloc getBloc(BuildContext context) =>
-      _InheritedScope.of(context)._bloc;
+  static MessageStickerBloc getBloc(BuildContext context) => _InheritedScope.of(context)._bloc;
 
   static ChatMessageFactory getChatMessageFactory(BuildContext context) =>
       _InheritedScope.of(context)._chatMessageFactory;
@@ -30,8 +29,7 @@ class MessageStickerScope extends StatefulWidget {
 class _MessageStickerScopeState extends State<MessageStickerScope> {
   late final MessageStickerDependencies _dependencies = widget.create.call();
   late final MessageStickerBloc _bloc = _dependencies.blocProvider.get();
-  late final ChatMessageFactory _chatMessageFactory =
-      _dependencies.chatMessageFactory;
+  late final ChatMessageFactory _chatMessageFactory = _dependencies.chatMessageFactory;
 
   @override
   void initState() {
@@ -71,10 +69,8 @@ class _InheritedScope extends InheritedWidget {
   final _MessageStickerScopeState _state;
 
   static _MessageStickerScopeState of(BuildContext context) {
-    final _MessageStickerScopeState? result = (context
-            .getElementForInheritedWidgetOfExactType<_InheritedScope>()
-            ?.widget as _InheritedScope?)
-        ?._state;
+    final _MessageStickerScopeState? result =
+        (context.getElementForInheritedWidgetOfExactType<_InheritedScope>()?.widget as _InheritedScope?)?._state;
     assert(result != null, 'No MessageStickerScope found in context');
     return result!;
   }

@@ -29,8 +29,7 @@ class MainPageState extends State<MainPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    final MainScreenWidgetModel widgetModel =
-        MainScreenScope.getMainScreenWidgetModel(context);
+    final MainScreenWidgetModel widgetModel = MainScreenScope.getMainScreenWidgetModel(context);
 
     return WillPopScope(
       onWillPop: widgetModel.onWillPop,
@@ -49,8 +48,7 @@ class _FloatingActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MainScreenWidgetModel widgetModel =
-        MainScreenScope.getMainScreenWidgetModel(context);
+    final MainScreenWidgetModel widgetModel = MainScreenScope.getMainScreenWidgetModel(context);
     return ValueListenableBuilder<bool>(
       valueListenable: widgetModel.floatingButtonState,
       builder: (BuildContext context, bool active, Widget? child) {
@@ -77,8 +75,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MainScreenWidgetModel widgetModel =
-        MainScreenScope.getMainScreenWidgetModel(context);
+    final MainScreenWidgetModel widgetModel = MainScreenScope.getMainScreenWidgetModel(context);
 
     return tg.TgSwitchedAppBar(
       backgroundColor: AppBarTheme.of(context).backgroundColor,
@@ -130,16 +127,14 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MainScreenWidgetModel widgetModel =
-        MainScreenScope.getMainScreenWidgetModel(context);
+    final MainScreenWidgetModel widgetModel = MainScreenScope.getMainScreenWidgetModel(context);
 
     return Stack(
       children: <Widget>[
         const _ChatLists(),
         ValueListenableBuilder<ScreenState>(
           valueListenable: widgetModel.screenState,
-          builder:
-              (BuildContext context, ScreenState screenState, Widget? child) {
+          builder: (BuildContext context, ScreenState screenState, Widget? child) {
             return AnimatedSwitcher(
               duration: const Duration(milliseconds: 200),
               child: screenState == ScreenState.search
@@ -170,8 +165,7 @@ class _Tabs extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MainScreenWidgetModel widgetModel =
-        MainScreenScope.getMainScreenWidgetModel(context);
+    final MainScreenWidgetModel widgetModel = MainScreenScope.getMainScreenWidgetModel(context);
 
     return StreamListener<List<TabInfo>>(
       stream: widgetModel.tabsInfoStream,
@@ -212,8 +206,7 @@ class _TabsPages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MainScreenWidgetModel widgetModel =
-        MainScreenScope.getMainScreenWidgetModel(context);
+    final MainScreenWidgetModel widgetModel = MainScreenScope.getMainScreenWidgetModel(context);
 
     final ThemeData theme = Theme.of(context);
 
@@ -256,8 +249,7 @@ class _ChatsListPage extends StatefulWidget {
   State<_ChatsListPage> createState() => _ChatsListPageState();
 }
 
-class _ChatsListPageState extends State<_ChatsListPage>
-    with AutomaticKeepAliveClientMixin<_ChatsListPage> {
+class _ChatsListPageState extends State<_ChatsListPage> with AutomaticKeepAliveClientMixin<_ChatsListPage> {
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -291,8 +283,7 @@ class _MainDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final IStringsProvider stringsProvider =
-        MainScreenScope.getStringsProvider(context);
+    final IStringsProvider stringsProvider = MainScreenScope.getStringsProvider(context);
     final MainViewModel viewModel = MainScreenScope.getMainViewModel(context);
 
     return Drawer(
@@ -379,8 +370,7 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final HeaderViewModel viewModel =
-        MainScreenScope.getHeaderViewModel(context);
+    final HeaderViewModel viewModel = MainScreenScope.getHeaderViewModel(context);
 
     return StreamListener<HeaderState>(
       stream: viewModel.state,
@@ -410,8 +400,7 @@ class _HeaderData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final HeaderViewModel viewModel =
-        MainScreenScope.getHeaderViewModel(context);
+    final HeaderViewModel viewModel = MainScreenScope.getHeaderViewModel(context);
 
     final Color textColor = Theme.of(context).colorScheme.onSecondary;
     return DrawerHeader(
@@ -445,9 +434,7 @@ class _HeaderData extends StatelessWidget {
           IconButton(
             onPressed: viewModel.onToggleThemeTap,
             icon: Icon(
-              data.isDarkTheme
-                  ? Icons.toggle_off_outlined
-                  : Icons.toggle_on_outlined,
+              data.isDarkTheme ? Icons.toggle_off_outlined : Icons.toggle_on_outlined,
               color: textColor,
             ),
           )

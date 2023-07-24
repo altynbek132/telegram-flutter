@@ -11,14 +11,12 @@ class EventsRepository {
 
   final IEventsProvider _eventsProvider;
 
-  final BehaviorSubject<List<td.TdObject>> _eventsSubject =
-      BehaviorSubject<List<td.TdObject>>.seeded(<td.TdObject>[]);
+  final BehaviorSubject<List<td.TdObject>> _eventsSubject = BehaviorSubject<List<td.TdObject>>.seeded(<td.TdObject>[]);
 
   StreamSubscription<td.TdObject>? _eventsStreamSubscription;
 
   void init() {
-    _eventsStreamSubscription =
-        _eventsProvider.events.listen((td.TdObject event) {
+    _eventsStreamSubscription = _eventsProvider.events.listen((td.TdObject event) {
       final List<td.TdObject> currentEvents = _eventsSubject.value..add(event);
       _eventsSubject.add(currentEvents);
     });

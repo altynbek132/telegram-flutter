@@ -13,6 +13,5 @@ class SuperGroupRepositoryImpl extends ISuperGroupRepository {
   Future<td.Supergroup> getGroup(int id) => _dataSource.getGroup(id);
 
   @override
-  Future<td.SupergroupFullInfo> getGroupFullInfo(int id) =>
-      _dataSource.getGroupFullInfo(id);
+  Future<td.SupergroupFullInfo> getGroupFullInfo(int id) => _dataSource.getGroupFullInfo(id);
 }

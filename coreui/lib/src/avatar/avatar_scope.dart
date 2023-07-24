@@ -14,8 +14,7 @@ class AvatarScope extends StatefulWidget {
   @override
   State<AvatarScope> createState() => _AvatarScopeState();
 
-  static AvatarViewModel getViewModel(BuildContext context) =>
-      _InheritedScope.of(context)._viewModel;
+  static AvatarViewModel getViewModel(BuildContext context) => _InheritedScope.of(context)._viewModel;
 }
 
 class _AvatarScopeState extends State<AvatarScope> {
@@ -45,10 +44,8 @@ class _InheritedScope extends InheritedWidget {
   final _AvatarScopeState _state;
 
   static _AvatarScopeState of(BuildContext context) {
-    final _AvatarScopeState? result = (context
-            .getElementForInheritedWidgetOfExactType<_InheritedScope>()
-            ?.widget as _InheritedScope?)
-        ?._state;
+    final _AvatarScopeState? result =
+        (context.getElementForInheritedWidgetOfExactType<_InheritedScope>()?.widget as _InheritedScope?)?._state;
     assert(result != null, 'No AvatarScope found in context');
     return result!;
   }

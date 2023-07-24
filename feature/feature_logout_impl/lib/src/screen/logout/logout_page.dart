@@ -38,8 +38,7 @@ class _Body extends StatelessWidget {
           text: stringsProvider.alternativeOptions,
         ),
         tg.TextCell(
-          onTap: () => viewModel
-              .onEvent(const LogoutEvent.tap(TapType.addAnotherAccount)),
+          onTap: () => viewModel.onEvent(const LogoutEvent.tap(TapType.addAnotherAccount)),
           leading: const Icon(Icons.circle),
           title: stringsProvider.addAnotherAccount,
           subtitle: stringsProvider.addAnotherAccountInfo,
@@ -48,8 +47,7 @@ class _Body extends StatelessWidget {
           indent: tg.DividerIndent.large,
         ),
         tg.TextCell(
-          onTap: () =>
-              viewModel.onEvent(const LogoutEvent.tap(TapType.setPasscode)),
+          onTap: () => viewModel.onEvent(const LogoutEvent.tap(TapType.setPasscode)),
           leading: const Icon(Icons.circle),
           title: stringsProvider.setPasscode,
           subtitle: stringsProvider.setPasscodeInfo,
@@ -58,8 +56,7 @@ class _Body extends StatelessWidget {
           indent: tg.DividerIndent.large,
         ),
         tg.TextCell(
-          onTap: () =>
-              viewModel.onEvent(const LogoutEvent.tap(TapType.clearCache)),
+          onTap: () => viewModel.onEvent(const LogoutEvent.tap(TapType.clearCache)),
           leading: const Icon(Icons.circle),
           title: stringsProvider.clearCache,
           subtitle: stringsProvider.clearCacheInfo,
@@ -68,8 +65,7 @@ class _Body extends StatelessWidget {
           indent: tg.DividerIndent.large,
         ),
         tg.TextCell(
-          onTap: () => viewModel
-              .onEvent(const LogoutEvent.tap(TapType.changePhoneNumber)),
+          onTap: () => viewModel.onEvent(const LogoutEvent.tap(TapType.changePhoneNumber)),
           leading: const Icon(Icons.circle),
           title: stringsProvider.changePhoneNumber,
           subtitle: stringsProvider.changePhoneNumberInfo,
@@ -78,8 +74,7 @@ class _Body extends StatelessWidget {
           indent: tg.DividerIndent.large,
         ),
         tg.TextCell(
-          onTap: () =>
-              viewModel.onEvent(const LogoutEvent.tap(TapType.contactSupport)),
+          onTap: () => viewModel.onEvent(const LogoutEvent.tap(TapType.contactSupport)),
           leading: const Icon(Icons.circle),
           title: stringsProvider.contactSupport,
           subtitle: stringsProvider.contactSupportInfo,

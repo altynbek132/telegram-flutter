@@ -18,13 +18,10 @@ class _MessagesBundle implements IMessagesBundle {
   _MessagesBundle._(this.models, this.indexesInfo);
 
   factory _MessagesBundle.fromList(List<ITileModel> models) {
-    final Iterable<MapEntry<int, int>> indexesInfo = models
-        .whereType<BaseMessageTileModel>()
-        .cast<BaseMessageTileModel>()
-        .mapIndexed(
-          (int index, BaseMessageTileModel element) =>
-              MapEntry<int, int>(element.id, index),
-        );
+    final Iterable<MapEntry<int, int>> indexesInfo =
+        models.whereType<BaseMessageTileModel>().cast<BaseMessageTileModel>().mapIndexed(
+              (int index, BaseMessageTileModel element) => MapEntry<int, int>(element.id, index),
+            );
     return _MessagesBundle._(models, Map<int, int>.fromEntries(indexesInfo));
   }
 

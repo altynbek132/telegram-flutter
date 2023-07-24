@@ -86,23 +86,19 @@ abstract class MessageShowcaseModule {
 
   @j.provides
   @j.singleton
-  static IFileDownloader provideFileDownloader() =>
-      const fake.FakeFileDownloader();
+  static IFileDownloader provideFileDownloader() => const fake.FakeFileDownloader();
 
   @j.provides
   @j.singleton
-  static IMessageActionListener provideMessageActionListener() =>
-      _MessageActionListenerStub();
+  static IMessageActionListener provideMessageActionListener() => _MessageActionListenerStub();
 
   @j.provides
   @j.singleton
-  static IMessageWallContext provideMessageWallContext() =>
-      _FakeMessageWallContext();
+  static IMessageWallContext provideMessageWallContext() => _FakeMessageWallContext();
 
   @j.provides
   @j.singleton
-  static IChatMessageRepository provideChatMessageRepository() =>
-      fake.FakeChatMessageRepository(
+  static IChatMessageRepository provideChatMessageRepository() => fake.FakeChatMessageRepository(
         fakeMessages: <td.Message>[
           fake.createFakeMessage(),
         ],
@@ -110,8 +106,7 @@ abstract class MessageShowcaseModule {
 
   @j.provides
   @j.singleton
-  static IStickerRepository provideStickerRepository() =>
-      fake.FakeStickerRepository(
+  static IStickerRepository provideStickerRepository() => fake.FakeStickerRepository(
         customEmoji: (int customEmojiId) {
           return Completer<td.Sticker>().future;
         },
@@ -119,13 +114,11 @@ abstract class MessageShowcaseModule {
 
   @j.provides
   @j.singleton
-  static IChatRepository provideChatRepository() =>
-      const fake.FakeChatRepository();
+  static IChatRepository provideChatRepository() => const fake.FakeChatRepository();
 
   @j.provides
   @j.singleton
-  static IFileRepository provideFileRepository() =>
-      const fake.FakeFileRepository();
+  static IFileRepository provideFileRepository() => const fake.FakeFileRepository();
 
   @j.provides
   @j.singleton

@@ -4,11 +4,9 @@ import 'package:async/async.dart';
 import 'package:async_utils/async_utils.dart';
 
 mixin SubscriptionMixin {
-  final List<StreamSubscription<dynamic>> _subscriptionsList =
-      <StreamSubscription<dynamic>>[];
+  final List<StreamSubscription<dynamic>> _subscriptionsList = <StreamSubscription<dynamic>>[];
 
-  final List<CancelableOperation<dynamic>> _operationsList =
-      <CancelableOperation<dynamic>>[];
+  final List<CancelableOperation<dynamic>> _operationsList = <CancelableOperation<dynamic>>[];
 
   void subscribe<T>(
     Stream<T> stream,

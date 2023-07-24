@@ -4,8 +4,7 @@ import 'package:feature_chat_impl/src/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:tile/tile.dart';
 
-class MessageTextTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageTextTileModel> {
+class MessageTextTileFactoryDelegate implements ITileFactoryDelegate<MessageTextTileModel> {
   MessageTextTileFactoryDelegate({
     required MessageComponentResolver messageComponentResolver,
     required ChatMessageFactory chatMessageFactory,
@@ -27,10 +26,9 @@ class MessageTextTileFactoryDelegate
     return _chatMessageFactory.createConversationMessage(
       isOutgoing: model.isOutgoing,
       context: context,
-      senderTitle:
-          _messageComponentResolver.resolveSenderName(context, model) ??
-              // todo extract ext
-              SizedBox(height: chatContextData.verticalPadding),
+      senderTitle: _messageComponentResolver.resolveSenderName(context, model) ??
+          // todo extract ext
+          SizedBox(height: chatContextData.verticalPadding),
       reply: _replyInfoFactory.createFromMessageModel(context, model),
       blocks: <Widget>[
         MessageCaption(

@@ -21,8 +21,7 @@ class BackgroundListenable extends ValueNotifier<ChatBackground> {
   }
 
   void _init() {
-    _backgroundSubscription = _chatBackgroundManager.backgroundStream
-        .listen((ChatBackground newBackground) {
+    _backgroundSubscription = _chatBackgroundManager.backgroundStream.listen((ChatBackground newBackground) {
       value = newBackground;
     });
   }

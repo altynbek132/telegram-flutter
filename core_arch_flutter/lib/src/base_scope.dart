@@ -67,10 +67,8 @@ class _InheritedScope<D extends ScopeDelegate> extends InheritedWidget {
   final _BaseScopeState<D> _state;
 
   static _BaseScopeState<D> of<D extends ScopeDelegate>(BuildContext context) {
-    final _BaseScopeState<D>? result = (context
-            .getElementForInheritedWidgetOfExactType<_InheritedScope<D>>()
-            ?.widget as _InheritedScope<D>?)
-        ?._state;
+    final _BaseScopeState<D>? result =
+        (context.getElementForInheritedWidgetOfExactType<_InheritedScope<D>>()?.widget as _InheritedScope<D>?)?._state;
     assert(result != null, 'No ??? found in context');
     return result!;
   }

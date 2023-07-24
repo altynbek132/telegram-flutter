@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:localization_api/localization_api.dart';
 import 'package:tile/tile.dart';
 
-class MessageContactTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageContactTileModel> {
+class MessageContactTileFactoryDelegate implements ITileFactoryDelegate<MessageContactTileModel> {
   MessageContactTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
     required IStringsProvider stringsProvider,

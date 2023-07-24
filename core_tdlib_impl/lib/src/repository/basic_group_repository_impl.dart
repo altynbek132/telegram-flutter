@@ -13,6 +13,5 @@ class BasicGroupRepositoryImpl extends IBasicGroupRepository {
   Future<td.BasicGroup> getGroup(int id) => _dataSource.getGroup(id);
 
   @override
-  Future<td.BasicGroupFullInfo> getGroupFullInfo(int id) =>
-      _dataSource.getGroupFullInfo(id);
+  Future<td.BasicGroupFullInfo> getGroupFullInfo(int id) => _dataSource.getGroupFullInfo(id);
 }

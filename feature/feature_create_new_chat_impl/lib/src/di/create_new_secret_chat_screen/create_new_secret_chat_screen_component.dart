@@ -6,8 +6,7 @@ import 'package:jugger/jugger.dart' as j;
   modules: <Type>[CreateNewSecretChatScreenModule],
 )
 @screenScope
-abstract class ICreateNewSecretChatScreenComponent
-    implements INewSecretChatScreenScopeDelegate {}
+abstract class ICreateNewSecretChatScreenComponent implements INewSecretChatScreenScopeDelegate {}
 
 @j.module
 abstract class CreateNewSecretChatScreenModule {}

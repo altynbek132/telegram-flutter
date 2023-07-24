@@ -43,8 +43,7 @@ class ChatListInteractor {
           await _chatListUpdateHandler.handleNewChat(chat: chat);
         }
         _dispatchChats();
-        _chatUpdatesSubscription ??=
-            _chatUpdatesProvider.chatUpdates.listen(_handleChatUpdate);
+        _chatUpdatesSubscription ??= _chatUpdatesProvider.chatUpdates.listen(_handleChatUpdate);
       },
       onError: (Object? error) {},
     );
@@ -90,8 +89,7 @@ class ChatListInteractor {
     //todo need optimizing, new list created on each dispatch
     final List<ChatTileModel> list = _chatsHolder.orderedChats
         .map(
-          (OrderedChat element) =>
-              _chatsHolder.chatsData[element.chatId]!.model,
+          (OrderedChat element) => _chatsHolder.chatsData[element.chatId]!.model,
         )
         .toList();
     _chatsSubject.add(ChatsListState.data(list));
@@ -106,10 +104,8 @@ class ChatListInteractor {
         _dispatchChats();
       }
     } else if (event is td.UpdateChatLastMessage) {
-      final bool handleLastMessage = await _chatListUpdateHandler
-          .handleLastMessage(event.chatId, event.lastMessage);
-      final bool handleNewPositions =
-          await _chatListUpdateHandler.handleNewPositions(
+      final bool handleLastMessage = await _chatListUpdateHandler.handleLastMessage(event.chatId, event.lastMessage);
+      final bool handleNewPositions = await _chatListUpdateHandler.handleNewPositions(
         chatId: event.chatId,
         positions: event.positions,
       );
@@ -121,8 +117,7 @@ class ChatListInteractor {
         _dispatchChats();
       }
     } else if (event is td.UpdateChatNotificationSettings) {
-      if (await _chatListUpdateHandler
-          .handleUpdateChatNotificationSettings(event)) {
+      if (await _chatListUpdateHandler.handleUpdateChatNotificationSettings(event)) {
         _dispatchChats();
       }
     } else if (event is td.UpdateNewChat) {
@@ -134,8 +129,7 @@ class ChatListInteractor {
         _dispatchChats();
       }
     } else if (event is td.UpdateChatUnreadMentionCount) {
-      if (await _chatListUpdateHandler
-          .handleUpdateChatUnreadMentionCount(event)) {
+      if (await _chatListUpdateHandler.handleUpdateChatUnreadMentionCount(event)) {
         _dispatchChats();
       }
     } else if (event is td.UpdateMessageMentionRead) {

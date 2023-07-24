@@ -191,14 +191,10 @@ class SplitViewState extends State<SplitView> {
     },
   );
 
-  final GlobalKey<NavigatorState> _compactNavigatorKey =
-      GlobalKey<NavigatorState>();
-  final GlobalKey<NavigatorState> _topNavigatorKey =
-      GlobalKey<NavigatorState>();
-  final GlobalKey<NavigatorState> _leftNavigatorKey =
-      GlobalKey<NavigatorState>();
-  final GlobalKey<NavigatorState> _rightNavigatorKey =
-      GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> _compactNavigatorKey = GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> _topNavigatorKey = GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> _leftNavigatorKey = GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> _rightNavigatorKey = GlobalKey<NavigatorState>();
 
   // region public api
 
@@ -255,8 +251,7 @@ class SplitViewState extends State<SplitView> {
 
   void removeByKey(LocalKey key) {
     void remove(List<_PageNode> pages) {
-      final _PageNode page =
-          pages.firstWhere((_PageNode page) => page.pageKey == key);
+      final _PageNode page = pages.firstWhere((_PageNode page) => page.pageKey == key);
       pages.remove(page);
       _refreshCompactPages(notify: true);
     }
@@ -336,8 +331,8 @@ class SplitViewState extends State<SplitView> {
 
   void _refreshCompactPages({bool notify = false}) {
     if (_internalState.isCompact) {
-      final List<PageInfo> newPages = widget.delegate.compactLayoutMergeStrategy
-          .process(_leftPages, _rightPages, _topPages);
+      final List<PageInfo> newPages =
+          widget.delegate.compactLayoutMergeStrategy.process(_leftPages, _rightPages, _topPages);
 
       assert(
         () {
@@ -392,8 +387,7 @@ class SplitViewState extends State<SplitView> {
   }
 
   bool _shouldAnimate(LocalKey key, ContainerType container) {
-    final PageAnimationStrategy pageAnimationStrategy =
-        widget.delegate.pageAnimationStrategy;
+    final PageAnimationStrategy pageAnimationStrategy = widget.delegate.pageAnimationStrategy;
 
     if (_internalState.isCompact) {
       return pageAnimationStrategy.shouldAnimateCompact(
@@ -503,8 +497,7 @@ class _SimplePage extends Page<dynamic> {
   @override
   Route<dynamic> createRoute(BuildContext context) {
     final SplitViewState splitViewState = SplitViewScope.of(context);
-    final PageRouteConfigurator configurator =
-        splitViewState.widget.delegate.pageRouteConfigurator;
+    final PageRouteConfigurator configurator = splitViewState.widget.delegate.pageRouteConfigurator;
 
     return _DefaultRoute<dynamic>(
       settings: this,
@@ -568,13 +561,11 @@ class _DefaultRoute<T> extends MaterialPageRoute<T> {
   }
 
   @override
-  bool get fullscreenDialog =>
-      isFullscreenDialog.call() ?? super.fullscreenDialog;
+  bool get fullscreenDialog => isFullscreenDialog.call() ?? super.fullscreenDialog;
 }
 
 extension _Extensions on List<_PageNode> {
-  bool hasKey(LocalKey key) =>
-      any((_PageNode element) => element._page.key == key);
+  bool hasKey(LocalKey key) => any((_PageNode element) => element._page.key == key);
 }
 
 class _NavigatorContainer extends StatelessWidget {
@@ -648,8 +639,7 @@ class _TopNavigationContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final SplitViewState splitViewState = SplitViewScope.of(context);
-    final TopContainerConfig topContainerConfig =
-        splitViewState._internalState.config.topContainerConfig;
+    final TopContainerConfig topContainerConfig = splitViewState._internalState.config.topContainerConfig;
     return Align(
       key: key,
       child: Stack(
@@ -766,9 +756,7 @@ class _CompactLayout extends StatelessWidget {
     return _NavigatorContainer(
       navigatorKey: splitViewState._compactNavigatorKey,
       onPopPage: splitViewState._onPopPage,
-      pages: splitViewState._internalState.compactPages
-          .map((_PageNode e) => e._page)
-          .toList(),
+      pages: splitViewState._internalState.compactPages.map((_PageNode e) => e._page).toList(),
     );
   }
 }
@@ -779,8 +767,7 @@ class _SplitLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final SplitViewState splitViewState = SplitViewScope.of(context);
-    final double draggableDividerWidth =
-        splitViewState.widget.config.draggableDividerWidth;
+    final double draggableDividerWidth = splitViewState.widget.config.draggableDividerWidth;
     return Stack(
       children: <Widget>[
         Row(
@@ -790,17 +777,14 @@ class _SplitLayout extends StatelessWidget {
                 child: _NavigatorContainer(
                   navigatorKey: splitViewState._leftNavigatorKey,
                   onPopPage: splitViewState._onPopPage,
-                  pages: splitViewState._leftPages
-                      .map((_PageNode e) => e._page)
-                      .toList(),
+                  pages: splitViewState._leftPages.map((_PageNode e) => e._page).toList(),
                 ),
                 constraints: BoxConstraints.expand(
                   width: splitViewState._internalState.leftContainerWidth,
                 ),
               ),
             ),
-            if (splitViewState._leftPages.isNotEmpty ||
-                splitViewState._rightPages.isNotEmpty)
+            if (splitViewState._leftPages.isNotEmpty || splitViewState._rightPages.isNotEmpty)
               ConstrainedBox(
                 constraints: const BoxConstraints.expand(width: 1),
                 child: ColoredBox(
@@ -809,19 +793,15 @@ class _SplitLayout extends StatelessWidget {
               ),
             _RightNavigatorContainer(
               onPopPage: splitViewState._onPopPage,
-              pages: splitViewState._rightPages
-                  .map((_PageNode e) => e._page)
-                  .toList(),
-              placeholder:
-                  splitViewState._internalState.rightContainerPlaceholder,
+              pages: splitViewState._rightPages.map((_PageNode e) => e._page).toList(),
+              placeholder: splitViewState._internalState.rightContainerPlaceholder,
             ),
           ],
         ),
         if (splitViewState.widget.config.isDraggableDivider)
           Padding(
             padding: EdgeInsets.only(
-              left: splitViewState._internalState.leftContainerWidth -
-                  draggableDividerWidth / 2,
+              left: splitViewState._internalState.leftContainerWidth - draggableDividerWidth / 2,
             ),
             child: ConstrainedBox(
               constraints: BoxConstraints.expand(width: draggableDividerWidth),
@@ -830,8 +810,7 @@ class _SplitLayout extends StatelessWidget {
                 child: Listener(
                   onPointerMove: (PointerMoveEvent event) {
                     splitViewState._internalState.leftContainerWidth =
-                        splitViewState.widget.delegate.splitLayoutDelegate
-                            .calculateLeftContainerWidth(
+                        splitViewState.widget.delegate.splitLayoutDelegate.calculateLeftContainerWidth(
                       splitViewState._internalState,
                       event.position.dx,
                     );
@@ -846,13 +825,11 @@ class _SplitLayout extends StatelessWidget {
           ),
         _AnimatedTopNavigationContainer(
           onPopPage: splitViewState._onPopPage,
-          isNotSinglePage: splitViewState._leftPages.isNotEmpty ||
-              splitViewState._rightPages.isNotEmpty,
+          isNotSinglePage: splitViewState._leftPages.isNotEmpty || splitViewState._rightPages.isNotEmpty,
           onBarrierTap: () {
             splitViewState.removeUntil(ContainerType.top, (_) => false);
           },
-          pages:
-              splitViewState._topPages.map((_PageNode e) => e._page).toList(),
+          pages: splitViewState._topPages.map((_PageNode e) => e._page).toList(),
         ),
       ],
     );

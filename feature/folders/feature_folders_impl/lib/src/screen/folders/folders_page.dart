@@ -15,12 +15,9 @@ class FoldersPage extends StatefulWidget {
 class _FoldersPageState extends State<FoldersPage> {
   @override
   Widget build(BuildContext context) {
-    final tg.TgAppBarFactory appBarFactory =
-        FoldersScreenScope.getTgAppBarFactory(context);
-    final IStringsProvider stringsProvider =
-        FoldersScreenScope.getStringsProvider(context);
-    final FoldersViewModel viewModel =
-        FoldersScreenScope.getFoldersViewModel(context);
+    final tg.TgAppBarFactory appBarFactory = FoldersScreenScope.getTgAppBarFactory(context);
+    final IStringsProvider stringsProvider = FoldersScreenScope.getStringsProvider(context);
+    final FoldersViewModel viewModel = FoldersScreenScope.getFoldersViewModel(context);
 
     return Scaffold(
       appBar: appBarFactory.createDefaultTitle(

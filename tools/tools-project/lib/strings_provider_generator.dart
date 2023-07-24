@@ -7,12 +7,10 @@ import 'package:dart_style/dart_style.dart';
 import 'package:xml/xml.dart';
 
 void generateStringsProvider(String workDirectory) {
-  final File file =
-      File('$workDirectory/localization_impl/assets/translations/en.xml');
+  final File file = File('$workDirectory/localization_impl/assets/translations/en.xml');
   final XmlDocument document = XmlDocument.parse(file.readAsStringSync());
 
-  final List<_Item> list =
-      document.children[2].children.whereType<XmlElement>().map((XmlNode node) {
+  final List<_Item> list = document.children[2].children.whereType<XmlElement>().map((XmlNode node) {
     final String stringName = _handleReservedName(node.attributes[0].value);
     final String stringValue = node.children.first.toString();
 
@@ -52,8 +50,7 @@ void _generateStringProvider(List<_Item> list, String workDirectory) {
         for (final _Item item in list) {
           builder.methods.add(
             Method((MethodBuilder mBuilder) {
-              mBuilder.name =
-                  item.name[0].toLowerCase() + item.name.substring(1);
+              mBuilder.name = item.name[0].toLowerCase() + item.name.substring(1);
 
               if (item.formatted) {
                 mBuilder.requiredParameters.add(
@@ -75,8 +72,7 @@ void _generateStringProvider(List<_Item> list, String workDirectory) {
     ),
   );
 
-  final File stringsProviderFile =
-      File('$workDirectory/localization_api/lib/src/strings_provider.dart');
+  final File stringsProviderFile = File('$workDirectory/localization_api/lib/src/strings_provider.dart');
   stringsProviderFile.create();
   stringsProviderFile.writeAsString(
     DartFormatter().format('${target.build().accept(emitter)}'),
@@ -118,8 +114,7 @@ void _generateTgStringProvider(List<_Item> list, String workDirectory) {
         );
         builder.fields.add(
           Field((FieldBuilder fBuilder) {
-            fBuilder.type =
-                refer('String Function(String key, List<dynamic> args)');
+            fBuilder.type = refer('String Function(String key, List<dynamic> args)');
             fBuilder.name = '_stringFormattedGetter';
             fBuilder.modifier = FieldModifier.final$;
           }),
@@ -135,8 +130,7 @@ void _generateTgStringProvider(List<_Item> list, String workDirectory) {
         for (final _Item item in list) {
           builder.methods.add(
             Method((MethodBuilder mBuilder) {
-              mBuilder.name =
-                  item.name[0].toLowerCase() + item.name.substring(1);
+              mBuilder.name = item.name[0].toLowerCase() + item.name.substring(1);
               mBuilder.lambda = true;
               mBuilder.annotations.add(const Reference('override'));
 
@@ -196,8 +190,7 @@ void _generateTgStringProvider(List<_Item> list, String workDirectory) {
             );
             mBuilder.lambda = true;
             mBuilder.returns = const Reference('String');
-            mBuilder.body =
-                const Code('_stringFormattedGetter.call(key, args)');
+            mBuilder.body = const Code('_stringFormattedGetter.call(key, args)');
             // mBuilder.body = Code('CONSTRUCTOR');
           }),
         );
@@ -210,8 +203,7 @@ void _generateTgStringProvider(List<_Item> list, String workDirectory) {
   );
   stringsProviderFile.create();
 
-  const String imprt =
-      """import 'package:localization_api/localization_api.dart';""";
+  const String imprt = """import 'package:localization_api/localization_api.dart';""";
 
   stringsProviderFile.writeAsString(
     DartFormatter().format('$imprt ${target.build().accept(emitter)}'),

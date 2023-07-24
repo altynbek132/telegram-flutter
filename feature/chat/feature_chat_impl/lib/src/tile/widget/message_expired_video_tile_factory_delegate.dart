@@ -5,8 +5,7 @@ import 'package:tile/tile.dart';
 
 import 'not_implemented.dart';
 
-class MessageExpiredVideoTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageExpiredVideoTileModel> {
+class MessageExpiredVideoTileFactoryDelegate implements ITileFactoryDelegate<MessageExpiredVideoTileModel> {
   MessageExpiredVideoTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
   }) : _chatMessageFactory = chatMessageFactory;

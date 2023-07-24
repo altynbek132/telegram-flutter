@@ -6,8 +6,7 @@ import 'package:jugger/jugger.dart' as j;
   modules: <Type>[CreateNewGroupScreenModule],
 )
 @screenScope
-abstract class ICreateNewGroupScreenComponent
-    implements INewGroupScreenScopeDelegate {}
+abstract class ICreateNewGroupScreenComponent implements INewGroupScreenScopeDelegate {}
 
 @j.module
 abstract class CreateNewGroupScreenModule {}

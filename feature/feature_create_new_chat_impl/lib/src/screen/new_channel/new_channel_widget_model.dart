@@ -9,8 +9,7 @@ class NewChannelWidgetModel {
 
   final NewChannelViewModel _viewModel;
   final TextEditingController channelNameController = TextEditingController();
-  final TextEditingController channelDescriptionController =
-      TextEditingController();
+  final TextEditingController channelDescriptionController = TextEditingController();
 
   void submitTap() {
     _viewModel.onCreateChannelTap(

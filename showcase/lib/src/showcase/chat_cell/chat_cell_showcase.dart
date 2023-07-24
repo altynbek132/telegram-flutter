@@ -16,8 +16,7 @@ class ChatCellShowCase extends StatefulWidget {
   State<ChatCellShowCase> createState() => _ChatCellShowCaseState();
 }
 
-class _ChatCellShowCaseState extends State<ChatCellShowCase>
-    implements IChatTileListener {
+class _ChatCellShowCaseState extends State<ChatCellShowCase> implements IChatTileListener {
   late ChatTileFactory chatTileFactory;
   late List<ChatTileModel> models;
 
@@ -37,8 +36,7 @@ class _ChatCellShowCaseState extends State<ChatCellShowCase>
 
     int count = 0;
     _unreadMessagesCountSubscription =
-        Stream<int>.periodic(const Duration(milliseconds: 400), (_) => count++)
-            .listen((int event) {
+        Stream<int>.periodic(const Duration(milliseconds: 400), (_) => count++).listen((int event) {
       setState(() {
         models[1] = models[1].copy(unreadMessagesCount: count);
       });
@@ -55,10 +53,8 @@ class _ChatCellShowCaseState extends State<ChatCellShowCase>
   Widget build(BuildContext context) {
     final ListView listView = ListView.separated(
       itemCount: models.length,
-      itemBuilder: (BuildContext context, int index) =>
-          chatTileFactory.create(context, models[index]),
-      separatorBuilder: (BuildContext context, int index) =>
-          const tg.Divider(indent: DividerIndent.large),
+      itemBuilder: (BuildContext context, int index) => chatTileFactory.create(context, models[index]),
+      separatorBuilder: (BuildContext context, int index) => const tg.Divider(indent: DividerIndent.large),
     );
     return Scaffold(
       appBar: AppBar(),
@@ -119,8 +115,7 @@ class _ChatCellShowCaseState extends State<ChatCellShowCase>
       ),
       _createModel(
         id: 7,
-        title:
-            'long title long title long title long title long title long title',
+        title: 'long title long title long title long title long title long title',
         secondSubtitle:
             'long secondSubtitle long secondSubtitle long secondSubtitle long secondSubtitle long secondSubtitle long secondSubtitle',
         firstSubtitle:
@@ -185,22 +180,18 @@ class _ChatCellShowCaseState extends State<ChatCellShowCase>
       _createModel(
         id: 17,
         title: '❌emoji emoji emoji emoji emoji emoji emoji emoji emoji emoji',
-        firstSubtitle:
-            '😃emoji😃 emoji emoji emoji emoji emoji emoji emoji emoji emoji',
-        secondSubtitle:
-            '❌emoji emoji emoji emoji emoji emoji emoji emoji emoji emoji',
+        firstSubtitle: '😃emoji😃 emoji emoji emoji emoji emoji emoji emoji emoji emoji',
+        secondSubtitle: '❌emoji emoji emoji emoji emoji emoji emoji emoji emoji emoji',
       ),
       _createModel(
         id: 18,
         title: '❌emoji emoji emoji emoji emoji emoji emoji emoji emoji emoji',
-        secondSubtitle:
-            '😃emoji emoji emoji emoji emoji emoji emoji ❌emoji emoji emoji',
+        secondSubtitle: '😃emoji emoji emoji emoji emoji emoji emoji ❌emoji emoji emoji',
       ),
       _createModel(
         id: 19,
         title: '❌emoji emoji emoji emoji emoji emoji emoji emoji emoji emoji',
-        firstSubtitle:
-            '😃😃😃😃emoji emoji emoji emoji emoji emoji emoji ❌emoji emoji emoji',
+        firstSubtitle: '😃😃😃😃emoji emoji emoji emoji emoji emoji emoji ❌emoji emoji emoji',
       ),
       _createModel(
         id: 20,

@@ -23,6 +23,5 @@ class DateFormatter {
 }
 
 extension DateFormatterExtensions on DateFormatter {
-  String? formatChatLastMessageDateOrNull(DateTime? time) =>
-      time != null ? formatChatLastMessageDate(time) : null;
+  String? formatChatLastMessageDateOrNull(DateTime? time) => time != null ? formatChatLastMessageDate(time) : null;
 }

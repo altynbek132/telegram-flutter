@@ -8,8 +8,7 @@ class ChatContext extends StatelessWidget {
   final Widget child;
 
   static ChatContextData of(BuildContext context) {
-    final _InheritedContext? inheritedTheme =
-        context.dependOnInheritedWidgetOfExactType<_InheritedContext>();
+    final _InheritedContext? inheritedTheme = context.dependOnInheritedWidgetOfExactType<_InheritedContext>();
     final ChatContextData theme = inheritedTheme!.theme.data;
     return theme;
   }
@@ -34,8 +33,7 @@ class ChatContextData {
     required this.mediaConstraints,
   });
 
-  factory ChatContextData.desktop({required double maxWidth}) =>
-      ChatContextData.raw(
+  factory ChatContextData.desktop({required double maxWidth}) => ChatContextData.raw(
         width: maxWidth,
         horizontalPadding: 8.0,
         verticalPadding: 4.0,
@@ -68,6 +66,5 @@ class _InheritedContext extends InheritedTheme {
   }
 
   @override
-  bool updateShouldNotify(_InheritedContext old) =>
-      theme.data != old.theme.data;
+  bool updateShouldNotify(_InheritedContext old) => theme.data != old.theme.data;
 }

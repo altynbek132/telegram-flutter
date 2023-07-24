@@ -16,8 +16,7 @@ class ChatSettingsFeature implements IChatSettingsFeatureApi {
   final ChatSettingsFeatureDependencies _dependencies;
 
   @override
-  late final IChatSettingsWidgetFactory screenWidgetFactory =
-      _ScreenWidgetFactory(dependencies: _dependencies);
+  late final IChatSettingsWidgetFactory screenWidgetFactory = _ScreenWidgetFactory(dependencies: _dependencies);
 }
 
 class _ScreenWidgetFactory implements IChatSettingsWidgetFactory {

@@ -16,15 +16,13 @@ class MainScreenShowcaseFactory {
   final IStringsProvider _stringsProvider;
 
   Widget create(BuildContext context) {
-    final FakeTdFunctionExecutor fakeTdFunctionExecutor =
-        FakeTdFunctionExecutor(
+    final FakeTdFunctionExecutor fakeTdFunctionExecutor = FakeTdFunctionExecutor(
       resultFactory: (td.TdFunction object) {
         throw Exception('todo');
       },
     );
 
-    final MainScreenFeatureDependencies dependencies =
-        MainScreenFeatureDependencies(
+    final MainScreenFeatureDependencies dependencies = MainScreenFeatureDependencies(
       chatFilterRepository: FakeChatFilterRepository(
         chatFilters: Stream<List<td.ChatFilterInfo>>.value(
           <td.ChatFilterInfo>[
@@ -48,8 +46,7 @@ class MainScreenShowcaseFactory {
       ),
       chatsListScreenFactory: const FakeChatsListScreenFactory(),
       globalSearchScreenFactory: const FakeGlobalSearchScreenFactory(),
-      connectionStateProvider:
-          const FakeConnectionStateProvider(unstable: true),
+      connectionStateProvider: const FakeConnectionStateProvider(unstable: true),
       router: const _Router(),
       stringsProvider: _stringsProvider,
       userRepository: FakeUserRepository(

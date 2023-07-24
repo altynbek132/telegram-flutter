@@ -28,8 +28,7 @@ class InteractableMessageFactoryComponent {
   final IMessageWallContext _messageWallContext;
 
   IInteractableMessageFactory create() {
-    final MessageComponentResolver messageComponentResolver =
-        MessageComponentResolver(
+    final MessageComponentResolver messageComponentResolver = MessageComponentResolver(
       senderAvatarFactory: SenderAvatarFactory(
         avatarWidgetFactory: _avatarWidgetFactory,
       ),

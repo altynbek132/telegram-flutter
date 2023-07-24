@@ -5,21 +5,17 @@ import 'package:td_api/td_api.dart' as td;
 
 class AuthenticationStateProviderImpl implements IAuthenticationStateProvider {
   AuthenticationStateProviderImpl({
-    required IAuthenticationStateUpdatesProvider
-        authenticationStateUpdatesProvider,
+    required IAuthenticationStateUpdatesProvider authenticationStateUpdatesProvider,
   }) {
-    _authorizationStateUpdateSubscription = authenticationStateUpdatesProvider
-        .authorizationStateUpdates
-        .listen((td.UpdateAuthorizationState update) {
+    _authorizationStateUpdateSubscription =
+        authenticationStateUpdatesProvider.authorizationStateUpdates.listen((td.UpdateAuthorizationState update) {
       _authorizationState = update.authorizationState;
     });
   }
 
-  StreamSubscription<td.UpdateAuthorizationState>?
-      _authorizationStateUpdateSubscription;
+  StreamSubscription<td.UpdateAuthorizationState>? _authorizationStateUpdateSubscription;
 
-  td.AuthorizationState _authorizationState =
-      const td.AuthorizationStateWaitTdlibParameters();
+  td.AuthorizationState _authorizationState = const td.AuthorizationStateWaitTdlibParameters();
 
   @override
   td.AuthorizationState get authorizationState => _authorizationState;

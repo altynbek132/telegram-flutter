@@ -12,31 +12,26 @@ import 'widget/masks_widget_factory.dart';
 import 'widget/trending_stickers_widget_factory.dart';
 
 class StickersFeature implements IStickersFeatureApi {
-  StickersFeature({required StickersFeatureDependencies dependencies})
-      : _dependencies = dependencies;
+  StickersFeature({required StickersFeatureDependencies dependencies}) : _dependencies = dependencies;
 
   final StickersFeatureDependencies _dependencies;
 
-  late final IStickersComponent _component =
-      JuggerStickersComponentBuilder().dependencies(_dependencies).build();
+  late final IStickersComponent _component = JuggerStickersComponentBuilder().dependencies(_dependencies).build();
 
   @override
-  late final IStickersWidgetFactory stickersWidgetFactory =
-      StickersWidgetFactory(dependencies: _dependencies);
+  late final IStickersWidgetFactory stickersWidgetFactory = StickersWidgetFactory(dependencies: _dependencies);
 
   @override
   late final IArchivedStickersWidgetFactory archivedStickersWidgetFactory =
       ArchivedStickersWidgetFactory(dependencies: _dependencies);
 
   @override
-  late final IMasksWidgetFactory masksWidgetFactory =
-      MasksWidgetFactory(dependencies: _dependencies);
+  late final IMasksWidgetFactory masksWidgetFactory = MasksWidgetFactory(dependencies: _dependencies);
 
   @override
   late final ITrendingStickersWidgetFactory trendingStickersWidgetFactory =
       TrendingStickersWidgetFactory(dependencies: _dependencies);
 
   @override
-  late final IStickerSetScreenFactory stickerSetScreenFactory =
-      StickerSetWidgetFactory(parentComponent: _component);
+  late final IStickerSetScreenFactory stickerSetScreenFactory = StickerSetWidgetFactory(parentComponent: _component);
 }

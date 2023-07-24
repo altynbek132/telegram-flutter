@@ -9,8 +9,7 @@ class FakeFileDownloader implements IFileDownloader {
     this.downloadFileProvider,
   });
 
-  final Stream<FileDownloadState>? Function(int fileId)?
-      fileDownloadStateStreamProvider;
+  final Stream<FileDownloadState>? Function(int fileId)? fileDownloadStateStreamProvider;
   final Future<File> Function(int fileId)? downloadFileProvider;
 
   @override
@@ -34,8 +33,7 @@ class FakeFileDownloader implements IFileDownloader {
 
   @override
   Future<File> downloadFile(int fileId) {
-    final Future<File> Function(int fileId)? downloadFileProvider =
-        this.downloadFileProvider;
+    final Future<File> Function(int fileId)? downloadFileProvider = this.downloadFileProvider;
     if (downloadFileProvider != null) {
       return downloadFileProvider.call(fileId);
     }

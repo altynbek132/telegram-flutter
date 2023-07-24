@@ -9,8 +9,7 @@ import 'package:tile/tile.dart';
 import 'message_animation_dependencies.dart';
 import 'message_animation_scope.dart';
 
-class MessageAnimationTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageAnimationTileModel> {
+class MessageAnimationTileFactoryDelegate implements ITileFactoryDelegate<MessageAnimationTileModel> {
   MessageAnimationTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
     required ShortInfoFactory shortInfoFactory,

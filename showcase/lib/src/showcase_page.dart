@@ -11,18 +11,15 @@ class ShowcasePage extends StatefulWidget {
   @override
   _ShowcasePageState createState() => _ShowcasePageState();
 
-  static final GlobalKey<SplitViewState> splitViewNavigatorKey =
-      GlobalKey<SplitViewState>();
+  static final GlobalKey<SplitViewState> splitViewNavigatorKey = GlobalKey<SplitViewState>();
 }
 
 class _ShowcasePageState extends State<ShowcasePage> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final BuildContext? currentContext =
-          ShowcasePage.splitViewNavigatorKey.currentContext;
-      final SplitViewState? currentState =
-          ShowcasePage.splitViewNavigatorKey.currentState;
+      final BuildContext? currentContext = ShowcasePage.splitViewNavigatorKey.currentContext;
+      final SplitViewState? currentState = ShowcasePage.splitViewNavigatorKey.currentState;
 
       if (currentContext == null || currentState == null) {
         return;
@@ -31,8 +28,7 @@ class _ShowcasePageState extends State<ShowcasePage> {
       currentState.setRightContainerPlaceholder(
         const Material(child: Center(child: Text('Showcase'))),
       );
-      final ShowcaseInfo info =
-          ShowcaseScope.getShowcaseInfoResolver(context).resolve(
+      final ShowcaseInfo info = ShowcaseScope.getShowcaseInfoResolver(context).resolve(
         context: currentContext,
         params: const shp.ShowcaseParams.initialScreen(),
       );

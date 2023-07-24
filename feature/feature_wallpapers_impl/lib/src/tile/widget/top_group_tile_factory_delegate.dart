@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:localization_api/localization_api.dart';
 import 'package:tile/tile.dart';
 
-class TopGroupTileFactoryDelegate
-    implements ITileFactoryDelegate<TopGroupTileModel> {
+class TopGroupTileFactoryDelegate implements ITileFactoryDelegate<TopGroupTileModel> {
   const TopGroupTileFactoryDelegate({
     required ILocalizationManager localizationManager,
   }) : _localizationManager = localizationManager;

@@ -56,10 +56,8 @@ class FileDownloader implements IFileDownloader {
 
   @override
   Stream<FileDownloadState> getFileDownloadStateStream(int fileId) {
-    final Stream<FileDownloadState> currentState =
-        Stream<FileDownloadState>.fromFuture(getFileDownloadState(fileId));
-    final Stream<FileDownloadState> stateUpdates = _fileUpdatesProvider
-        .fileUpdates
+    final Stream<FileDownloadState> currentState = Stream<FileDownloadState>.fromFuture(getFileDownloadState(fileId));
+    final Stream<FileDownloadState> stateUpdates = _fileUpdatesProvider.fileUpdates
         .where((td.UpdateFile update) => update.file.id == fileId)
         .map((td.UpdateFile update) => _toDownloadState(update.file));
     return Rx.concat(<Stream<FileDownloadState>>[currentState, stateUpdates]);

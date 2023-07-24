@@ -6,8 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:localization_api/localization_api.dart';
 import 'package:provider/provider.dart';
 
-class QuickNotificationSettingsScreenFactory
-    implements IQuickNotificationSettingsScreenFactory {
+class QuickNotificationSettingsScreenFactory implements IQuickNotificationSettingsScreenFactory {
   QuickNotificationSettingsScreenFactory({
     required NotificationsSettingsFeatureDependencies dependencies,
   }) : _dependencies = dependencies;

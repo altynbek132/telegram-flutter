@@ -17,9 +17,7 @@ class SearchSettingsScreenFactory implements ISettingsSearchScreenFactory {
   Widget create(SettingsSearchScreenController controller) {
     return SettingsSearchScreenScope(
       child: SettingsSearchPage(controller: controller),
-      create: () => JuggerSettingsSearchScreenComponentBuilder()
-          .dependencies(_dependencies)
-          .build(),
+      create: () => JuggerSettingsSearchScreenComponentBuilder().dependencies(_dependencies).build(),
     );
   }
 }

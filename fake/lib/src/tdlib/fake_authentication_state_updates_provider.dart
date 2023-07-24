@@ -1,8 +1,7 @@
 import 'package:core_tdlib_api/core_tdlib_api.dart';
 import 'package:td_api/td_api.dart' as td;
 
-class FakeAuthenticationStateUpdatesProvider
-    implements IAuthenticationStateUpdatesProvider {
+class FakeAuthenticationStateUpdatesProvider implements IAuthenticationStateUpdatesProvider {
   FakeAuthenticationStateUpdatesProvider({
     Stream<td.UpdateAuthorizationState>? fakeStateStream,
   }) : _fakeStateStream = fakeStateStream ??
@@ -15,6 +14,5 @@ class FakeAuthenticationStateUpdatesProvider
   final Stream<td.UpdateAuthorizationState> _fakeStateStream;
 
   @override
-  Stream<td.UpdateAuthorizationState> get authorizationStateUpdates =>
-      _fakeStateStream;
+  Stream<td.UpdateAuthorizationState> get authorizationStateUpdates => _fakeStateStream;
 }

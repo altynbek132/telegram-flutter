@@ -28,22 +28,17 @@ class UsernameChecker {
       td.CreatePrivateChat(userId: myId, force: false),
     );
 
-    final td.CheckChatUsernameResult result =
-        await _functionExecutor.send<td.CheckChatUsernameResult>(
+    final td.CheckChatUsernameResult result = await _functionExecutor.send<td.CheckChatUsernameResult>(
       td.CheckChatUsername(chatId: myChat.id, username: username),
     );
 
     return result.map(
       ok: (_) => const CheckResult.ok(),
-      usernameInvalid: (_) =>
-          CheckResult.error(_stringsProvider.usernameInvalid),
-      usernameOccupied: (_) =>
-          CheckResult.error(_stringsProvider.usernameInUse),
+      usernameInvalid: (_) => CheckResult.error(_stringsProvider.usernameInvalid),
+      usernameOccupied: (_) => CheckResult.error(_stringsProvider.usernameInUse),
       publicChatsTooMany: (_) => const CheckResult.error('publicChatsTooMany'),
-      publicGroupsUnavailable: (_) =>
-          const CheckResult.error('publicGroupsUnavailable'),
-      usernamePurchasable: (_) =>
-          const CheckResult.error('usernamePurchasable'),
+      publicGroupsUnavailable: (_) => const CheckResult.error('publicGroupsUnavailable'),
+      usernamePurchasable: (_) => const CheckResult.error('usernamePurchasable'),
     );
   }
 }

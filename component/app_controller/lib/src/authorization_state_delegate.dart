@@ -13,10 +13,8 @@ class AuthorizationStateDelegate {
     required IAppControllerRouter router,
     required ITdConfigProvider tdConfigProvider,
     required ITdFunctionExecutor functionExecutor,
-    required IAuthenticationStateUpdatesProvider
-        authenticationStateUpdatesProvider,
-  })  : _authenticationStateUpdatesProvider =
-            authenticationStateUpdatesProvider,
+    required IAuthenticationStateUpdatesProvider authenticationStateUpdatesProvider,
+  })  : _authenticationStateUpdatesProvider = authenticationStateUpdatesProvider,
         _deviceInfoProvider = deviceInfoProvider,
         _router = router,
         _tdConfigProvider = tdConfigProvider,
@@ -31,8 +29,7 @@ class AuthorizationStateDelegate {
   StreamSubscription<dynamic>? _authorizationStateUpdatesSubscription;
 
   void onInit() {
-    _authorizationStateUpdatesSubscription = _authenticationStateUpdatesProvider
-        .authorizationStateUpdates
+    _authorizationStateUpdatesSubscription = _authenticationStateUpdatesProvider.authorizationStateUpdates
         .map((td.UpdateAuthorizationState update) => update.authorizationState)
         .listen(_handleAuthorizationState);
   }
@@ -54,8 +51,7 @@ class AuthorizationStateDelegate {
   }
 
   Future<void> _handleWaitTdlibParametersState() async {
-    final Directory applicationSupportDirectory =
-        await getApplicationSupportDirectory();
+    final Directory applicationSupportDirectory = await getApplicationSupportDirectory();
     await _functionExecutor.send<td.Ok>(
       td.SetTdlibParameters(
         systemVersion: await _deviceInfoProvider.systemVersion,

@@ -150,8 +150,7 @@ class SubtitleGroup extends StatelessWidget {
       );
     }
 
-    if ((unreadMessagesCount > 1 && isMentioned) ||
-        (!isMentioned && unreadMessagesCount > 0)) {
+    if ((unreadMessagesCount > 1 && isMentioned) || (!isMentioned && unreadMessagesCount > 0)) {
       if (isMentioned) {
         widgets.add(const SizedBox(width: 4));
       }
@@ -267,8 +266,7 @@ class _SecondSubtitle extends StatelessWidget {
       maxLines: firstSubtitle != null ? 1 : 2,
       textAlign: TextAlign.start,
       overflow: TextOverflow.ellipsis,
-      style:
-          Theme.of(context).extension<ChatCellTheme>()?.secondarySubtitleStyle,
+      style: Theme.of(context).extension<ChatCellTheme>()?.secondarySubtitleStyle,
     );
   }
 }

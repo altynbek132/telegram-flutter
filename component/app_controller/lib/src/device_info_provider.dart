@@ -8,8 +8,7 @@ class DeviceInfoProvider {
 
   Future<String> get systemVersion async {
     if (Platform.isAndroid) {
-      final AndroidBuildVersion version =
-          (await _deviceInfoPlugin.androidInfo).version;
+      final AndroidBuildVersion version = (await _deviceInfoPlugin.androidInfo).version;
       return 'Android ${version.release} (SDK ${version.sdkInt})';
     } else if (Platform.isIOS) {
       final IosDeviceInfo iosInfo = await _deviceInfoPlugin.iosInfo;

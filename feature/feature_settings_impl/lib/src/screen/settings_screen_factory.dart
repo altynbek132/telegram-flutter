@@ -17,8 +17,7 @@ class SettingsScreenFactory implements ISettingScreenFactory {
   Widget create() {
     return SettingsScreenScope(
       child: const SettingsPage(),
-      create: () =>
-          JuggerSettingsComponentBuilder().dependencies(_dependencies).build(),
+      create: () => JuggerSettingsComponentBuilder().dependencies(_dependencies).build(),
     );
   }
 }

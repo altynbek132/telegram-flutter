@@ -12,8 +12,7 @@ class ChatAdministrationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final IStringsProvider stringsProvider =
-        ChatAdministrationScreenScope.getStringsProvider(context);
+    final IStringsProvider stringsProvider = ChatAdministrationScreenScope.getStringsProvider(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(stringsProvider.channelEdit),
@@ -28,8 +27,7 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ChatAdministrationViewModel viewModel =
-        ChatAdministrationScreenScope.getChatAdministrationViewModel(context);
+    final ChatAdministrationViewModel viewModel = ChatAdministrationScreenScope.getChatAdministrationViewModel(context);
     return StreamListener<AvailableActionsState>(
       stream: viewModel.availableActionsState,
       builder: _buildBody,
@@ -37,8 +35,7 @@ class _Body extends StatelessWidget {
   }
 
   Widget _buildBody(BuildContext context, AvailableActionsState state) {
-    final ChatAdministrationViewModel viewModel =
-        ChatAdministrationScreenScope.getChatAdministrationViewModel(context);
+    final ChatAdministrationViewModel viewModel = ChatAdministrationScreenScope.getChatAdministrationViewModel(context);
     final DeleteChat? deleteChat = state.deleteChat;
     return Column(
       children: <Widget>[

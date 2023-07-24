@@ -47,8 +47,7 @@ class MessageTileMapper {
 
   Future<ITileModel> mapToTileModel(td.Message message) async {
     final td.MessageContent content = message.content;
-    final String notImplementedText =
-        'not implemented ${message.content.runtimeType.toString()}';
+    final String notImplementedText = 'not implemented ${message.content.runtimeType.toString()}';
 
     return content.map(
       messageAnimation: (td.MessageAnimation value) async {
@@ -74,8 +73,7 @@ class MessageTileMapper {
           additionalInfo: await _additionalInfoMapper.map(message),
           isOutgoing: message.isOutgoing,
           performer: value.audio.performer,
-          totalDuration:
-              '${duration.inMinutes.remainder(60)}:${duration.inSeconds.remainder(60)}',
+          totalDuration: '${duration.inMinutes.remainder(60)}:${duration.inSeconds.remainder(60)}',
           title: value.audio.title,
         );
       },
@@ -97,12 +95,10 @@ class MessageTileMapper {
       },
       messageChatAddMembers: (td.MessageChatAddMembers value) async {
         final String joinedUserNames =
-            (await Stream<int>.fromIterable(value.memberUserIds)
-                    .asyncMap((int userId) async {
+            (await Stream<int>.fromIterable(value.memberUserIds).asyncMap((int userId) async {
           final td.User user = await _userRepository.getUser(userId);
           // todo extract to extension for concat first and last names
-          return <String>[user.firstName, user.lastName]
-              .where((String element) {
+          return <String>[user.firstName, user.lastName].where((String element) {
             // todo check by isNotBlack
             return element.isNotEmpty;
           }).join(' ');
@@ -150,8 +146,7 @@ class MessageTileMapper {
               <dynamic>[
                 'todo',
                 // todo extract to extension for concat first and last names
-                (<String>[user.firstName, user.lastName]
-                    .where((String element) {
+                (<String>[user.firstName, user.lastName].where((String element) {
                   // todo check by isNotBlack
                   return element.isNotEmpty;
                 }).join(' ')),
@@ -187,10 +182,8 @@ class MessageTileMapper {
           isOutgoing: message.isOutgoing,
           title: rt.RichText.planeText(
             message.isOutgoing
-                ? _stringsProvider
-                    .messageLifetimeChangedOutgoing(<dynamic>['todo'])
-                : _stringsProvider
-                    .messageLifetimeChanged(<dynamic>['todo', 'todo']),
+                ? _stringsProvider.messageLifetimeChangedOutgoing(<dynamic>['todo'])
+                : _stringsProvider.messageLifetimeChanged(<dynamic>['todo', 'todo']),
           ),
         );
       },
@@ -234,8 +227,7 @@ class MessageTileMapper {
           additionalInfo: await _additionalInfoMapper.map(message),
           isOutgoing: message.isOutgoing,
           title: // todo extract to extension for concat first and last names
-              <String>[contact.firstName, contact.lastName]
-                  .where((String element) {
+              <String>[contact.firstName, contact.lastName].where((String element) {
             // todo check by isNotBlack
             return element.isNotEmpty;
           }).join(' '),
@@ -366,8 +358,7 @@ class MessageTileMapper {
           type: notImplementedText,
         );
       },
-      messageProximityAlertTriggered:
-          (td.MessageProximityAlertTriggered value) {
+      messageProximityAlertTriggered: (td.MessageProximityAlertTriggered value) {
         return MessageProximityAlertTriggeredTileModel(
           id: message.id,
           isOutgoing: message.isOutgoing,
@@ -470,8 +461,7 @@ class MessageTileMapper {
           type: notImplementedText,
         );
       },
-      messageInviteVideoChatParticipants:
-          (td.MessageInviteVideoChatParticipants value) {
+      messageInviteVideoChatParticipants: (td.MessageInviteVideoChatParticipants value) {
         return MessageInviteVideoChatParticipantsTileModel(
           id: message.id,
           isOutgoing: message.isOutgoing,

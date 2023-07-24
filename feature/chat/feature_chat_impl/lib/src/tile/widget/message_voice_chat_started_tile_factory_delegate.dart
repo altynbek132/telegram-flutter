@@ -5,8 +5,7 @@ import 'package:tile/tile.dart';
 
 import 'not_implemented.dart';
 
-class MessageVoiceChatStartedTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageVoiceChatStartedTileModel> {
+class MessageVoiceChatStartedTileFactoryDelegate implements ITileFactoryDelegate<MessageVoiceChatStartedTileModel> {
   MessageVoiceChatStartedTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
   }) : _chatMessageFactory = chatMessageFactory;

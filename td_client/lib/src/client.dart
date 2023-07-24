@@ -9,8 +9,7 @@ export 'package:tdlib/td_client.dart' show TdFunctionException;
 class TdClient {
   late tdc.Client _client;
 
-  final PublishSubject<td.TdObject> _eventController =
-      PublishSubject<td.TdObject>();
+  final PublishSubject<td.TdObject> _eventController = PublishSubject<td.TdObject>();
 
   Future<void> init() async {
     _client = tdc.Client.create();
@@ -24,9 +23,7 @@ class TdClient {
 
   Stream<td.TdObject> get events => _eventController.stream;
 
-  Future<T> send<T extends td.TdObject>(td.TdFunction object) async =>
-      _client.send(object);
+  Future<T> send<T extends td.TdObject>(td.TdFunction object) async => _client.send(object);
 
-  T execute<T extends td.TdObject>(td.TdFunction object) =>
-      _client.execute(object);
+  T execute<T extends td.TdObject>(td.TdFunction object) => _client.execute(object);
 }

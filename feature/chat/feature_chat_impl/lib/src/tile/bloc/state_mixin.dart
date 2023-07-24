@@ -5,8 +5,7 @@ import 'package:feature_chat_impl/src/tile/model/base_message_tile_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rxdart/rxdart.dart';
 
-mixin StateMixin<Model extends BaseMessageTileModel, State>
-    on MessageBloc<Model> {
+mixin StateMixin<Model extends BaseMessageTileModel, State> on MessageBloc<Model> {
   final BehaviorSubject<State> _stateSubject = BehaviorSubject<State>();
 
   Stream<State> get state => _stateSubject;

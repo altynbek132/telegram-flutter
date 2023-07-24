@@ -15,15 +15,13 @@ class Join extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final IStringsProvider stringsProvider =
-        ChatActionPanelScope.getStringsProvider(context);
+    final IStringsProvider stringsProvider = ChatActionPanelScope.getStringsProvider(context);
 
     return TextButton(
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(double.infinity, kPanelHeight),
       ),
-      onPressed: () =>
-          ChatActionPanelScope.getChatActionsPanelViewModel(context).onJoin(),
+      onPressed: () => ChatActionPanelScope.getChatActionsPanelViewModel(context).onJoin(),
       child: Text(stringsProvider.channelJoin),
     );
   }

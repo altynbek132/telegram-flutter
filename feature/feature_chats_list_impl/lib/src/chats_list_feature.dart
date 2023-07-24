@@ -17,6 +17,5 @@ class ChatsListFeature implements IChatsListFeatureApi {
   final ChatsListFeatureDependencies _dependencies;
 
   @override
-  late final IChatsListScreenFactory chatsListScreenFactory =
-      ChatsListScreenFactory(dependencies: _dependencies);
+  late final IChatsListScreenFactory chatsListScreenFactory = ChatsListScreenFactory(dependencies: _dependencies);
 }

@@ -11,6 +11,5 @@ class SettingsFeature implements ISettingsFeatureApi {
   final SettingsFeatureDependencies _dependencies;
 
   @override
-  late final ISettingScreenFactory settingsScreenFactory =
-      SettingsScreenFactory(dependencies: _dependencies);
+  late final ISettingScreenFactory settingsScreenFactory = SettingsScreenFactory(dependencies: _dependencies);
 }

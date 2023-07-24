@@ -88,8 +88,7 @@ class CommonScreenRouterImpl
   @override
   void toChatProfile({required int chatId, required ProfileType type}) {
     _add(
-      widget: _featureProvider.profileFeatureApi.profileScreenFactory
-          .create(chatId, type),
+      widget: _featureProvider.profileFeatureApi.profileScreenFactory.create(chatId, type),
       key: _keyGenerator.generateForChatProfile(chatId),
       container: ContainerType.top,
     );
@@ -98,17 +97,15 @@ class CommonScreenRouterImpl
   @override
   void toSharedMedia(SharedContentType type) {
     _add(
-      widget: _featureProvider.sharedMediaFeatureApi.sharedMediaScreenFactory
-          .create(type),
+      widget: _featureProvider.sharedMediaFeatureApi.sharedMediaScreenFactory.create(type),
       container: ContainerType.top,
     );
   }
 
   @override
   void toQuickNotificationSettings() {
-    final Widget widget = _featureProvider
-        .notificationsSettingsFeatureApi.quickNotificationSettingsScreenFactory
-        .create();
+    final Widget widget =
+        _featureProvider.notificationsSettingsFeatureApi.quickNotificationSettingsScreenFactory.create();
 
     _showDialog(
       builder: (_) => widget,
@@ -118,8 +115,7 @@ class CommonScreenRouterImpl
   @override
   void toChooseCountry(void Function(Country country) callback) {
     _add(
-      widget: _featureProvider.countryFeatureApi.chooseCountryScreenFactory
-          .create(callback),
+      widget: _featureProvider.countryFeatureApi.chooseCountryScreenFactory.create(callback),
       container: ContainerType.top,
     );
   }
@@ -159,8 +155,7 @@ class CommonScreenRouterImpl
   @override
   void toArchivedStickers() {
     _add(
-      widget: _featureProvider.stickersFeatureApi.archivedStickersWidgetFactory
-          .create(),
+      widget: _featureProvider.stickersFeatureApi.archivedStickersWidgetFactory.create(),
       container: ContainerType.top,
     );
   }
@@ -176,8 +171,7 @@ class CommonScreenRouterImpl
   @override
   void toStickersSet(int setId) {
     _add(
-      widget: _featureProvider.stickersFeatureApi.stickerSetScreenFactory
-          .create(setId),
+      widget: _featureProvider.stickersFeatureApi.stickerSetScreenFactory.create(setId),
       container: ContainerType.top,
     );
   }
@@ -185,8 +179,7 @@ class CommonScreenRouterImpl
   @override
   void toTrendingStickers() {
     _add(
-      widget: _featureProvider.stickersFeatureApi.trendingStickersWidgetFactory
-          .create(),
+      widget: _featureProvider.stickersFeatureApi.trendingStickersWidgetFactory.create(),
       container: ContainerType.top,
     );
   }
@@ -202,8 +195,7 @@ class CommonScreenRouterImpl
   @override
   void toCreateNewFolder() {
     _add(
-      widget:
-          _featureProvider.foldersFeatureApi.setupFolderScreenFactory.create(),
+      widget: _featureProvider.foldersFeatureApi.setupFolderScreenFactory.create(),
       container: ContainerType.top,
     );
   }
@@ -211,8 +203,7 @@ class CommonScreenRouterImpl
   @override
   void toSessions() {
     _add(
-      widget:
-          _featureProvider.sessionsFeatureApi.sessionsScreenFactory.create(),
+      widget: _featureProvider.sessionsFeatureApi.sessionsScreenFactory.create(),
       container: ContainerType.top,
     );
   }
@@ -220,8 +211,7 @@ class CommonScreenRouterImpl
   @override
   void toPrivacySettings() {
     _add(
-      widget: _featureProvider.privacySettingsFeatureApi.screenWidgetFactory
-          .create(),
+      widget: _featureProvider.privacySettingsFeatureApi.screenWidgetFactory.create(),
       container: ContainerType.top,
     );
   }
@@ -229,9 +219,7 @@ class CommonScreenRouterImpl
   @override
   void toNotificationsSettings() {
     _add(
-      widget: _featureProvider
-          .notificationsSettingsFeatureApi.screenWidgetFactory
-          .create(),
+      widget: _featureProvider.notificationsSettingsFeatureApi.screenWidgetFactory.create(),
       container: ContainerType.top,
     );
   }
@@ -239,8 +227,7 @@ class CommonScreenRouterImpl
   @override
   void toDataSettings() {
     _add(
-      widget:
-          _featureProvider.dataSettingsFeatureApi.screenWidgetFactory.create(),
+      widget: _featureProvider.dataSettingsFeatureApi.screenWidgetFactory.create(),
       container: ContainerType.top,
     );
   }
@@ -248,8 +235,7 @@ class CommonScreenRouterImpl
   @override
   void toChatSettings() {
     _add(
-      widget:
-          _featureProvider.chatSettingsFeatureApi.screenWidgetFactory.create(),
+      widget: _featureProvider.chatSettingsFeatureApi.screenWidgetFactory.create(),
       container: ContainerType.top,
     );
   }
@@ -265,8 +251,7 @@ class CommonScreenRouterImpl
   @override
   void toStickersAndMasks() {
     _add(
-      widget:
-          _featureProvider.stickersFeatureApi.stickersWidgetFactory.create(),
+      widget: _featureProvider.stickersFeatureApi.stickersWidgetFactory.create(),
       container: ContainerType.top,
     );
   }
@@ -274,16 +259,14 @@ class CommonScreenRouterImpl
   @override
   void toWallPapers() {
     _add(
-      widget: _featureProvider.wallpapersFeatureApi.wallpapersListScreenFactory
-          .create(),
+      widget: _featureProvider.wallpapersFeatureApi.wallpapersListScreenFactory.create(),
       container: ContainerType.top,
     );
   }
 
   @override
   void toEventsList() {
-    final Widget widget =
-        _featureProvider.devFeature.eventsListScreenFactory.create();
+    final Widget widget = _featureProvider.devFeature.eventsListScreenFactory.create();
     _add(
       widget: widget,
       container: ContainerType.top,
@@ -293,8 +276,7 @@ class CommonScreenRouterImpl
   @override
   void toSettings() {
     _add(
-      widget:
-          _featureProvider.settingsFeatureApi.settingsScreenFactory.create(),
+      widget: _featureProvider.settingsFeatureApi.settingsScreenFactory.create(),
       container: ContainerType.top,
     );
   }
@@ -319,8 +301,7 @@ class CommonScreenRouterImpl
 
   void toCreateNewChannel() {
     _add(
-      widget: _featureProvider.newChatFeatureApi.createNewChannelScreenFactory
-          .create(),
+      widget: _featureProvider.newChatFeatureApi.createNewChannelScreenFactory.create(),
       key: _keyGenerator.generateForCreateNewChannel(),
       container: ContainerType.top,
     );
@@ -328,17 +309,14 @@ class CommonScreenRouterImpl
 
   void toCreateNewGroup() {
     _add(
-      widget: _featureProvider.newChatFeatureApi.createNewGroupScreenFactory
-          .create(),
+      widget: _featureProvider.newChatFeatureApi.createNewGroupScreenFactory.create(),
       container: ContainerType.top,
     );
   }
 
   void toCreateNewSecretChat() {
     _add(
-      widget: _featureProvider
-          .newChatFeatureApi.createNewSecretChatScreenFactory
-          .create(),
+      widget: _featureProvider.newChatFeatureApi.createNewSecretChatScreenFactory.create(),
       container: ContainerType.top,
     );
   }
@@ -346,8 +324,7 @@ class CommonScreenRouterImpl
   @override
   void toContacts() {
     _add(
-      widget:
-          _featureProvider.contactsFeatureApi.contactsScreenFactory.create(),
+      widget: _featureProvider.contactsFeatureApi.contactsScreenFactory.create(),
       container: ContainerType.top,
     );
   }
@@ -370,9 +347,7 @@ class CommonScreenRouterImpl
   @override
   void toChatAdministration(int chatId) {
     _add(
-      widget: _featureProvider
-          .chatAdministrationFeatureApi.chatAdministrationScreenFactory
-          .create(chatId),
+      widget: _featureProvider.chatAdministrationFeatureApi.chatAdministrationScreenFactory.create(chatId),
       key: _keyGenerator.generateForChatAdministration(chatId),
       container: ContainerType.top,
     );
@@ -381,8 +356,7 @@ class CommonScreenRouterImpl
   @override
   void toAddNewContact(int userId) {
     _add(
-      widget: _featureProvider.newContactFeatureApi.newContactScreenFactory
-          .create(userId),
+      widget: _featureProvider.newContactFeatureApi.newContactScreenFactory.create(userId),
       key: _keyGenerator.generateForNewContact(),
       container: ContainerType.top,
     );
@@ -391,9 +365,7 @@ class CommonScreenRouterImpl
   @override
   void toChangeUsername() {
     _add(
-      widget: _featureProvider
-          .changeUsernameFeatureApi.changeUsernameScreenFactory
-          .create(),
+      widget: _featureProvider.changeUsernameFeatureApi.changeUsernameScreenFactory.create(),
       key: _keyGenerator.generateForChangeUsername(),
       container: ContainerType.top,
     );
@@ -402,8 +374,7 @@ class CommonScreenRouterImpl
   @override
   void toChangeBio() {
     _add(
-      widget:
-          _featureProvider.changeBioFeatureApi.changeBioScreenFactory.create(),
+      widget: _featureProvider.changeBioFeatureApi.changeBioScreenFactory.create(),
       key: _keyGenerator.generateForChangeBio(),
       container: ContainerType.top,
     );
@@ -412,8 +383,7 @@ class CommonScreenRouterImpl
   @override
   void toChatForum(int chatId) {
     _add(
-      widget: _featureProvider.chatForumFeatureApi.chatForumScreenFactory
-          .create(chatId),
+      widget: _featureProvider.chatForumFeatureApi.chatForumScreenFactory.create(chatId),
       container: ContainerType.left,
     );
   }

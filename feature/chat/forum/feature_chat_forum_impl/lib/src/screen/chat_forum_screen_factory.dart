@@ -17,9 +17,7 @@ class ChatForumScreenFactory implements IChatForumScreenFactory {
   Widget create(int chatId) {
     return ChatForumScreenScope(
       child: const ChatForumPage(),
-      create: () => JuggerChatForumScreenComponentBuilder()
-          .dependencies(_dependencies)
-          .build(),
+      create: () => JuggerChatForumScreenComponentBuilder().dependencies(_dependencies).build(),
     );
   }
 }

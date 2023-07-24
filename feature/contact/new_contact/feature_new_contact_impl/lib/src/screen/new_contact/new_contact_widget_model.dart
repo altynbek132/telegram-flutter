@@ -13,10 +13,8 @@ class NewContactWidgetModel with SubscriptionMixin {
   NewContactWidgetModel({
     required NewContactViewModel viewModel,
   }) : _viewModel = viewModel {
-    final Stream<DataState> stateStream = _viewModel.state
-        .where((NewContactState state) => state is DataState)
-        .take(1)
-        .cast<DataState>();
+    final Stream<DataState> stateStream =
+        _viewModel.state.where((NewContactState state) => state is DataState).take(1).cast<DataState>();
 
     subscribe(stateStream, (DataState state) {
       firstNameController.text = state.userInformation.firstName;

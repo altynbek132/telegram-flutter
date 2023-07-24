@@ -6,8 +6,7 @@ import 'package:feature_auth_impl/src/screen/auth/auth_screen_scope_delegate.sco
 import 'package:flutter/material.dart';
 
 class AuthScreenFactory implements IAuthScreenFactory {
-  AuthScreenFactory({required AuthFeatureDependencies dependencies})
-      : _dependencies = dependencies;
+  AuthScreenFactory({required AuthFeatureDependencies dependencies}) : _dependencies = dependencies;
 
   final AuthFeatureDependencies _dependencies;
 
@@ -15,9 +14,7 @@ class AuthScreenFactory implements IAuthScreenFactory {
   Widget create() {
     return AuthScreenScope(
       child: const AuthPage(),
-      create: () => JuggerAuthScreenComponentBuilder()
-          .dependencies(_dependencies)
-          .build(),
+      create: () => JuggerAuthScreenComponentBuilder().dependencies(_dependencies).build(),
     );
   }
 }

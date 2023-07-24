@@ -18,10 +18,8 @@ class TgApp extends StatelessWidget {
   final th.ThemeManager themeManager;
   final th.ThemeDataResolver themeDataResolver;
 
-  static final GlobalKey<NavigatorState> navigatorKey =
-      GlobalKey<NavigatorState>();
-  static final GlobalKey<SplitViewState> splitViewNavigatorKey =
-      GlobalKey<SplitViewState>();
+  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  static final GlobalKey<SplitViewState> splitViewNavigatorKey = GlobalKey<SplitViewState>();
 
   @override
   Widget build(BuildContext context) {

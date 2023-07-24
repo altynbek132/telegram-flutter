@@ -8,8 +8,7 @@ import 'package:jugger/jugger.dart' as j;
   modules: <Type>[CreateNewChatScreenModule],
 )
 @screenScope
-abstract class ICreateNewChatScreenComponent
-    implements INewChatScreenScopeDelegate {}
+abstract class ICreateNewChatScreenComponent implements INewChatScreenScopeDelegate {}
 
 @j.module
 abstract class CreateNewChatScreenModule {

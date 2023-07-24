@@ -9,8 +9,7 @@ import 'package:flutter/widgets.dart';
 import 'profile_screen_scope_delegate.scope.dart';
 
 class ProfileScreenFactory implements IProfileScreenFactory {
-  ProfileScreenFactory({required ProfileFeatureDependencies dependencies})
-      : _dependencies = dependencies;
+  ProfileScreenFactory({required ProfileFeatureDependencies dependencies}) : _dependencies = dependencies;
 
   final ProfileFeatureDependencies _dependencies;
 

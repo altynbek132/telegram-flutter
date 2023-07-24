@@ -63,13 +63,11 @@ abstract class AppModule {
 
   @applicationScope
   @j.provides
-  static IConnectivityProvider provideConnectivityProvider() =>
-      ConnectivityProviderImpl();
+  static IConnectivityProvider provideConnectivityProvider() => ConnectivityProviderImpl();
 
   @applicationScope
   @j.provides
-  static IAppLifecycleStateProvider provideAppLifecycleStateProvider() =>
-      AppLifecycleStateProviderImpl();
+  static IAppLifecycleStateProvider provideAppLifecycleStateProvider() => AppLifecycleStateProviderImpl();
 
   @applicationScope
   @j.provides
@@ -90,15 +88,13 @@ abstract class AppModule {
 
   @applicationScope
   @j.provides
-  static ISplitNavigationDelegate provideSplitNavigationDelegate() =>
-      SplitNavigationDelegateImpl(
+  static ISplitNavigationDelegate provideSplitNavigationDelegate() => SplitNavigationDelegateImpl(
         TgApp.splitViewNavigatorKey,
       );
 
   @applicationScope
   @j.provides
-  static ILocalizationManager provideLocalizationManager() =>
-      LocalizationManager();
+  static ILocalizationManager provideLocalizationManager() => LocalizationManager();
 
   @applicationScope
   @j.binds
@@ -145,8 +141,7 @@ abstract class AppModule {
       AppControllerComponent(
         dependencies: AppControllerComponentDependencies(
           router: router,
-          authenticationStateUpdatesProvider:
-              authenticationStateUpdatesProvider,
+          authenticationStateUpdatesProvider: authenticationStateUpdatesProvider,
           functionExecutor: functionExecutor,
           appLifecycleStateProvider: appLifecycleStateProvider,
           connectivityProvider: connectivityProvider,
@@ -183,8 +178,7 @@ abstract class AppModule {
       AppControllerRouterImpl(
         navigationKey: TgApp.splitViewNavigatorKey,
         authScreenFactory: featureProvider.authFeatureApi.authScreenFactory,
-        mainScreenFactory:
-            featureProvider.mainScreenFeatureApi.mainScreenFactory,
+        mainScreenFactory: featureProvider.mainScreenFeatureApi.mainScreenFactory,
         placeholderFactory: RightContainerPlaceholderFactory(
           chatBackgroundFactory: ChatBackgroundFactory(
             // TODO: dispose BackgroundListenable

@@ -21,8 +21,7 @@ class CustomEmojiShowcaseFactory {
   Widget create(BuildContext context) {
     return CustomEmojiShowcaseScope(
       create: () {
-        final FakeStickerRepository fakeStickerRepository =
-            FakeStickerRepository(
+        final FakeStickerRepository fakeStickerRepository = FakeStickerRepository(
           customEmoji: (int customEmojiId) async {
             Future<td.Sticker> getStickerObject(
               FakeCustomEmoji emoji,
@@ -40,8 +39,7 @@ class CustomEmojiShowcaseFactory {
               );
             }
 
-            if (customEmojiId == FakeCustomEmoji.duck.id ||
-                customEmojiId == FakeCustomEmoji.duckSlowLoading.id) {
+            if (customEmojiId == FakeCustomEmoji.duck.id || customEmojiId == FakeCustomEmoji.duckSlowLoading.id) {
               if (customEmojiId == FakeCustomEmoji.duckSlowLoading.id) {
                 await Future<void>.delayed(const Duration(seconds: 2));
               }
@@ -77,8 +75,7 @@ class CustomEmojiShowcaseFactory {
               return stickerFile;
             }
 
-            if (fileId == FakeCustomEmoji.duck.fileId ||
-                fileId == FakeCustomEmoji.duckSlowLoading.fileId) {
+            if (fileId == FakeCustomEmoji.duck.fileId || fileId == FakeCustomEmoji.duckSlowLoading.fileId) {
               return getFile(FakeCustomEmoji.duck);
             } else if (fileId == FakeCustomEmoji.e.fileId) {
               return getFile(FakeCustomEmoji.e);

@@ -20,8 +20,7 @@ class MessageShowcaseViewModel extends BaseViewModel {
   final MessageBundle _messageBundle;
   final MessageTileMapper _messageTileMapper;
 
-  final BehaviorSubject<MessageShowcaseState> _stateSubject =
-      BehaviorSubject<MessageShowcaseState>.seeded(
+  final BehaviorSubject<MessageShowcaseState> _stateSubject = BehaviorSubject<MessageShowcaseState>.seeded(
     const MessageShowcaseState.loading(),
   );
 
@@ -35,17 +34,16 @@ class MessageShowcaseViewModel extends BaseViewModel {
   }
 
   void _init() {
-    final Stream<MessageShowcaseState> stateStream =
-        Stream<MessageData>.fromIterable(_messageBundle.messages)
-            .asyncMap((MessageData data) async {
-              final td.Message message = await data.messageFactory.call();
-              return _messageTileMapper.mapToTileModel(message);
-            })
-            .bufferCount(100)
-            .map((List<ITileModel> items) {
-              return MessageShowcaseState(items: items);
-            })
-            .startWith(const MessageShowcaseState.loading());
+    final Stream<MessageShowcaseState> stateStream = Stream<MessageData>.fromIterable(_messageBundle.messages)
+        .asyncMap((MessageData data) async {
+          final td.Message message = await data.messageFactory.call();
+          return _messageTileMapper.mapToTileModel(message);
+        })
+        .bufferCount(100)
+        .map((List<ITileModel> items) {
+          return MessageShowcaseState(items: items);
+        })
+        .startWith(const MessageShowcaseState.loading());
     subscribe(stateStream, _stateSubject.add);
   }
 }

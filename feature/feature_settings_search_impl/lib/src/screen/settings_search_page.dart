@@ -28,8 +28,7 @@ class _SettingsSearchPageState extends State<SettingsSearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    final SettingsSearchViewModel viewModel =
-        SettingsSearchScreenScope.getSettingsSearchViewModel(context);
+    final SettingsSearchViewModel viewModel = SettingsSearchScreenScope.getSettingsSearchViewModel(context);
 
     return StreamListener<SearchState>(
       stream: viewModel.state,
@@ -46,8 +45,7 @@ class _SettingsSearchPageState extends State<SettingsSearchPage> {
             );
           },
           data: (List<ITileModel> models) {
-            final TileFactory tileFactory =
-                SettingsSearchScreenScope.getTileFactory(context);
+            final TileFactory tileFactory = SettingsSearchScreenScope.getTileFactory(context);
 
             return ListView.builder(
               itemCount: models.length,
@@ -64,8 +62,7 @@ class _SettingsSearchPageState extends State<SettingsSearchPage> {
 
   void onCallback() {
     final String query = widget.controller.queryValue.value;
-    SettingsSearchScreenScope.getSettingsSearchViewModel(context)
-        .onQueryChanged(query);
+    SettingsSearchScreenScope.getSettingsSearchViewModel(context).onQueryChanged(query);
   }
 
   @override

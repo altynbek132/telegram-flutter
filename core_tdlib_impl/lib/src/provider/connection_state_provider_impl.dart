@@ -12,27 +12,23 @@ class ConnectionStateProviderImpl implements IConnectionStateProvider {
     _init();
   }
 
-  StreamSubscription<td.UpdateConnectionState>?
-      _connectionStateUpdatesSubscription;
+  StreamSubscription<td.UpdateConnectionState>? _connectionStateUpdatesSubscription;
 
   void _init() {
-    _connectionStateUpdatesSubscription = _updatesProvider
-        .connectionStateUpdates
-        .listen((td.UpdateConnectionState event) {
+    _connectionStateUpdatesSubscription =
+        _updatesProvider.connectionStateUpdates.listen((td.UpdateConnectionState event) {
       _currentState = event.state;
     });
   }
 
-  td.ConnectionState _currentState =
-      const td.ConnectionStateWaitingForNetwork();
+  td.ConnectionState _currentState = const td.ConnectionStateWaitingForNetwork();
 
   final UpdatesProvider _updatesProvider;
 
   @override
-  Stream<td.ConnectionState> get connectionStateAsStream =>
-      _updatesProvider.connectionStateUpdates
-          .map((td.UpdateConnectionState event) => event.state)
-          .startWith(_currentState);
+  Stream<td.ConnectionState> get connectionStateAsStream => _updatesProvider.connectionStateUpdates
+      .map((td.UpdateConnectionState event) => event.state)
+      .startWith(_currentState);
 
   void dispose() {
     _connectionStateUpdatesSubscription?.cancel();

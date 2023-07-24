@@ -108,8 +108,7 @@ abstract class FeatureModule {
         router: router,
         connectionStateProvider: connectionStateProvider,
         chatsListScreenFactory: chatsListFeatureApi.chatsListScreenFactory,
-        globalSearchScreenFactory:
-            globalSearchFeatureApi.globalSearchScreenFactory,
+        globalSearchScreenFactory: globalSearchFeatureApi.globalSearchScreenFactory,
         optionsManager: optionsManager,
       );
 
@@ -229,48 +228,44 @@ abstract class FeatureModule {
         fileDownloader: fileDownloader,
         stringsProvider: stringsProvider,
         router: router,
-        settingsSearchScreenFactory:
-            settingsSearchFeatureApi.settingsSearchScreenFactory,
+        settingsSearchScreenFactory: settingsSearchFeatureApi.settingsSearchScreenFactory,
       );
 
   @j.provides
-  static SettingsSearchFeatureDependencies
-      provideSettingsSearchFeatureDependencies(
+  static SettingsSearchFeatureDependencies provideSettingsSearchFeatureDependencies(
     IConnectionStateProvider connectionStateProvider,
     ISettingsSearchScreenRouter router,
     IStringsProvider stringsProvider,
   ) =>
-          SettingsSearchFeatureDependencies(
-            connectionStateProvider: connectionStateProvider,
-            router: router,
-            stringsProvider: stringsProvider,
-          );
+      SettingsSearchFeatureDependencies(
+        connectionStateProvider: connectionStateProvider,
+        router: router,
+        stringsProvider: stringsProvider,
+      );
 
   @j.provides
-  static PrivacySettingsFeatureDependencies
-      providePrivacySettingsFeatureDependencies(
+  static PrivacySettingsFeatureDependencies providePrivacySettingsFeatureDependencies(
     IConnectionStateProvider connectionStateProvider,
     IPrivacySettingsScreenRouter router,
     ILocalizationManager localizationManager,
   ) =>
-          PrivacySettingsFeatureDependencies(
-            connectionStateProvider: connectionStateProvider,
-            router: router,
-            localizationManager: localizationManager,
-          );
+      PrivacySettingsFeatureDependencies(
+        connectionStateProvider: connectionStateProvider,
+        router: router,
+        localizationManager: localizationManager,
+      );
 
   @j.provides
-  static NotificationsSettingsFeatureDependencies
-      provideNotificationsSettingsFeatureDependencies(
+  static NotificationsSettingsFeatureDependencies provideNotificationsSettingsFeatureDependencies(
     IConnectionStateProvider connectionStateProvider,
     ILocalizationManager localizationManager,
     INotificationsSettingsScreenRouter router,
   ) =>
-          NotificationsSettingsFeatureDependencies(
-            connectionStateProvider: connectionStateProvider,
-            localizationManager: localizationManager,
-            router: router,
-          );
+      NotificationsSettingsFeatureDependencies(
+        connectionStateProvider: connectionStateProvider,
+        localizationManager: localizationManager,
+        router: router,
+      );
 
   @j.provides
   static DataSettingsFeatureDependencies provideDataSettingsFeatureDependencies(
@@ -331,8 +326,7 @@ abstract class FeatureModule {
       );
 
   @j.provides
-  static ChatHeaderInfoFeatureDependencies
-      provideChatHeaderInfoFeatureDependencies(
+  static ChatHeaderInfoFeatureDependencies provideChatHeaderInfoFeatureDependencies(
     IChatRepository chatRepository,
     ILocalizationManager localizationManager,
     IBasicGroupRepository basicGroupRepository,
@@ -466,21 +460,20 @@ abstract class FeatureModule {
       );
 
   @j.provides
-  static CreateNewChatFeatureDependencies
-      provideCreateNewChatFeatureDependencies(
+  static CreateNewChatFeatureDependencies provideCreateNewChatFeatureDependencies(
     IStringsProvider stringsProvider,
     ICreateNewChatRouter router,
     IChatManager chatManager,
     IErrorTransformer errorTransformer,
     IBlockInteractionManager blockInteractionManager,
   ) =>
-          CreateNewChatFeatureDependencies(
-            errorTransformer: errorTransformer,
-            blockInteractionManager: blockInteractionManager,
-            chatManager: chatManager,
-            router: router,
-            stringsProvider: stringsProvider,
-          );
+      CreateNewChatFeatureDependencies(
+        errorTransformer: errorTransformer,
+        blockInteractionManager: blockInteractionManager,
+        chatManager: chatManager,
+        router: router,
+        stringsProvider: stringsProvider,
+      );
 
   @j.provides
   static ContactsFeatureDependencies provideContactsFeatureDependencies(
@@ -517,8 +510,7 @@ abstract class FeatureModule {
       );
 
   @j.provides
-  static ChatAdministrationFeatureDependencies
-      provideChatAdministrationFeatureDependencies(
+  static ChatAdministrationFeatureDependencies provideChatAdministrationFeatureDependencies(
     IConnectionStateProvider connectionStateProvider,
     ILocalizationManager localizationManager,
     IChatAdministrationRouterFactory routerFactory,
@@ -529,21 +521,20 @@ abstract class FeatureModule {
     IBasicGroupRepository basicGroupRepository,
     IChatManager chatManager,
   ) =>
-          ChatAdministrationFeatureDependencies(
-            errorTransformer: errorTransformer,
-            chatRepository: chatRepository,
-            basicGroupRepository: basicGroupRepository,
-            superGroupRepository: superGroupRepository,
-            blockInteractionManager: blockInteractionManager,
-            routerFactory: routerFactory,
-            chatManager: chatManager,
-            connectionStateProvider: connectionStateProvider,
-            stringsProvider: localizationManager.stringsProvider,
-          );
+      ChatAdministrationFeatureDependencies(
+        errorTransformer: errorTransformer,
+        chatRepository: chatRepository,
+        basicGroupRepository: basicGroupRepository,
+        superGroupRepository: superGroupRepository,
+        blockInteractionManager: blockInteractionManager,
+        routerFactory: routerFactory,
+        chatManager: chatManager,
+        connectionStateProvider: connectionStateProvider,
+        stringsProvider: localizationManager.stringsProvider,
+      );
 
   @j.provides
-  static ChangeUsernameFeatureDependencies
-      provideChangeUsernameFeatureDependencies(
+  static ChangeUsernameFeatureDependencies provideChangeUsernameFeatureDependencies(
     IConnectionStateProvider connectionStateProvider,
     IStringsProvider stringsProvider,
     IBlockInteractionManager blockInteractionManager,
@@ -553,16 +544,16 @@ abstract class FeatureModule {
     OptionsManager optionsManager,
     IUserRepository userRepository,
   ) =>
-          ChangeUsernameFeatureDependencies(
-            optionManager: optionsManager,
-            userRepository: userRepository,
-            functionExecutor: functionExecutor,
-            router: router,
-            errorTransformer: errorTransformer,
-            blockInteractionManager: blockInteractionManager,
-            connectionStateProvider: connectionStateProvider,
-            stringsProvider: stringsProvider,
-          );
+      ChangeUsernameFeatureDependencies(
+        optionManager: optionsManager,
+        userRepository: userRepository,
+        functionExecutor: functionExecutor,
+        router: router,
+        errorTransformer: errorTransformer,
+        blockInteractionManager: blockInteractionManager,
+        connectionStateProvider: connectionStateProvider,
+        stringsProvider: stringsProvider,
+      );
 
   @j.provides
   static ChangeBioFeatureDependencies provideChangeBioFeatureDependencies(
@@ -668,11 +659,10 @@ abstract class FeatureModule {
       PrivacySettingsFeature(dependencies: dependencies);
 
   @j.provides
-  static INotificationsSettingsFeatureApi
-      provideNotificationsSettingsFeatureApi(
+  static INotificationsSettingsFeatureApi provideNotificationsSettingsFeatureApi(
     NotificationsSettingsFeatureDependencies dependencies,
   ) =>
-          NotificationsSettingsFeatureApi(dependencies: dependencies);
+      NotificationsSettingsFeatureApi(dependencies: dependencies);
 
   @j.provides
   static IDataSettingsFeatureApi provideDataSettingsFeatureApi(

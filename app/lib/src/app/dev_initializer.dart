@@ -3,8 +3,7 @@ import 'package:jugger/jugger.dart' as j;
 
 class DevInitializer {
   @j.inject
-  DevInitializer({required j.ILazy<DevFeature> devFeature})
-      : _devFeature = devFeature;
+  DevInitializer({required j.ILazy<DevFeature> devFeature}) : _devFeature = devFeature;
 
   final j.ILazy<DevFeature> _devFeature;
 

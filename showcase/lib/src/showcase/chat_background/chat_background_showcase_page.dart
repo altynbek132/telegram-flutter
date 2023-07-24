@@ -8,8 +8,7 @@ class ChatBackgroundShowcasePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String name =
-        ChatBackgroundWidgetShowcaseScope.getChatBackgroundType(context).name;
+    final String name = ChatBackgroundWidgetShowcaseScope.getChatBackgroundType(context).name;
     return Scaffold(
       appBar: AppBar(
         title: Text('Background $name'),

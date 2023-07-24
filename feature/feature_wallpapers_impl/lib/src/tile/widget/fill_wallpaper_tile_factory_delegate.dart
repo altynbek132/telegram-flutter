@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tile/tile.dart';
 
-class FillWallpaperTileFactoryDelegate
-    implements ITileFactoryDelegate<FillWallpaperTileModel> {
+class FillWallpaperTileFactoryDelegate implements ITileFactoryDelegate<FillWallpaperTileModel> {
   const FillWallpaperTileFactoryDelegate({
     required void Function(FillWallpaperTileModel model) onTap,
   }) : _onTap = onTap;

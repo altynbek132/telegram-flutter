@@ -5,8 +5,7 @@ import 'country_feature_dependencies.dart';
 import 'screen/factory/choose_country_screen_factory.dart';
 
 class CountryFeature implements ICountryFeatureApi {
-  CountryFeature({required CountryFeatureDependencies dependencies})
-      : _dependencies = dependencies;
+  CountryFeature({required CountryFeatureDependencies dependencies}) : _dependencies = dependencies;
 
   final CountryFeatureDependencies _dependencies;
 

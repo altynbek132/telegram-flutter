@@ -28,8 +28,7 @@ class ChatMessagesInteractor {
 
   final int _chatId;
 
-  final BehaviorSubject<List<ITileModel>> _messagesSubject =
-      BehaviorSubject<List<ITileModel>>();
+  final BehaviorSubject<List<ITileModel>> _messagesSubject = BehaviorSubject<List<ITileModel>>();
 
   // todo check is hasValue
   List<ITileModel> get messages => _messagesSubject.value;
@@ -40,8 +39,7 @@ class ChatMessagesInteractor {
   bool _isCanBeLodOldest = true;
   CancelableOperation<_Result>? _oldestMessagesOperation;
 
-  List<ITileModel> get currentItems =>
-      _messagesSubject.hasValue ? _messagesSubject.value : const <ITileModel>[];
+  List<ITileModel> get currentItems => _messagesSubject.hasValue ? _messagesSubject.value : const <ITileModel>[];
 
   Future<void> init() async {
     _chatMessageUpdatesHandler.attach(
@@ -65,16 +63,13 @@ class ChatMessagesInteractor {
     _isCanBeLodOldest = false;
 
     if (currentItems.isNotEmpty) {
-      _messagesSubject
-          .add(currentItems.toList().addLoadingIndicatorForOldestIfNeeded());
+      _messagesSubject.add(currentItems.toList().addLoadingIndicatorForOldestIfNeeded());
     }
 
     _oldestMessagesOperation = CancelableOperation<_Result>.fromFuture(
       _loadMessagesFuture(fromMessageId),
     ).onValue((_Result result) {
-      final List<ITileModel> list = currentItems
-          .toList()
-          .removeLoadingIndicatorForOldestIfNeeded()
+      final List<ITileModel> list = currentItems.toList().removeLoadingIndicatorForOldestIfNeeded()
         ..addAll(result.tileModels);
 
       _messagesSubject.add(list);
@@ -89,8 +84,8 @@ class ChatMessagesInteractor {
       fromMessageId: fromMessageId,
       limit: 30,
     );
-    final Stream<_Result> asyncMap = Stream<List<td.Message>>.value(messages)
-        .asyncMap((List<td.Message> messages) async {
+    final Stream<_Result> asyncMap =
+        Stream<List<td.Message>>.value(messages).asyncMap((List<td.Message> messages) async {
       return _Result(
         messages: messages,
         tileModels: await _mapToTileModels(messages),
@@ -101,8 +96,7 @@ class ChatMessagesInteractor {
 
   Future<List<ITileModel>> _mapToTileModels(List<td.Message> messages) async {
     // todo refactor without stream
-    final Stream<ITileModel> tileModels =
-        Stream<td.Message>.fromIterable(messages).asyncMap(
+    final Stream<ITileModel> tileModels = Stream<td.Message>.fromIterable(messages).asyncMap(
       _messageTileMapper.mapToTileModel,
     );
     return tileModels.toList();

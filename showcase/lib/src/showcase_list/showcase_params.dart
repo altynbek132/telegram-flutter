@@ -11,8 +11,7 @@ class ShowcaseParams with _$ShowcaseParams {
 
   const factory ShowcaseParams.authScreen() = AuthScreen;
 
-  const factory ShowcaseParams.createNewChannelScreen() =
-      CreateNewChannelScreen;
+  const factory ShowcaseParams.createNewChannelScreen() = CreateNewChannelScreen;
 
   const factory ShowcaseParams.newContactScreen() = NewContactScreen;
 
@@ -32,8 +31,7 @@ class ShowcaseParams with _$ShowcaseParams {
 
   const factory ShowcaseParams.imageWidget() = ImageWidget;
 
-  const factory ShowcaseParams.circularProgressWidget() =
-      CircularProgressWidget;
+  const factory ShowcaseParams.circularProgressWidget() = CircularProgressWidget;
 
   const factory ShowcaseParams.messageWrapWidget() = MessageWrapWidget;
 

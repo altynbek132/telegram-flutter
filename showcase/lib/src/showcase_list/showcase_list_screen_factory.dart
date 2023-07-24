@@ -23,8 +23,7 @@ class ShowcaseListScreenFactory {
     return ShowcaseListScreenScope(
       child: const ShowcaseListPage(),
       create: () => _component.createShowcaseListScreenComponent(
-        JuggerSubcomponent$ShowcaseListScreenComponentBuilder()
-            .setArgs(ShowcaseListArgs(title: title, items: items)),
+        JuggerSubcomponent$ShowcaseListScreenComponentBuilder().setArgs(ShowcaseListArgs(title: title, items: items)),
       ),
     );
   }

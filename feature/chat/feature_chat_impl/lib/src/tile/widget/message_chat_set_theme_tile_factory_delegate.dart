@@ -5,8 +5,7 @@ import 'package:tile/tile.dart';
 
 import 'not_implemented.dart';
 
-class MessageChatSetThemeTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageChatSetThemeTileModel> {
+class MessageChatSetThemeTileFactoryDelegate implements ITileFactoryDelegate<MessageChatSetThemeTileModel> {
   MessageChatSetThemeTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
   }) : _chatMessageFactory = chatMessageFactory;

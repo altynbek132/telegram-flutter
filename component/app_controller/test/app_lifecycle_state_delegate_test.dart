@@ -23,8 +23,7 @@ void main() {
       appLifecycleStateProvider: mockIAppLifecycleStateProvider,
     );
 
-    when(mockIAppLifecycleStateProvider.onStateChange)
-        .thenAnswer((_) => const Stream<LifecycleState>.empty());
+    when(mockIAppLifecycleStateProvider.onStateChange).thenAnswer((_) => const Stream<LifecycleState>.empty());
   });
 
   test('should listen app lifecycle state on init', () async {

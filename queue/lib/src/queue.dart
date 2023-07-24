@@ -1,14 +1,12 @@
 import 'dart:async';
 
 class Queue<R> {
-  final StreamController<_Action<R>> _queueStreamController =
-      StreamController<_Action<R>>();
+  final StreamController<_Action<R>> _queueStreamController = StreamController<_Action<R>>();
 
   late StreamSubscription<void> _streamSubscription;
 
   Queue() {
-    _streamSubscription =
-        _queueStreamController.stream.asyncMap((_Action<R> event) async {
+    _streamSubscription = _queueStreamController.stream.asyncMap((_Action<R> event) async {
       final R result = await event.action.call().then((R value) => value);
       return event.completer.complete(result);
     }).listen(null);

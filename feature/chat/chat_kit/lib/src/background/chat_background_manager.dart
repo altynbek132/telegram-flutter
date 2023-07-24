@@ -15,14 +15,12 @@ class ChatBackgroundManager {
   ChatBackgroundManager({
     required IBackgroundRepository backgroundRepository,
     required ActiveBackgroundStorage activeBackgroundStorage,
-    required IAuthenticationStateUpdatesProvider
-        authenticationStateUpdatesProvider,
+    required IAuthenticationStateUpdatesProvider authenticationStateUpdatesProvider,
     required IAuthenticationStateProvider authenticationStateProvider,
     required IFileDownloader fileDownloader,
     required PatternBackgroundFileResolver patternBackgroundFileResolver,
   })  : _backgroundRepository = backgroundRepository,
-        _authenticationStateUpdatesProvider =
-            authenticationStateUpdatesProvider,
+        _authenticationStateUpdatesProvider = authenticationStateUpdatesProvider,
         _activeBackgroundStorage = activeBackgroundStorage,
         _authenticationStateProvider = authenticationStateProvider,
         _patternBackgroundFileResolver = patternBackgroundFileResolver,
@@ -31,8 +29,7 @@ class ChatBackgroundManager {
   }
 
   StreamSubscription<dynamic>? _changeBackgroundEventSubscription;
-  final PublishSubject<int> _changeBackgroundEventSubject =
-      PublishSubject<int>();
+  final PublishSubject<int> _changeBackgroundEventSubject = PublishSubject<int>();
 
   final BehaviorSubject<ChatBackground> _backgroundSubject =
       BehaviorSubject<ChatBackground>.seeded(const ChatBackground.none());
@@ -56,9 +53,8 @@ class ChatBackgroundManager {
   }
 
   void _init() {
-    _changeBackgroundEventSubscription = _changeBackgroundEventSubject
-        .startWith(_activeBackgroundStorage.value)
-        .switchMap((int id) {
+    _changeBackgroundEventSubscription =
+        _changeBackgroundEventSubject.startWith(_activeBackgroundStorage.value).switchMap((int id) {
       return _authenticationStateUpdatesProvider.authorizationStateUpdates
           .map(
             (td.UpdateAuthorizationState update) => update.authorizationState,
@@ -74,8 +70,7 @@ class ChatBackgroundManager {
           .take(1)
           .asyncMap((_) async {
         if (id == -1) {
-          final List<td.Background> backgrounds =
-              await _backgroundRepository.backgrounds;
+          final List<td.Background> backgrounds = await _backgroundRepository.backgrounds;
           assert(backgrounds.isNotEmpty);
           final td.Background background = backgrounds.first;
           return background;
@@ -111,8 +106,7 @@ class ChatBackgroundManager {
     final td.Document? document = background.document;
     assert(document != null);
     if (document!.mimeType == 'application/x-tgwallpattern') {
-      final File tgvFile =
-          await _fileDownloader.downloadFile(document.document.id);
+      final File tgvFile = await _fileDownloader.downloadFile(document.document.id);
       final File pngFile = await _patternBackgroundFileResolver.resolve(
         backgroundId: background.id,
         tgvFile: tgvFile,

@@ -3,8 +3,7 @@ import 'package:feature_chat_impl/src/widget/chat_message/chat_message_factory.d
 import 'package:flutter/material.dart';
 import 'package:tile/tile.dart';
 
-class MessageChatUpgradeFromTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageChatUpgradeFromTileModel> {
+class MessageChatUpgradeFromTileFactoryDelegate implements ITileFactoryDelegate<MessageChatUpgradeFromTileModel> {
   MessageChatUpgradeFromTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
   }) : _chatMessageFactory = chatMessageFactory;

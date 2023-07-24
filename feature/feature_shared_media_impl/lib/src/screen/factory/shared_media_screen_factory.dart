@@ -17,9 +17,7 @@ class SharedMediaScreenFactory implements ISharedMediaScreenFactory {
   Widget create(SharedContentType type) {
     return SharedMediaScreenScope(
       child: const SharedMediaPage(),
-      create: () => JuggerSharedMediaComponentBuilder()
-          .dependencies(_dependencies)
-          .build(),
+      create: () => JuggerSharedMediaComponentBuilder().dependencies(_dependencies).build(),
     );
   }
 }

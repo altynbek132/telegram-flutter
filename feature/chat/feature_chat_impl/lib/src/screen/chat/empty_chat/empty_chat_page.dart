@@ -11,11 +11,9 @@ class EmptyChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final EmptyChatViewModel emptyChatViewModel =
-        EmptyChatScope.getEmptyChatViewModel(context);
+    final EmptyChatViewModel emptyChatViewModel = EmptyChatScope.getEmptyChatViewModel(context);
 
-    final IStringsProvider stringsProvider =
-        EmptyChatScope.getStringsProvider(context);
+    final IStringsProvider stringsProvider = EmptyChatScope.getStringsProvider(context);
 
     return StreamListener<EmptyState>(
       stream: emptyChatViewModel.state,

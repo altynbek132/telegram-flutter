@@ -15,8 +15,7 @@ class MyChatProvider {
 
   // TODO handle potential errors
   // TODO extract myChatResolver and to place in core module
-  late final Future<int> _myChatIdFuture =
-      _optionsManager.getMyId().then((int myId) {
+  late final Future<int> _myChatIdFuture = _optionsManager.getMyId().then((int myId) {
     return _functionExecutor.send<td.Chat>(
       td.CreatePrivateChat(userId: myId, force: false),
     );

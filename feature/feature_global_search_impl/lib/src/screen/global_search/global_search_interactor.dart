@@ -44,8 +44,7 @@ class GlobalSearchInteractor {
       mapper: _resultTileMapper.mapToVoiceTileModel,
     );
 
-    Rx.combineLatest6<PageState, PageState, PageState, PageState, PageState,
-        PageState, GlobalSearchState>(
+    Rx.combineLatest6<PageState, PageState, PageState, PageState, PageState, PageState, GlobalSearchState>(
       _cache[GlobalSearchResultCategory.chats]!.result.map(_mapToPageState),
       _cache[GlobalSearchResultCategory.media]!.result.map(_mapToPageState),
       _cache[GlobalSearchResultCategory.links]!.result.map(_mapToPageState),
@@ -76,16 +75,13 @@ class GlobalSearchInteractor {
   final IChatRepository _chatRepository;
   final IChatMessageRepository _chatMessageRepository;
 
-  final Map<GlobalSearchResultCategory, ISearchInteractor<List<ITileModel>>>
-      _cache =
+  final Map<GlobalSearchResultCategory, ISearchInteractor<List<ITileModel>>> _cache =
       <GlobalSearchResultCategory, ISearchInteractor<List<ITileModel>>>{};
 
   String _currentQuery = '';
-  GlobalSearchResultCategory _currentCategory =
-      GlobalSearchResultCategory.chats;
+  GlobalSearchResultCategory _currentCategory = GlobalSearchResultCategory.chats;
 
-  final BehaviorSubject<GlobalSearchState> _stateSubject =
-      BehaviorSubject<GlobalSearchState>.seeded(
+  final BehaviorSubject<GlobalSearchState> _stateSubject = BehaviorSubject<GlobalSearchState>.seeded(
     const GlobalSearchState(
       chatsPageState: PageState.data(models: <ITileModel>[]),
       filesPageState: PageState.data(models: <ITileModel>[]),
@@ -140,8 +136,7 @@ class GlobalSearchInteractor {
     );
   }
 
-  ISearchInteractor<List<ITileModel>> _createChatsSearchInteractor() =>
-      _searchInteractorFactory.create<List<td.Chat>>(
+  ISearchInteractor<List<ITileModel>> _createChatsSearchInteractor() => _searchInteractorFactory.create<List<td.Chat>>(
         resultMapper: (List<td.Chat> result) => Future.wait(
           result.map(_resultTileMapper.mapToChatTileModel).toList(),
         ),
@@ -156,8 +151,7 @@ class GlobalSearchInteractor {
     required Future<ITileModel> Function(td.Message result) mapper,
   }) =>
       _searchInteractorFactory.create<List<td.Message>>(
-        resultMapper: (List<td.Message> result) =>
-            Future.wait(result.map(mapper).toList()),
+        resultMapper: (List<td.Message> result) => Future.wait(result.map(mapper).toList()),
         resultFetcher: (String query) {
           return _chatMessageRepository.findMessages(
             query: query,

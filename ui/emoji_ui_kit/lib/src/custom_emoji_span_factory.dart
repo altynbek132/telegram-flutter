@@ -98,8 +98,7 @@ class _EmojiState extends State<_Emoji> {
       _EmojiScope.getStickerRepository(context).getCustomEmoji(customEmojiId),
     ).flatMap((td.Sticker value) {
       return Stream<File>.fromFuture(
-        _EmojiScope.getFileDownloader(context)
-            .downloadFile(value.thumbnail!.file.id),
+        _EmojiScope.getFileDownloader(context).downloadFile(value.thumbnail!.file.id),
       );
     })
         // .delay(const Duration(seconds: 1))
@@ -136,8 +135,7 @@ class _EmojiScope extends StatefulWidget {
   static IStickerRepository getStickerRepository(BuildContext context) =>
       _InheritedScope.of(context)._data.stickerRepository;
 
-  static IFileDownloader getFileDownloader(BuildContext context) =>
-      _InheritedScope.of(context)._data.fileDownloader;
+  static IFileDownloader getFileDownloader(BuildContext context) => _InheritedScope.of(context)._data.fileDownloader;
 }
 
 class _EmojiScopeState extends State<_EmojiScope> {
@@ -161,10 +159,8 @@ class _InheritedScope extends InheritedWidget {
   final _EmojiScopeState _state;
 
   static _EmojiScopeState of(BuildContext context) {
-    final _EmojiScopeState? result = (context
-            .getElementForInheritedWidgetOfExactType<_InheritedScope>()
-            ?.widget as _InheritedScope?)
-        ?._state;
+    final _EmojiScopeState? result =
+        (context.getElementForInheritedWidgetOfExactType<_InheritedScope>()?.widget as _InheritedScope?)?._state;
     assert(result != null, 'No _EmojiScope found in context');
     return result!;
   }

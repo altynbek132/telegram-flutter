@@ -33,8 +33,7 @@ class LocalizationManager implements ILocalizationManager {
     List<dynamic> formatArgs, [
     String defaultValue = '',
   ]) {
-    final String s =
-        _currentStrings[key] ?? _defaultStrings[key] ?? defaultValue;
+    final String s = _currentStrings[key] ?? _defaultStrings[key] ?? defaultValue;
     return sprintf(s, formatArgs);
   }
 
@@ -52,11 +51,9 @@ class LocalizationManager implements ILocalizationManager {
 
     final Map<String, String> strings = <String, String>{};
 
-    final XmlElement resNode = document.nodes
-        .firstWhere((XmlNode node) => node is XmlElement) as XmlElement;
+    final XmlElement resNode = document.nodes.firstWhere((XmlNode node) => node is XmlElement) as XmlElement;
 
-    final Iterable<XmlElement> stringNodes =
-        resNode.nodes.whereType<XmlElement>();
+    final Iterable<XmlElement> stringNodes = resNode.nodes.whereType<XmlElement>();
     for (final XmlNode stringNode in stringNodes) {
       final XmlAttribute stringAttribute = stringNode.attributes[0];
 

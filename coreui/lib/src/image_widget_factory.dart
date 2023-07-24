@@ -77,9 +77,7 @@ class _ImageWidgetState extends State<_ImageWidget> {
     Stream<FileDownloadState> stream;
     final int? imageId = _imageId;
     if (imageId != null) {
-      stream =
-          Stream<void>.fromFuture(_fileDownloader.startDownloadFile(imageId))
-              .flatMap(
+      stream = Stream<void>.fromFuture(_fileDownloader.startDownloadFile(imageId)).flatMap(
         (_) => _fileDownloader.getFileDownloadStateStream(imageId),
       );
     } else {
@@ -103,8 +101,7 @@ class _Body extends StatelessWidget {
   Widget build(BuildContext context) {
     final double progress = state.map(
       none: (None value) => _kMinimumProgress,
-      downloading: (Downloading value) =>
-          max(value.progress / 100, _kMinimumProgress),
+      downloading: (Downloading value) => max(value.progress / 100, _kMinimumProgress),
       completed: (Completed value) => 1,
     );
 
@@ -143,12 +140,10 @@ class _AnimatedCircularProgress extends StatefulWidget {
   final bool isVisible;
 
   @override
-  State<_AnimatedCircularProgress> createState() =>
-      _AnimatedCircularProgressState();
+  State<_AnimatedCircularProgress> createState() => _AnimatedCircularProgressState();
 }
 
-class _AnimatedCircularProgressState extends State<_AnimatedCircularProgress>
-    with TickerProviderStateMixin {
+class _AnimatedCircularProgressState extends State<_AnimatedCircularProgress> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final Widget? child = widget.isVisible
@@ -177,11 +172,8 @@ class _SwitchedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final shm.Minithumbnail? minithumbnail =
-        _ImageScope.of(context).minithumbnail;
-    final Widget? placeholder = minithumbnail != null
-        ? Minithumbnail(minithumbnail: minithumbnail)
-        : null;
+    final shm.Minithumbnail? minithumbnail = _ImageScope.of(context).minithumbnail;
+    final Widget? placeholder = minithumbnail != null ? Minithumbnail(minithumbnail: minithumbnail) : null;
 
     final String? imagePath = this.imagePath;
     return AnimatedSwitcher(
@@ -218,8 +210,7 @@ class _Image extends StatelessWidget {
       fit: BoxFit.fill,
     );
 
-    final ImageLayoutBuilder? layoutBuilder =
-        _ImageScope.of(context).layoutBuilder;
+    final ImageLayoutBuilder? layoutBuilder = _ImageScope.of(context).layoutBuilder;
     if (layoutBuilder != null) {
       return layoutBuilder.call(image);
     }
@@ -243,8 +234,7 @@ class _ImageScope extends InheritedWidget {
   final ImageLayoutBuilder? layoutBuilder;
 
   static _ImageScope of(BuildContext context) {
-    final _ImageScope? result =
-        context.dependOnInheritedWidgetOfExactType<_ImageScope>();
+    final _ImageScope? result = context.dependOnInheritedWidgetOfExactType<_ImageScope>();
     assert(result != null, 'No _ImageScope found in context');
     return result!;
   }

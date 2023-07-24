@@ -12,7 +12,6 @@ class ScopeGenerator extends GeneratorForAnnotation<Scope> {
     ConstantReader annotation,
     BuildStep buildStep,
   ) async {
-    return GeneratorDelegate()
-        .generateForAnnotatedElement(element as ClassElement);
+    return GeneratorDelegate().generateForAnnotatedElement(element as ClassElement);
   }
 }

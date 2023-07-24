@@ -17,9 +17,7 @@ class EmptyChatWidgetFactory {
   Widget create() {
     return EmptyChatScope(
       create: () {
-        return JuggerEmptyChatComponentBuilder()
-            .setChatScreenComponent(_chatScreenComponent)
-            .build();
+        return JuggerEmptyChatComponentBuilder().setChatScreenComponent(_chatScreenComponent).build();
       },
       child: const EmptyChatPage(),
     );

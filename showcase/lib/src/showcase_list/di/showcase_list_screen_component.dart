@@ -10,5 +10,4 @@ import 'showcase_list_screen_module.dart';
   builder: IShowcaseListScreenComponentBuilder,
 )
 @screenScope
-abstract class IShowcaseListScreenComponent
-    implements IShowcaseListScreenScopeDelegate {}
+abstract class IShowcaseListScreenComponent implements IShowcaseListScreenScopeDelegate {}

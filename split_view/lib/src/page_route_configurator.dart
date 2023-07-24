@@ -54,9 +54,7 @@ class _DefaultPageRouteConfigurator implements PageRouteConfigurator {
       }
       return null;
     }
-    return (container == ContainerType.right ||
-            container == ContainerType.top) &&
-        index == 0;
+    return (container == ContainerType.right || container == ContainerType.top) && index == 0;
   }
 
   int _indexOf(List<PageInfo> pages, LocalKey key) {

@@ -12,8 +12,7 @@ class FakeBackgroundRepository implements IBackgroundRepository {
   @override
   Future<td.Background> getBackground(int id) {
     return fakeBackgrounds.call().then(
-          (List<td.Background> value) =>
-              value.firstWhere((td.Background element) => element.id == id),
+          (List<td.Background> value) => value.firstWhere((td.Background element) => element.id == id),
         );
   }
 }

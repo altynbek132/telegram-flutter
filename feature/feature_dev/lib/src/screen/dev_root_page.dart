@@ -81,8 +81,7 @@ class _Body extends StatelessWidget {
           children: <Widget>[
             OutlinedButton(
               onPressed: () {
-                DevScope.getThemeManager(context).theme =
-                    const th.Theme.classic();
+                DevScope.getThemeManager(context).theme = const th.Theme.classic();
               },
               child: const Text('Classic'),
             ),
@@ -105,8 +104,7 @@ class _Body extends StatelessWidget {
         const Divider(),
         ListTile(
           onTap: () {
-            final Widget screenWidget =
-                DevScope.getShowcaseScreenFactory(context).create();
+            final Widget screenWidget = DevScope.getShowcaseScreenFactory(context).create();
             Navigator.of(context, rootNavigator: true).push<dynamic>(
               MaterialPageRoute<dynamic>(
                 builder: (BuildContext context) => screenWidget,
@@ -119,10 +117,7 @@ class _Body extends StatelessWidget {
         ListTile(
           title: Text(
             'Screens:',
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
           ),
         ),
         const Divider(),

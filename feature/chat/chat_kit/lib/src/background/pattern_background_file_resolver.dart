@@ -40,12 +40,10 @@ class PatternBackgroundFileResolver {
     // TODO magic numbers
     const double width = 155 * 5;
     const double height = 320 * 5;
-    final ui.Picture picture =
-        svgDrawableRoot.toPicture(size: const Size(width, height));
+    final ui.Picture picture = svgDrawableRoot.toPicture(size: const Size(width, height));
 
     final ui.Image image = await picture.toImage(width.toInt(), height.toInt());
-    final ByteData bytes =
-        (await image.toByteData(format: ui.ImageByteFormat.png))!;
+    final ByteData bytes = (await image.toByteData(format: ui.ImageByteFormat.png))!;
 
     return bytes.buffer.asUint8List();
   }

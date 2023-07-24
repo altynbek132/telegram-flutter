@@ -43,8 +43,7 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ChatMessagesViewModel viewModel =
-        ChatScreenScope.getChatMessagesViewModel(context);
+    final ChatMessagesViewModel viewModel = ChatScreenScope.getChatMessagesViewModel(context);
 
     return StreamListener<BodyState>(
       stream: viewModel.bodyStateStream,
@@ -57,8 +56,7 @@ class _Body extends StatelessWidget {
               return MessagesList(messagesBundle: messagesBundle);
             },
             empty: () {
-              return ChatScreenScope.getEmptyChatWidgetFactory(context)
-                  .create();
+              return ChatScreenScope.getEmptyChatWidgetFactory(context).create();
             },
           ),
         );
@@ -100,8 +98,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ChatActionBarViewModel viewModel =
-        ChatScreenScope.getChatActionBarModel(context);
+    final ChatActionBarViewModel viewModel = ChatScreenScope.getChatActionBarModel(context);
     return StreamBuilder<HeaderState>(
       stream: viewModel.headerStateStream,
       builder: (BuildContext context, AsyncSnapshot<HeaderState> data) {
@@ -112,8 +109,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
           return AppBar();
         }
 
-        final IChatHeaderInfoFactory chatHeaderInfoFactory =
-            ChatScreenScope.getChatHeaderInfoFactory(context);
+        final IChatHeaderInfoFactory chatHeaderInfoFactory = ChatScreenScope.getChatHeaderInfoFactory(context);
         return AppBar(
           titleSpacing: 0.0,
           // todo wrap to builder?

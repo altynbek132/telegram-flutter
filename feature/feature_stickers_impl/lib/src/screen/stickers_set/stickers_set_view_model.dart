@@ -26,8 +26,7 @@ class StickersSetViewModel extends BaseViewModel {
   final IStickerRepository _stickerRepository;
   final int _setId;
 
-  final BehaviorSubject<StickersSetState> _stateSubject =
-      BehaviorSubject<StickersSetState>.seeded(
+  final BehaviorSubject<StickersSetState> _stateSubject = BehaviorSubject<StickersSetState>.seeded(
     const StickersSetState.loading(),
   );
 
@@ -40,10 +39,8 @@ class StickersSetViewModel extends BaseViewModel {
   }
 
   void _load() {
-    final CancelableOperation<Object?> operation = _stickerRepository
-        .getStickersSet(_setId)
-        .toCancelableOperation()
-        .onValue((td.StickerSet set) {
+    final CancelableOperation<Object?> operation =
+        _stickerRepository.getStickersSet(_setId).toCancelableOperation().onValue((td.StickerSet set) {
       final List<ITileModel> stickers = set.stickers.map((td.Sticker sticker) {
         // sticker.thumbnail.
         return StickerTileModel(

@@ -13,16 +13,14 @@ class ShowcaseFeature {
 
   final ShowcaseDependencies _dependencies;
 
-  late final IShowcaseComponent _component =
-      JuggerShowcaseComponentBuilder().dependencies(_dependencies).build();
+  late final IShowcaseComponent _component = JuggerShowcaseComponentBuilder().dependencies(_dependencies).build();
 
   ShowcaseBlockInteractionManager get showcaseBlockInteractionManager =>
       _component.getShowcaseBlockInteractionManager();
 
   GlobalKey<NavigatorState> get navigationKey => _component.getNavigatorKey();
 
-  late final ShowcaseScreenFactory showcaseScreenFactory =
-      ShowcaseScreenFactory(
+  late final ShowcaseScreenFactory showcaseScreenFactory = ShowcaseScreenFactory(
     component: _component,
   );
 }

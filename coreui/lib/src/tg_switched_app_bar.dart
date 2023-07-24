@@ -27,8 +27,7 @@ class TgSwitchedAppBar extends StatefulWidget implements PreferredSizeWidget {
   final Size preferredSize;
 }
 
-class TgSwitchedAppBarState extends State<TgSwitchedAppBar>
-    with TickerProviderStateMixin {
+class TgSwitchedAppBarState extends State<TgSwitchedAppBar> with TickerProviderStateMixin {
   late AnimationController _animationController;
 
   bool _isActive = false;
@@ -49,8 +48,7 @@ class TgSwitchedAppBarState extends State<TgSwitchedAppBar>
   @override
   void initState() {
     super.initState();
-    _animationController =
-        AnimationController(vsync: this, duration: _animationDuration);
+    _animationController = AnimationController(vsync: this, duration: _animationDuration);
   }
 
   @override
@@ -65,8 +63,7 @@ class TgSwitchedAppBarState extends State<TgSwitchedAppBar>
             opacity: animation,
           );
         },
-        child: widget.appBarBuilder!
-            .call(_animationController, context, _isActive),
+        child: widget.appBarBuilder!.call(_animationController, context, _isActive),
       ),
     );
   }

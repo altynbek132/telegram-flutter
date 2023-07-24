@@ -8,8 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:jugger/jugger.dart' as j;
 import 'package:tile/tile.dart';
 
-class MessageStickerTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageStickerTileModel> {
+class MessageStickerTileFactoryDelegate implements ITileFactoryDelegate<MessageStickerTileModel> {
   MessageStickerTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
     required j.IProvider<MessageStickerBloc> blocProvider,

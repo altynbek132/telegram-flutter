@@ -25,8 +25,7 @@ Future<void> main(List<String> arguments) async {
   final String workDirectory = results['work-directory']! as String;
   final bool withOutputs = results['withOutputs'] == 'true';
 
-  final List<DartProject> dartProjects = (await getDartProjects(workDirectory))
-    ..sort();
+  final List<DartProject> dartProjects = (await getDartProjects(workDirectory))..sort();
 
   if (command == 'get') {
     Console.write('run packages get\n');
@@ -38,9 +37,7 @@ Future<void> main(List<String> arguments) async {
     Console.write('run gen\n');
     await runBuildRunnerCommandForProjects(
       withOutputs: withOutputs,
-      dartProjects: dartProjects
-          .where((DartProject project) => project.withBuildRunner)
-          .toList(),
+      dartProjects: dartProjects.where((DartProject project) => project.withBuildRunner).toList(),
     );
   } else if (command == 'analyze') {
     Console.write('run analyze\n');
@@ -52,9 +49,7 @@ Future<void> main(List<String> arguments) async {
     Console.write('run test\n');
     await runTestCommandForProjects(
       withOutputs: withOutputs,
-      dartProjects: dartProjects
-          .where((DartProject project) => project.withTest)
-          .toList(),
+      dartProjects: dartProjects.where((DartProject project) => project.withTest).toList(),
     );
   } else if (command == 'validate_dependencies') {
     Console.write('run dependencies validator\n');

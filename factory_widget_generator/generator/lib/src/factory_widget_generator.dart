@@ -24,8 +24,7 @@ class FactoryWidgetGenerator extends GeneratorForAnnotation<WidgetFactory> {
     factoryClass.visitChildren(createMethodVisitor);
 
     assert(createMethodVisitor.createMethod != null);
-    final List<ParameterElement> parameters = createMethodVisitor
-        .createMethod!.parameters
+    final List<ParameterElement> parameters = createMethodVisitor.createMethod!.parameters
         .where((ParameterElement parameter) => parameter.name != 'context')
         .toList(growable: false);
 
@@ -86,21 +85,18 @@ class FactoryWidgetGenerator extends GeneratorForAnnotation<WidgetFactory> {
         );
         builder.optionalParameters.addAll(
           parameters.map(
-            (ParameterElement parameter) =>
-                Parameter((ParameterBuilder builder) {
+            (ParameterElement parameter) => Parameter((ParameterBuilder builder) {
               builder
                 ..name = parameter.name
                 ..toThis = true
                 ..named = true
-                ..required =
-                    parameter.type.nullabilitySuffix == NullabilitySuffix.none;
+                ..required = parameter.type.nullabilitySuffix == NullabilitySuffix.none;
             }),
           ),
         );
       });
 
-  Field _createFactoryField(ClassElement factoryClass) =>
-      Field((FieldBuilder builder) {
+  Field _createFactoryField(ClassElement factoryClass) => Field((FieldBuilder builder) {
         builder
           ..name = 'factory'
           ..type = refer(factoryClass.displayName)

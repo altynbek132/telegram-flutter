@@ -3,8 +3,7 @@ import 'package:feature_wallpapers_impl/src/tile/model/background_wallpaper_tile
 import 'package:flutter/material.dart';
 import 'package:tile/tile.dart';
 
-class BackgroundWallpaperTileFactoryDelegate
-    implements ITileFactoryDelegate<BackgroundWallpaperTileModel> {
+class BackgroundWallpaperTileFactoryDelegate implements ITileFactoryDelegate<BackgroundWallpaperTileModel> {
   const BackgroundWallpaperTileFactoryDelegate({
     required ImageWidgetFactory imageWidgetFactory,
   }) : _imageWidgetFactory = imageWidgetFactory;

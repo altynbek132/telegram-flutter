@@ -14,8 +14,7 @@ class TgTheme extends StatelessWidget {
   final Widget child;
 
   static TgThemeData of(BuildContext context) {
-    final _InheritedTheme? inheritedTheme =
-        context.dependOnInheritedWidgetOfExactType<_InheritedTheme>();
+    final _InheritedTheme? inheritedTheme = context.dependOnInheritedWidgetOfExactType<_InheritedTheme>();
     return inheritedTheme!.theme.data;
   }
 

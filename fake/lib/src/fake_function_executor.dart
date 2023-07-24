@@ -15,8 +15,7 @@ class FakeTdFunctionExecutor implements ITdFunctionExecutor {
 
   @override
   Future<T> send<T extends td.TdObject>(td.TdFunction object) async {
-    final td.TdObject tdObject =
-        await (resultFactory?.call(object) ?? Completer<td.TdObject>().future);
+    final td.TdObject tdObject = await (resultFactory?.call(object) ?? Completer<td.TdObject>().future);
     return tdObject as T;
   }
 }

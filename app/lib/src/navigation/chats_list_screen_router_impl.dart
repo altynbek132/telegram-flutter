@@ -29,8 +29,7 @@ class ChatsListScreenRouterImpl implements IChatsListScreenRouter {
   void toChat(int chatId) {
     final ValueKey<dynamic> key = _keyGenerator.generateForChat(chatId);
 
-    final Widget chatScreenWidget =
-        _featureProvider.chatFeatureApi.chatScreenFactory.create(chatId);
+    final Widget chatScreenWidget = _featureProvider.chatFeatureApi.chatScreenFactory.create(chatId);
     _navigationDelegate
       ..removeUntil(ContainerType.right, (_) => false)
       ..add(

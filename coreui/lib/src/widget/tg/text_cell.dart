@@ -27,10 +27,7 @@ class TextCell extends StatelessWidget {
         builder: (BuildContext context) {
           return Text(
             value,
-            style: Theme.of(context)
-                .textTheme
-                .labelLarge
-                ?.copyWith(color: Theme.of(context).colorScheme.secondary),
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(color: Theme.of(context).colorScheme.secondary),
           );
         },
       ),
@@ -89,12 +86,7 @@ class TextCell extends StatelessWidget {
         trailing: valueWidget,
         title: Text(
           title,
-          style: titleColor != null
-              ? Theme.of(context)
-                  .textTheme
-                  .titleMedium
-                  ?.copyWith(color: titleColor)
-              : null,
+          style: titleColor != null ? Theme.of(context).textTheme.titleMedium?.copyWith(color: titleColor) : null,
         ),
         subtitle: subtitle != null ? Text(subtitle!) : null,
       );
