@@ -13,9 +13,7 @@ Future<void> runPubGetCommandForProjects({
       name: project.name,
       workingDirectory: project.path,
       executable: project.isFlutter ? 'flutter' : 'dart',
-      arguments: project.isFlutter
-          ? <String>['packages', 'get']
-          : <String>['pub', 'get'],
+      arguments: project.isFlutter ? <String>['packages', 'get'] : <String>['pub', 'get'],
     );
   }).toList();
   await runCommands(

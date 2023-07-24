@@ -85,8 +85,7 @@ class _Grid extends StatelessWidget {
       staggeredTileBuilder: (int index) {
         final ITileModel tileModel = tileModels[index];
 
-        if (tileModel is TopGroupTileModel ||
-            tileModel is BottomGroupTileModel) {
+        if (tileModel is TopGroupTileModel || tileModel is BottomGroupTileModel) {
           return const StaggeredTile.fit(kCrossAxisCount);
         }
 

@@ -8,8 +8,7 @@ import 'new_contact_page.dart';
 import 'new_contact_screen_scope_delegate.scope.dart';
 
 class NewContactScreenFactory implements INewContactScreenFactory {
-  NewContactScreenFactory({required NewContactFeatureDependencies dependencies})
-      : _dependencies = dependencies;
+  NewContactScreenFactory({required NewContactFeatureDependencies dependencies}) : _dependencies = dependencies;
 
   final NewContactFeatureDependencies _dependencies;
 
@@ -17,10 +16,8 @@ class NewContactScreenFactory implements INewContactScreenFactory {
   Widget create(int userId) {
     return NewContactScreenScope(
       child: const NewContactPage(),
-      create: () => JuggerNewContactScreenComponentBuilder()
-          .dependencies(_dependencies)
-          .args(Args(userId: userId))
-          .build(),
+      create: () =>
+          JuggerNewContactScreenComponentBuilder().dependencies(_dependencies).args(Args(userId: userId)).build(),
     );
   }
 }

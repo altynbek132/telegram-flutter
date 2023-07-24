@@ -40,14 +40,12 @@ class ShowcaseInfoResolver {
     required MainScreenShowcaseFactory mainScreenShowcaseFactory,
     required ChatForumScreenShowcaseFactory chatForumScreenShowcaseFactory,
     required ImageWidgetShowcaseFactory imageWidgetShowcaseFactory,
-    required CircularProgressWidgetShowcaseFactory
-        circularProgressWidgetShowcaseFactory,
+    required CircularProgressWidgetShowcaseFactory circularProgressWidgetShowcaseFactory,
     required MessageWrapShowcaseFactory messageWrapShowcaseFactory,
     required CustomEmojiShowcaseFactory customEmojiShowcaseFactory,
     required AvatarShowcaseFactory avatarShowcaseFactory,
     required UiKitIconsShowcaseFactory uiKitIconsShowcaseFactory,
-    required ChatBackgroundWidgetShowcaseFactory
-        chatBackgroundWidgetShowcaseFactory,
+    required ChatBackgroundWidgetShowcaseFactory chatBackgroundWidgetShowcaseFactory,
     required SettingsScreenShowcaseFactory settingsScreenShowcaseFactory,
     required ChatScreenShowcaseFactory chatScreenShowcaseFactory,
     required LogoutShowcaseFactory logoutShowcaseFactory,
@@ -58,14 +56,12 @@ class ShowcaseInfoResolver {
         _mainScreenShowcaseFactory = mainScreenShowcaseFactory,
         _chatForumScreenShowcaseFactory = chatForumScreenShowcaseFactory,
         _imageWidgetShowcaseFactory = imageWidgetShowcaseFactory,
-        _circularProgressWidgetShowcaseFactory =
-            circularProgressWidgetShowcaseFactory,
+        _circularProgressWidgetShowcaseFactory = circularProgressWidgetShowcaseFactory,
         _messageWrapShowcaseFactory = messageWrapShowcaseFactory,
         _customEmojiShowcaseFactory = customEmojiShowcaseFactory,
         _avatarShowcaseFactory = avatarShowcaseFactory,
         _uiKitIconsShowcaseFactory = uiKitIconsShowcaseFactory,
-        _chatBackgroundWidgetShowcaseFactory =
-            chatBackgroundWidgetShowcaseFactory,
+        _chatBackgroundWidgetShowcaseFactory = chatBackgroundWidgetShowcaseFactory,
         _settingsScreenShowcaseFactory = settingsScreenShowcaseFactory,
         _chatScreenShowcaseFactory = chatScreenShowcaseFactory,
         _logoutShowcaseFactory = logoutShowcaseFactory,
@@ -79,14 +75,12 @@ class ShowcaseInfoResolver {
   final MainScreenShowcaseFactory _mainScreenShowcaseFactory;
   final ChatForumScreenShowcaseFactory _chatForumScreenShowcaseFactory;
   final ImageWidgetShowcaseFactory _imageWidgetShowcaseFactory;
-  final CircularProgressWidgetShowcaseFactory
-      _circularProgressWidgetShowcaseFactory;
+  final CircularProgressWidgetShowcaseFactory _circularProgressWidgetShowcaseFactory;
   final MessageWrapShowcaseFactory _messageWrapShowcaseFactory;
   final CustomEmojiShowcaseFactory _customEmojiShowcaseFactory;
   final AvatarShowcaseFactory _avatarShowcaseFactory;
   final UiKitIconsShowcaseFactory _uiKitIconsShowcaseFactory;
-  final ChatBackgroundWidgetShowcaseFactory
-      _chatBackgroundWidgetShowcaseFactory;
+  final ChatBackgroundWidgetShowcaseFactory _chatBackgroundWidgetShowcaseFactory;
   final SettingsScreenShowcaseFactory _settingsScreenShowcaseFactory;
   final ChatScreenShowcaseFactory _chatScreenShowcaseFactory;
   final LogoutShowcaseFactory _logoutShowcaseFactory;

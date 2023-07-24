@@ -44,13 +44,11 @@ class ChatHeaderInfoInteractor implements IChatHeaderInfoInteractor {
   final ILocalizationManager _localizationManager;
   final AvatarResolver _avatarResolver;
 
-  final BehaviorSubject<ChatHeaderInfo> _infoSubject =
-      BehaviorSubject<ChatHeaderInfo>();
+  final BehaviorSubject<ChatHeaderInfo> _infoSubject = BehaviorSubject<ChatHeaderInfo>();
 
   @override
   Stream<ChatHeaderInfo> get infoStream =>
-      Stream<td.Chat>.fromFuture(_chatRepository.getChat(_chatId))
-          .flatMap((td.Chat chat) {
+      Stream<td.Chat>.fromFuture(_chatRepository.getChat(_chatId)).flatMap((td.Chat chat) {
         switch (chat.type.getConstructor()) {
           case td.ChatTypeSecret.constructor:
           case td.ChatTypePrivate.constructor:
@@ -59,14 +57,12 @@ class ChatHeaderInfoInteractor implements IChatHeaderInfoInteractor {
             }
           case td.ChatTypeSupergroup.constructor:
             {
-              final td.ChatTypeSupergroup type =
-                  chat.type as td.ChatTypeSupergroup;
+              final td.ChatTypeSupergroup type = chat.type as td.ChatTypeSupergroup;
               return _asSupergroup(type.supergroupId, chat);
             }
           case td.ChatTypeBasicGroup.constructor:
             {
-              final td.ChatTypeBasicGroup type =
-                  chat.type as td.ChatTypeBasicGroup;
+              final td.ChatTypeBasicGroup type = chat.type as td.ChatTypeBasicGroup;
               return _asBasicGroup(type.basicGroupId, chat);
             }
         }
@@ -79,8 +75,7 @@ class ChatHeaderInfoInteractor implements IChatHeaderInfoInteractor {
   ChatHeaderInfo get current => _infoSubject.value;
 
   Stream<ChatHeaderInfo> _asBasicGroup(int id, td.Chat chat) {
-    return Stream<td.BasicGroup>.fromFuture(_basicGroupRepository.getGroup(id))
-        .flatMap((td.BasicGroup group) {
+    return Stream<td.BasicGroup>.fromFuture(_basicGroupRepository.getGroup(id)).flatMap((td.BasicGroup group) {
       return Stream<ChatHeaderInfo>.value(
         _createInfoForGroup(chat, group.memberCount, false),
       );
@@ -88,8 +83,7 @@ class ChatHeaderInfoInteractor implements IChatHeaderInfoInteractor {
   }
 
   Stream<ChatHeaderInfo> _asSupergroup(int id, td.Chat chat) {
-    return Stream<td.Supergroup>.fromFuture(_superGroupRepository.getGroup(id))
-        .flatMap((td.Supergroup group) {
+    return Stream<td.Supergroup>.fromFuture(_superGroupRepository.getGroup(id)).flatMap((td.Supergroup group) {
       return Stream<ChatHeaderInfo>.value(
         _createInfoForGroup(chat, group.memberCount, group.isChannel),
       );
@@ -97,8 +91,7 @@ class ChatHeaderInfoInteractor implements IChatHeaderInfoInteractor {
   }
 
   Stream<ChatHeaderInfo> _asUser(int id, td.Chat chat) {
-    return Stream<td.User>.fromFuture(_userRepository.getUser(id))
-        .flatMap((td.User user) {
+    return Stream<td.User>.fromFuture(_userRepository.getUser(id)).flatMap((td.User user) {
       switch (user.type.getConstructor()) {
         case td.UserTypeRegular.constructor:
           {

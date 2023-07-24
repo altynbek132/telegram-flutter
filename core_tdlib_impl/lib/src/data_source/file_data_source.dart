@@ -24,9 +24,7 @@ class FileDataSource {
   Future<td.LocalFile> getLocalFile(int id) {
     return _cache.putIfAbsent(
       id,
-      () => _functionExecutor
-          .send<td.File>(td.GetFile(fileId: id))
-          .then((td.File value) {
+      () => _functionExecutor.send<td.File>(td.GetFile(fileId: id)).then((td.File value) {
         if (value.local.isDownloadingCompleted) {
           _pathCache[id] = value.local.path;
           return Future<td.LocalFile>.value(value.local);
@@ -52,8 +50,7 @@ class FileDataSource {
 
   String? getPathOrNull(int id) => _pathCache[id];
 
-  Future<td.File> getFile(int id) =>
-      _functionExecutor.send<td.File>(td.GetFile(fileId: id));
+  Future<td.File> getFile(int id) => _functionExecutor.send<td.File>(td.GetFile(fileId: id));
 
   void dispose() {
     _fileUpdatesSubscription?.cancel();
@@ -64,8 +61,7 @@ class FileDataSource {
         .where((td.TdObject event) => event is td.UpdateFile)
         .map((td.TdObject event) => event as td.UpdateFile)
         .listen((td.UpdateFile event) {
-      if (!event.file.local.isDownloadingCompleted &&
-          event.file.local.path.isEmpty) {
+      if (!event.file.local.isDownloadingCompleted && event.file.local.path.isEmpty) {
         _cache.remove(event.file.id);
       }
     });

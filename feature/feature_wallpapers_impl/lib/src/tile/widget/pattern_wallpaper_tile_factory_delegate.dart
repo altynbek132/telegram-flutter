@@ -4,8 +4,7 @@ import 'package:feature_wallpapers_impl/src/widget/colored_container.dart';
 import 'package:flutter/material.dart';
 import 'package:tile/tile.dart';
 
-class PatternWallpaperTileFactoryDelegate
-    implements ITileFactoryDelegate<PatternWallpaperTileModel> {
+class PatternWallpaperTileFactoryDelegate implements ITileFactoryDelegate<PatternWallpaperTileModel> {
   const PatternWallpaperTileFactoryDelegate({
     required ImageWidgetFactory imageWidgetFactory,
     required void Function(PatternWallpaperTileModel model) onTap,
@@ -31,8 +30,7 @@ class PatternWallpaperTileFactoryDelegate
             child: Opacity(
               opacity: 1,
               child: ColorFiltered(
-                colorFilter:
-                    const ColorFilter.mode(Colors.grey, BlendMode.srcATop),
+                colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.srcATop),
                 // colorFilter: ColorFilter.mode(Colors.red, BlendMode.srcIn),
                 child: imageWidget,
               ),

@@ -5,8 +5,7 @@ import 'package:tile/tile.dart';
 
 typedef ChatResultTapCallback = void Function(BuildContext context, int chatId);
 
-class ChatResultTileFactoryDelegate
-    implements ITileFactoryDelegate<ChatResultTileModel> {
+class ChatResultTileFactoryDelegate implements ITileFactoryDelegate<ChatResultTileModel> {
   const ChatResultTileFactoryDelegate({
     required AvatarWidgetFactory avatarWidgetFactory,
     required ChatResultTapCallback onTap,

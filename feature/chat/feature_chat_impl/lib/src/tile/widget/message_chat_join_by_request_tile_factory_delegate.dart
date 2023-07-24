@@ -5,8 +5,7 @@ import 'package:tile/tile.dart';
 
 import 'not_implemented.dart';
 
-class MessageChatJoinByRequestTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageChatJoinByRequestTileModel> {
+class MessageChatJoinByRequestTileFactoryDelegate implements ITileFactoryDelegate<MessageChatJoinByRequestTileModel> {
   MessageChatJoinByRequestTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
   }) : _chatMessageFactory = chatMessageFactory;

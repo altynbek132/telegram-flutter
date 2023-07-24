@@ -34,8 +34,7 @@ class QuickNotificationSettingsPage extends StatelessWidget {
           ListTile(
             onTap: () {},
             leading: const Icon(Icons.circle),
-            title:
-                Text(localizationManager.getString('NotificationsCustomize')),
+            title: Text(localizationManager.getString('NotificationsCustomize')),
           ),
           ListTile(
             onTap: () {},

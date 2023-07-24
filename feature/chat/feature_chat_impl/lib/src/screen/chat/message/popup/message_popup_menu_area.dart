@@ -27,8 +27,7 @@ class _MessagePopupMenuAreaState extends State<MessagePopupMenuArea> {
     return PopupMenuArea<ItemAction>(
       // ignore: always_specify_types
       onTap: (show) {
-        final MessagePopupMenuImpl popupMenu =
-            MessagePopupMenuImpl(onShow: show);
+        final MessagePopupMenuImpl popupMenu = MessagePopupMenuImpl(onShow: show);
         widget.listener.onWillShowPopupMenu(widget.messageId, popupMenu);
       },
       onSelected: (ItemAction item) {

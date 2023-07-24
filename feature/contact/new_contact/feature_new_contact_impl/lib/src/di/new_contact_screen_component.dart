@@ -18,8 +18,7 @@ import 'new_contact_screen_component_builder.dart';
   builder: INewContactScreenComponentBuilder,
 )
 @j.singleton
-abstract class INewContactScreenComponent
-    implements INewContactScreenScopeDelegate {}
+abstract class INewContactScreenComponent implements INewContactScreenScopeDelegate {}
 
 @j.module
 abstract class NewContactScreenModule {

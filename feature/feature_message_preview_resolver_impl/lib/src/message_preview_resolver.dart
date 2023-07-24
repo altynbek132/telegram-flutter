@@ -55,16 +55,14 @@ class MessagePreviewResolver implements IMessagePreviewResolver {
         );
       },
       messageChatAddMembers: (td.MessageChatAddMembers value) async {
-        final Iterable<Future<String>> userNamesFutures =
-            value.memberUserIds.map((int userId) async {
+        final Iterable<Future<String>> userNamesFutures = value.memberUserIds.map((int userId) async {
           final td.User user = await _userRepository.getUser(userId);
           return <String>[user.firstName, user.lastName].join(', ');
         });
-        final String joinedUsernames = await Future.wait(userNamesFutures)
-            .then((List<String> users) => users.join(', '));
+        final String joinedUsernames =
+            await Future.wait(userNamesFutures).then((List<String> users) => users.join(', '));
         return MessagePreviewData(
-          firstText:
-              _stringsProvider.eventLogGroupJoined(<dynamic>[joinedUsernames]),
+          firstText: _stringsProvider.eventLogGroupJoined(<dynamic>[joinedUsernames]),
         );
       },
       messageDocument: (td.MessageDocument value) {

@@ -11,8 +11,7 @@ class ShowcaseListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamBuilder<ShowcaseListState>(
       stream: ShowcaseListScreenScope.getShowcaseListViewModel(context).state,
-      builder:
-          (BuildContext context, AsyncSnapshot<ShowcaseListState> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<ShowcaseListState> snapshot) {
         final ShowcaseListState? state = snapshot.data;
         if (state != null) {
           return _Body(title: state.title, items: state.items);
@@ -35,8 +34,7 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TileFactory tileFactory =
-        ShowcaseListScreenScope.getTileFactory(context);
+    final TileFactory tileFactory = ShowcaseListScreenScope.getTileFactory(context);
 
     return Scaffold(
       appBar: AppBar(title: Text(title)),

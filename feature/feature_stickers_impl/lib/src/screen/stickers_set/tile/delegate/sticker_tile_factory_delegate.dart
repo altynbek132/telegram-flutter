@@ -3,8 +3,7 @@ import 'package:feature_stickers_impl/src/screen/stickers_set/tile/model/sticker
 import 'package:flutter/material.dart';
 import 'package:tile/tile.dart';
 
-class StickerTileFactoryDelegate
-    implements ITileFactoryDelegate<StickerTileModel> {
+class StickerTileFactoryDelegate implements ITileFactoryDelegate<StickerTileModel> {
   const StickerTileFactoryDelegate({
     required ImageWidgetFactory imageWidgetFactory,
   }) : _imageWidgetFactory = imageWidgetFactory;

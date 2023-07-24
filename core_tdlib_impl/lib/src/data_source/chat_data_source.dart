@@ -56,8 +56,7 @@ class ChatDataSource {
 
   final ITdFunctionExecutor _functionExecutor;
 
-  Future<td.Chat> getChat(int id) =>
-      _functionExecutor.send<td.Chat>(td.GetChat(chatId: id));
+  Future<td.Chat> getChat(int id) => _functionExecutor.send<td.Chat>(td.GetChat(chatId: id));
 
   Future<List<td.Chat>> getChats({
     required int offsetChatId,
@@ -101,9 +100,7 @@ class ChatDataSource {
   Future<List<td.Chat>> findChats({
     required String query,
   }) =>
-      _functionExecutor
-          .send<td.Chats>(td.SearchPublicChats(query: query))
-          .then((td.Chats chats) {
+      _functionExecutor.send<td.Chats>(td.SearchPublicChats(query: query)).then((td.Chats chats) {
         return Stream<td.Chat>.fromFutures(
           chats.chatIds.map(
             (int e) => _functionExecutor.send<td.Chat>(

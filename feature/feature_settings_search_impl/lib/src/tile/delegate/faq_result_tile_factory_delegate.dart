@@ -6,8 +6,7 @@ abstract class IFaqResultTapListener {
   void onFaqResultTap(String url);
 }
 
-class FaqResultTileFactoryDelegate
-    implements ITileFactoryDelegate<FaqResultTileModel> {
+class FaqResultTileFactoryDelegate implements ITileFactoryDelegate<FaqResultTileModel> {
   FaqResultTileFactoryDelegate({
     required IFaqResultTapListener listener,
   }) : _listener = listener;

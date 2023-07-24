@@ -25,10 +25,8 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final IStringsProvider stringsProvider =
-        NewChatScreenScope.getStringsProvider(context);
-    final NewChatViewModel viewModel =
-        NewChatScreenScope.getNewChatViewModel(context);
+    final IStringsProvider stringsProvider = NewChatScreenScope.getStringsProvider(context);
+    final NewChatViewModel viewModel = NewChatScreenScope.getNewChatViewModel(context);
 
     return Column(
       children: <Widget>[

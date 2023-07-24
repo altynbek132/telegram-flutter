@@ -45,6 +45,5 @@ class Dependency {
   int get hashCode => hash2(version, name);
 
   @override
-  bool operator ==(Object other) =>
-      other is Dependency && (other.name == name && other.version == version);
+  bool operator ==(Object other) => other is Dependency && (other.name == name && other.version == version);
 }

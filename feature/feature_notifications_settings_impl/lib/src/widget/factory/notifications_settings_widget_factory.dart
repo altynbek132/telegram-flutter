@@ -6,8 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:localization_api/localization_api.dart';
 import 'package:provider/provider.dart';
 
-class NotificationsSettingsWidgetFactory
-    implements INotificationsSettingsWidgetFactory {
+class NotificationsSettingsWidgetFactory implements INotificationsSettingsWidgetFactory {
   NotificationsSettingsWidgetFactory({required this.dependencies});
 
   final NotificationsSettingsFeatureDependencies dependencies;

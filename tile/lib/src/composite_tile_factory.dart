@@ -9,8 +9,7 @@ class CompositeTileFactory extends TileFactory {
   }) : super(
           delegates: factories
               .map(
-                (TileFactory e) =>
-                    Map<Type, ITileFactoryDelegate<ITileModel>>.from(
+                (TileFactory e) => Map<Type, ITileFactoryDelegate<ITileModel>>.from(
                   e.delegates,
                 ),
               )

@@ -20,8 +20,7 @@ class ChatCellTheme extends ThemeExtension<ChatCellTheme> {
     return ChatCellTheme(
       titleStyle: titleStyle ?? this.titleStyle,
       subtitleStyle: subtitleStyle ?? this.subtitleStyle,
-      secondarySubtitleStyle:
-          secondarySubtitleStyle ?? this.secondarySubtitleStyle,
+      secondarySubtitleStyle: secondarySubtitleStyle ?? this.secondarySubtitleStyle,
     );
   }
 

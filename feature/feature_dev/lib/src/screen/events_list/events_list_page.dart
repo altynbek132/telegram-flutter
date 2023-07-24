@@ -31,8 +31,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final EventsListWidgetModel widgetModel =
-        EventsListScreenScope.getEventsListWidgetModel(context);
+    final EventsListWidgetModel widgetModel = EventsListScreenScope.getEventsListWidgetModel(context);
 
     return AppBar(
       title: Builder(
@@ -85,8 +84,7 @@ class _List extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final EventsListWidgetModel widgetModel =
-        EventsListScreenScope.getEventsListWidgetModel(context);
+    final EventsListWidgetModel widgetModel = EventsListScreenScope.getEventsListWidgetModel(context);
 
     return StreamListener<List<td.TdObject>>(
       stream: widgetModel.events,

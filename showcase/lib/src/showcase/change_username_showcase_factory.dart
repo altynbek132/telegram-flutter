@@ -29,8 +29,7 @@ class ChangeUsernameShowcaseFactory {
   final ILogger _logger;
 
   Widget create(BuildContext context) {
-    final FakeTdFunctionExecutor fakeTdFunctionExecutor =
-        FakeTdFunctionExecutor(
+    final FakeTdFunctionExecutor fakeTdFunctionExecutor = FakeTdFunctionExecutor(
       resultFactory: (td.TdFunction object) async {
         if (object is td.CreatePrivateChat) {
           return createFakeChat();
@@ -57,8 +56,7 @@ class ChangeUsernameShowcaseFactory {
         throw Exception('not handled $object');
       },
     );
-    final ChangeUsernameFeatureDependencies dependencies =
-        ChangeUsernameFeatureDependencies(
+    final ChangeUsernameFeatureDependencies dependencies = ChangeUsernameFeatureDependencies(
       userRepository: FakeUserRepository(
         fakeUserProvider: const FakeUserProvider(),
       ),

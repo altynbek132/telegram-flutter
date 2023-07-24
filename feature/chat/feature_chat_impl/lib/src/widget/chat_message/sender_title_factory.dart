@@ -29,9 +29,7 @@ class SenderTitleFactory {
         overflow: TextOverflow.ellipsis,
         style: textTheme.subtitle3.copyWith(
           // todo extract ext
-          color: AvatarWidgetFactory.colors[
-              (messageModel.senderInfo.id % AvatarWidgetFactory.colors.length)
-                  .abs()],
+          color: AvatarWidgetFactory.colors[(messageModel.senderInfo.id % AvatarWidgetFactory.colors.length).abs()],
         ),
       ),
     );

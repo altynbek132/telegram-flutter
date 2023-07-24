@@ -31,13 +31,12 @@ class ChangeUsernameScreenWidgetModel with SubscriptionMixin {
   }
 
   void _init() {
-    final Stream<CheckUsernameStateData> checkUsernameStateDataStream =
-        _viewModel.state
-            .where(
-              (CheckUsernameState state) => state is CheckUsernameStateData,
-            )
-            .cast<CheckUsernameStateData>()
-            .take(1);
+    final Stream<CheckUsernameStateData> checkUsernameStateDataStream = _viewModel.state
+        .where(
+          (CheckUsernameState state) => state is CheckUsernameStateData,
+        )
+        .cast<CheckUsernameStateData>()
+        .take(1);
 
     subscribe(
       checkUsernameStateDataStream,

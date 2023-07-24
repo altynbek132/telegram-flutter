@@ -34,8 +34,7 @@ abstract class IMessageTileFactoryComponent {
 abstract class MessageTileFactoryModule {
   @j.provides
   @j.singleton
-  static MessagesTileFactoryFactory provideMessagesTileFactoryFactory() =>
-      MessagesTileFactoryFactory();
+  static MessagesTileFactoryFactory provideMessagesTileFactoryFactory() => MessagesTileFactoryFactory();
 
   @j.provides
   @j.singleton
@@ -50,13 +49,11 @@ abstract class MessageTileFactoryModule {
 
   @j.provides
   @j.singleton
-  static SenderTitleFactory provideSenderTitleFactory() =>
-      const SenderTitleFactory();
+  static SenderTitleFactory provideSenderTitleFactory() => const SenderTitleFactory();
 
   @j.provides
   @j.singleton
-  static ChatMessageFactory provideChatMessageFactory() =>
-      const ChatMessageFactory();
+  static ChatMessageFactory provideChatMessageFactory() => const ChatMessageFactory();
 
   @j.provides
   @j.singleton
@@ -145,6 +142,5 @@ abstract class MessageTileFactoryModule {
   // todo temporary
   @j.provides
   @j.singleton
-  static LottieStickerFileResolver provideLottieStickerFileResolver() =>
-      const LottieStickerFileResolver();
+  static LottieStickerFileResolver provideLottieStickerFileResolver() => const LottieStickerFileResolver();
 }

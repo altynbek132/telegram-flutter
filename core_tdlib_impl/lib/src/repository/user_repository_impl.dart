@@ -23,8 +23,7 @@ class UserRepositoryImpl extends IUserRepository {
   }
 
   @override
-  Future<td.UserFullInfo> getUserFullInfo(int id) =>
-      _dataSource.getUserFullInfo(id);
+  Future<td.UserFullInfo> getUserFullInfo(int id) => _dataSource.getUserFullInfo(id);
 
   @override
   Stream<td.User> getUserAsStream(int id) => _dataSource.getUserAsStream(id);

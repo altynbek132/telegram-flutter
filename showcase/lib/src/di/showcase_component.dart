@@ -74,6 +74,5 @@ abstract class ShowcaseModule {
 
   @j.provides
   @j.singleton
-  static GlobalKey<SplitViewState> provideNavigatorKey() =>
-      ShowcasePage.splitViewNavigatorKey;
+  static GlobalKey<SplitViewState> provideNavigatorKey() => ShowcasePage.splitViewNavigatorKey;
 }

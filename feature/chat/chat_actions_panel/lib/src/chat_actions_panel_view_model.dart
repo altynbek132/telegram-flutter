@@ -35,8 +35,7 @@ class ChatActionsPanelViewModel extends BaseViewModel {
   final d.IDialogRouter _dialogRouter;
   final IStringsProvider _stringsProvider;
 
-  Stream<PanelState> get actionsPanelState =>
-      _actionPanelInteractor.panelStateStream;
+  Stream<PanelState> get actionsPanelState => _actionPanelInteractor.panelStateStream;
 
   @override
   void dispose() {
@@ -62,10 +61,8 @@ class ChatActionsPanelViewModel extends BaseViewModel {
   // endregion action
 
   void _sendMessage(String text) {
-    final CancelableOperation<void> operation = _messageSender
-        .sendText(chatId: _chatId, text: text)
-        .toCancelableOperation()
-        .onError((Object error) {
+    final CancelableOperation<void> operation =
+        _messageSender.sendText(chatId: _chatId, text: text).toCancelableOperation().onError((Object error) {
       _dialogRouter.toDialog(
         body: d.Body.text(
           text: _errorTransformer.transformToString(error),

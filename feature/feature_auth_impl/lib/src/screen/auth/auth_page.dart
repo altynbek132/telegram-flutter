@@ -13,8 +13,7 @@ class AuthPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AuthScreenWidgetModel widgetModel =
-        AuthScreenScope.getAuthScreenWidgetModel(context);
+    final AuthScreenWidgetModel widgetModel = AuthScreenScope.getAuthScreenWidgetModel(context);
     return StreamListener<AuthState>(
       stream: widgetModel.state,
       builder: (_, AuthState state) {
@@ -79,8 +78,7 @@ class _AuthScaffold extends StatelessWidget {
       body: AnimatedSwitcher(
         duration: const Duration(milliseconds: 200),
         child: state.map(
-          phoneNumber: (PhoneNumberState value) =>
-              _PhoneNumberStateWidget(state: value),
+          phoneNumber: (PhoneNumberState value) => _PhoneNumberStateWidget(state: value),
           code: (CodeState value) => _CodeStateWidget(
             state: value,
           ),
@@ -103,10 +101,8 @@ class _PhoneNumberStateWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AuthScreenWidgetModel widgetModel =
-        AuthScreenScope.getAuthScreenWidgetModel(context);
-    final IStringsProvider stringsProvider =
-        AuthScreenScope.getStringsProvider(context);
+    final AuthScreenWidgetModel widgetModel = AuthScreenScope.getAuthScreenWidgetModel(context);
+    final IStringsProvider stringsProvider = AuthScreenScope.getStringsProvider(context);
     final Size calculatedCodeWidth = (TextPainter(
       text: const TextSpan(text: '+00000'),
       maxLines: 1,
@@ -145,9 +141,7 @@ class _PhoneNumberStateWidget extends StatelessWidget {
               Expanded(
                 child: TextField(
                   focusNode: widgetModel.phoneNumberFocusNode,
-                  inputFormatters: <TextInputFormatter>[
-                    widgetModel.phoneMaskFormatter
-                  ],
+                  inputFormatters: <TextInputFormatter>[widgetModel.phoneMaskFormatter],
                   controller: widgetModel.phoneNumberController,
                   keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
@@ -174,10 +168,8 @@ class _CodeStateWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AuthScreenWidgetModel widgetModel =
-        AuthScreenScope.getAuthScreenWidgetModel(context);
-    final IStringsProvider stringsProvider =
-        AuthScreenScope.getStringsProvider(context);
+    final AuthScreenWidgetModel widgetModel = AuthScreenScope.getAuthScreenWidgetModel(context);
+    final IStringsProvider stringsProvider = AuthScreenScope.getStringsProvider(context);
     final ThemeData theme = Theme.of(context);
     return Column(
       key: const ValueKey<dynamic>('code'),
@@ -256,8 +248,7 @@ class _SubmitPhone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AuthScreenWidgetModel widgetModel =
-        AuthScreenScope.getAuthScreenWidgetModel(context);
+    final AuthScreenWidgetModel widgetModel = AuthScreenScope.getAuthScreenWidgetModel(context);
     return FloatingActionButton(
       child: const Icon(Icons.arrow_forward_outlined),
       onPressed: widgetModel.onSubmitPhoneTap,
@@ -274,8 +265,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AuthScreenWidgetModel widgetModel =
-        AuthScreenScope.getAuthScreenWidgetModel(context);
+    final AuthScreenWidgetModel widgetModel = AuthScreenScope.getAuthScreenWidgetModel(context);
     return AppBar(
       leading: state is PhoneNumberState
           ? null

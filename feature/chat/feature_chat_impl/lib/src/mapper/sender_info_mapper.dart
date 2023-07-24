@@ -19,8 +19,7 @@ class SenderInfoMapper {
     switch (sender.getConstructor()) {
       case td.MessageSenderUser.constructor:
         {
-          final td.User user = await _userRepository
-              .getUser((sender as td.MessageSenderUser).userId);
+          final td.User user = await _userRepository.getUser((sender as td.MessageSenderUser).userId);
           return SenderInfo(
             id: user.id,
             avatar: Avatar.simple(
@@ -37,8 +36,7 @@ class SenderInfoMapper {
         }
       case td.MessageSenderChat.constructor:
         {
-          final td.Chat chat = await _chatRepository
-              .getChat((sender as td.MessageSenderChat).chatId);
+          final td.Chat chat = await _chatRepository.getChat((sender as td.MessageSenderChat).chatId);
           return SenderInfo(
             id: chat.id,
             avatar: Avatar.simple(

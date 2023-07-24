@@ -17,8 +17,7 @@ Future<void> runCommands({
   final int startMillis = DateTime.now().millisecondsSinceEpoch;
 
   final List<_CommandResultWrapper> failedCommands =
-      (await Stream<Command>.fromIterable(commands)
-              .flatMap<_CommandResultWrapper>(
+      (await Stream<Command>.fromIterable(commands).flatMap<_CommandResultWrapper>(
     (Command command) {
       TextPen()
         ..setColor(Color.YELLOW)
@@ -47,8 +46,7 @@ Future<void> runCommands({
     maxConcurrent: 4,
   ).toList())
           .where(
-            (_CommandResultWrapper result) =>
-                result.result == _CommandResult.failed,
+            (_CommandResultWrapper result) => result.result == _CommandResult.failed,
           )
           .toList();
 
@@ -58,9 +56,7 @@ Future<void> runCommands({
       ..text('retry...')
       ..print();
     await runCommands(
-      commands: failedCommands
-          .map((_CommandResultWrapper result) => result.command)
-          .toList(),
+      commands: failedCommands.map((_CommandResultWrapper result) => result.command).toList(),
       withOutputs: withOutputs,
     );
   }

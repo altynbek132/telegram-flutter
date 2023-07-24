@@ -16,10 +16,7 @@ class ChatScreenFactory implements IChatScreenFactory {
   Widget create(int chatId) {
     return ChatScreenScope(
       child: const ChatPage(),
-      create: () => JuggerChatScreenComponentBuilder()
-          .dependencies(dependencies)
-          .chatArgs(ChatArgs(chatId))
-          .build(),
+      create: () => JuggerChatScreenComponentBuilder().dependencies(dependencies).chatArgs(ChatArgs(chatId)).build(),
     );
   }
 }

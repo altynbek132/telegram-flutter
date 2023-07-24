@@ -42,8 +42,7 @@ class _BodyState extends State<_Body> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    final ImageWidgetFactory imageWidgetFactory =
-        ImageWidgetShowcaseScope.getImageWidgetFactory(context);
+    final ImageWidgetFactory imageWidgetFactory = ImageWidgetShowcaseScope.getImageWidgetFactory(context);
 
     return Column(
       children: <Widget>[

@@ -11,8 +11,7 @@ class ShowcaseSplitViewPage extends StatefulWidget {
 }
 
 class _ShowcaseSplitViewPageState extends State<ShowcaseSplitViewPage> {
-  static final GlobalKey<SplitViewState> _navigationKey =
-      GlobalKey<SplitViewState>();
+  static final GlobalKey<SplitViewState> _navigationKey = GlobalKey<SplitViewState>();
 
   int _count = 0;
 

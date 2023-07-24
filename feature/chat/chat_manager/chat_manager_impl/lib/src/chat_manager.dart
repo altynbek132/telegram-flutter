@@ -15,18 +15,15 @@ class ChatManager implements IChatManager {
   final ITdFunctionExecutor _functionExecutor;
 
   @override
-  Future<void> leave(int chatId) =>
-      _functionExecutor.send(td.LeaveChat(chatId: chatId));
+  Future<void> leave(int chatId) => _functionExecutor.send(td.LeaveChat(chatId: chatId));
 
   @override
-  Future<void> join(int chatId) =>
-      _functionExecutor.send<td.Ok>(td.JoinChat(chatId: chatId));
+  Future<void> join(int chatId) => _functionExecutor.send<td.Ok>(td.JoinChat(chatId: chatId));
 
   @override
   Future<void> muteFor(int chatId, int seconds) async {
     final td.Chat chat = await _chatRepository.getChat(chatId);
-    final td.ChatNotificationSettings notificationSettings =
-        chat.notificationSettings.copyWith(
+    final td.ChatNotificationSettings notificationSettings = chat.notificationSettings.copyWith(
       useDefaultMuteFor: false,
       muteFor: seconds,
     );
@@ -49,8 +46,7 @@ class ChatManager implements IChatManager {
   }
 
   @override
-  Future<void> delete(int chatId) =>
-      _functionExecutor.send<td.Ok>(td.DeleteChat(chatId: chatId));
+  Future<void> delete(int chatId) => _functionExecutor.send<td.Ok>(td.DeleteChat(chatId: chatId));
 
   @override
   Future<int> createChannel({

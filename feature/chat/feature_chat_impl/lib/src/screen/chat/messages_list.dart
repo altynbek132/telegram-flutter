@@ -31,8 +31,7 @@ class _MessagesListState extends State<MessagesList> {
       if (!_scrolledToOldest && _scrollController.position.extentAfter < 300) {
         _scrolledToOldest = true;
         _viewModel?.onLoadOldestMessages();
-      } else if (_scrolledToOldest &&
-          _scrollController.position.extentAfter >= 300) {
+      } else if (_scrolledToOldest && _scrollController.position.extentAfter >= 300) {
         _scrolledToOldest = false;
       }
     });
@@ -47,8 +46,7 @@ class _MessagesListState extends State<MessagesList> {
 
   @override
   Widget build(BuildContext context) {
-    final MessageFactory messageFactory =
-        ChatScreenScope.getMessageFactory(context);
+    final MessageFactory messageFactory = ChatScreenScope.getMessageFactory(context);
 
     return Scrollbar(
       child: ListView.custom(
@@ -60,8 +58,7 @@ class _MessagesListState extends State<MessagesList> {
             final int itemIndex = index ~/ 2;
             final Widget widget;
             if (index.isEven) {
-              final ITileModel tileModel =
-                  this.widget.messagesBundle[itemIndex];
+              final ITileModel tileModel = this.widget.messagesBundle[itemIndex];
               widget = Padding(
                 padding: EdgeInsets.zero,
                 child: messageFactory.create(

@@ -44,8 +44,7 @@ class _Delegate implements IChatBackgroundWidgetShowcaseScopeDelegate {
     ),
     patternBackgroundFileResolver: const PatternBackgroundFileResolver(),
     activeBackgroundStorage: ActiveBackgroundStorage(),
-    authenticationStateUpdatesProvider:
-        FakeAuthenticationStateUpdatesProvider(),
+    authenticationStateUpdatesProvider: FakeAuthenticationStateUpdatesProvider(),
     authenticationStateProvider: const FakeAuthenticationStateProvider(
       authorizationState: td.AuthorizationStateReady(),
     ),

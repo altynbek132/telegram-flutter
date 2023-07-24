@@ -142,8 +142,7 @@ abstract class ChatScreenModule {
 
   @j.provides
   @j.singleton
-  static IMessageWallContext provideMessageWallContext() =>
-      MessageWallContextImpl();
+  static IMessageWallContext provideMessageWallContext() => MessageWallContextImpl();
 
   @j.provides
   @j.singleton

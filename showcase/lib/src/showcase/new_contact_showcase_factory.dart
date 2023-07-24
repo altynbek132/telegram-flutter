@@ -28,8 +28,7 @@ class NewContactShowcaseFactory {
   final ILogger _logger;
 
   Widget create(BuildContext context) {
-    final NewContactFeatureDependencies dependencies =
-        NewContactFeatureDependencies(
+    final NewContactFeatureDependencies dependencies = NewContactFeatureDependencies(
       errorTransformer: const FakeErrorTransformer(),
       fileDownloader: const FakeFileDownloader(),
       userRepository: FakeUserRepository(

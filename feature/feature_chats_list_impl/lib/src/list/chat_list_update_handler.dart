@@ -36,8 +36,7 @@ class ChatListUpdateHandler {
 
   Map<int, ChatData> get _chats => _chatsHolder.chatsData;
 
-  Future<bool> handleNewChat({required td.Chat chat}) =>
-      _enqueue(() => _handleNewChat(chat: chat));
+  Future<bool> handleNewChat({required td.Chat chat}) => _enqueue(() => _handleNewChat(chat: chat));
 
   Future<bool> handleNewPositions({
     required int chatId,
@@ -73,8 +72,7 @@ class ChatListUpdateHandler {
     _eventsQueue.dispose();
   }
 
-  Future<bool> _enqueue(Future<bool> Function() action) =>
-      _eventsQueue.enqueue(action);
+  Future<bool> _enqueue(Future<bool> Function() action) => _eventsQueue.enqueue(action);
 
   Future<ChatData> _toChatData(td.Chat chat) async {
     return ChatData(
@@ -140,9 +138,7 @@ class ChatListUpdateHandler {
     }
 
     final td.ChatPosition? position = positions.firstWhereOrNull(
-      (td.ChatPosition position) =>
-          position.list.getConstructor() ==
-          _chatListConfig.chatList.getConstructor(),
+      (td.ChatPosition position) => position.list.getConstructor() == _chatListConfig.chatList.getConstructor(),
     );
 
     if (position != null) {
@@ -157,8 +153,7 @@ class ChatListUpdateHandler {
     }
 
     if (!_chats.containsKey(chatId)) {
-      final bool handleNewChatResult =
-          await _handleNewChat(chat: await _chatRepository.getChat(chatId));
+      final bool handleNewChatResult = await _handleNewChat(chat: await _chatRepository.getChat(chatId));
       assert(handleNewChatResult);
     }
 
@@ -179,8 +174,7 @@ class ChatListUpdateHandler {
       final ChatData? removeChat = _chats.remove(chatId);
       assert(removeChat != null);
     } else {
-      final OrderedChat newOrderedChat =
-          OrderedChat(chatId: chatData.chat.id, order: position.order);
+      final OrderedChat newOrderedChat = OrderedChat(chatId: chatData.chat.id, order: position.order);
       chatData
         ..chat = chatData.chat.copyWith(positions: <td.ChatPosition>[position])
         ..model = chatData.model.copy(
@@ -221,8 +215,7 @@ class ChatListUpdateHandler {
         unreadCount: update.unreadCount,
         // all messages was read, set 0 to MentionCount
         // because Update for it not incoming
-        unreadMentionCount:
-            update.unreadCount == 0 ? 0 : chatData.chat.unreadMentionCount,
+        unreadMentionCount: update.unreadCount == 0 ? 0 : chatData.chat.unreadMentionCount,
         lastReadInboxMessageId: update.lastReadInboxMessageId,
       )
       ..model = await _chatTileModelMapper.mapToModel(
@@ -242,8 +235,7 @@ class ChatListUpdateHandler {
     }
 
     chatData
-      ..chat =
-          chatData.chat.copyWith(unreadMentionCount: update.unreadMentionCount)
+      ..chat = chatData.chat.copyWith(unreadMentionCount: update.unreadMentionCount)
       ..model = await _chatTileModelMapper.mapToModel(
         chat: chatData.chat,
         chatList: _chatListConfig.chatList,
@@ -291,6 +283,5 @@ class ChatListUpdateHandler {
     return true;
   }
 
-  int? getOrder(td.Chat chat) =>
-      chat.getPositionByChatList(_chatListConfig.chatList)?.order;
+  int? getOrder(td.Chat chat) => chat.getPositionByChatList(_chatListConfig.chatList)?.order;
 }

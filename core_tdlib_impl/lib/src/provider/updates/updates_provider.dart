@@ -22,31 +22,25 @@ class UpdatesProvider
   @override
   Stream<td.Update> get chatUpdates => _client.events.chatUpdatesFilter();
 
-  Stream<td.UpdateConnectionState> get connectionStateUpdates =>
-      _client.events.connectionStateUpdatesFilter();
+  Stream<td.UpdateConnectionState> get connectionStateUpdates => _client.events.connectionStateUpdatesFilter();
 
   @override
-  Stream<td.UpdateChatFilters> get chatFiltersUpdates =>
-      _client.events.chatFiltersUpdatesFilter();
+  Stream<td.UpdateChatFilters> get chatFiltersUpdates => _client.events.chatFiltersUpdatesFilter();
 
   @override
-  Stream<td.UpdateAuthorizationState> get authorizationStateUpdates =>
-      _client.events.authorizationStateUpdatesFilter();
+  Stream<td.UpdateAuthorizationState> get authorizationStateUpdates => _client.events.authorizationStateUpdatesFilter();
 
   @override
   Stream<td.UpdateFile> get fileUpdates => _client.events.fileUpdatesFilter();
 
   @override
-  Stream<td.UpdateSupergroup> get superGroupUpdates =>
-      _client.events.superGroupUpdatesFilter();
+  Stream<td.UpdateSupergroup> get superGroupUpdates => _client.events.superGroupUpdatesFilter();
 
   @override
-  Stream<td.UpdateBasicGroup> get basicGroupUpdates =>
-      _client.events.basicGroupUpdatesFilter();
+  Stream<td.UpdateBasicGroup> get basicGroupUpdates => _client.events.basicGroupUpdatesFilter();
 
   @override
-  Stream<td.Update> get chatMessageUpdates =>
-      _client.events.messageUpdatesFilter();
+  Stream<td.Update> get chatMessageUpdates => _client.events.messageUpdatesFilter();
 
   @override
   Stream<td.UpdateUser> get userUpdates => _client.events.userUpdatesFilter();
@@ -57,32 +51,25 @@ class UpdatesProvider
 
 extension _UpdatesExtensions on Stream<td.TdObject> {
   Stream<td.UpdateChatFilters> chatFiltersUpdatesFilter() =>
-      where((td.TdObject event) => event is td.UpdateChatFilters)
-          .cast<td.UpdateChatFilters>();
+      where((td.TdObject event) => event is td.UpdateChatFilters).cast<td.UpdateChatFilters>();
 
   Stream<td.UpdateConnectionState> connectionStateUpdatesFilter() =>
-      where((td.TdObject event) => event is td.UpdateConnectionState)
-          .cast<td.UpdateConnectionState>();
+      where((td.TdObject event) => event is td.UpdateConnectionState).cast<td.UpdateConnectionState>();
 
   Stream<td.UpdateAuthorizationState> authorizationStateUpdatesFilter() =>
-      where((td.TdObject event) => event is td.UpdateAuthorizationState)
-          .cast<td.UpdateAuthorizationState>();
+      where((td.TdObject event) => event is td.UpdateAuthorizationState).cast<td.UpdateAuthorizationState>();
 
   Stream<td.UpdateFile> fileUpdatesFilter() =>
-      where((td.TdObject event) => event is td.UpdateFile)
-          .cast<td.UpdateFile>();
+      where((td.TdObject event) => event is td.UpdateFile).cast<td.UpdateFile>();
 
   Stream<td.UpdateSupergroup> superGroupUpdatesFilter() =>
-      where((td.TdObject event) => event is td.UpdateSupergroup)
-          .cast<td.UpdateSupergroup>();
+      where((td.TdObject event) => event is td.UpdateSupergroup).cast<td.UpdateSupergroup>();
 
   Stream<td.UpdateBasicGroup> basicGroupUpdatesFilter() =>
-      where((td.TdObject event) => event is td.UpdateBasicGroup)
-          .cast<td.UpdateBasicGroup>();
+      where((td.TdObject event) => event is td.UpdateBasicGroup).cast<td.UpdateBasicGroup>();
 
   Stream<td.UpdateUser> userUpdatesFilter() =>
-      where((td.TdObject event) => event is td.UpdateUser)
-          .cast<td.UpdateUser>();
+      where((td.TdObject event) => event is td.UpdateUser).cast<td.UpdateUser>();
 
   // todo add more updates after update lib version
   Stream<td.Update> chatUpdatesFilter() => where(

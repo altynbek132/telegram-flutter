@@ -37,8 +37,7 @@ class ProfileViewModel extends BaseViewModel {
   final ProfileArgs _args;
   final HeaderActionsResolver _headerActionsResolver;
 
-  final BehaviorSubject<ProfileState> _stateSubject =
-      BehaviorSubject<ProfileState>.seeded(
+  final BehaviorSubject<ProfileState> _stateSubject = BehaviorSubject<ProfileState>.seeded(
     const ProfileState(
       bodyState: BodyState.loading(),
       headerState: HeaderState.loading(),
@@ -92,13 +91,11 @@ class ProfileViewModel extends BaseViewModel {
   }
 
   void _initCompositeStateSubscription() {
-    final Stream<BodyState> body =
-        Stream<ContentData>.fromFuture(_contentInteractor.getContent())
-            .map<BodyState>(BodyState.data)
-            .startWith(const BodyState.loading());
+    final Stream<BodyState> body = Stream<ContentData>.fromFuture(_contentInteractor.getContent())
+        .map<BodyState>(BodyState.data)
+        .startWith(const BodyState.loading());
 
-    final Stream<ChatHeaderInfo> info = _headerInfoInteractor.infoStream
-        .startWith(_headerInfoInteractor.current);
+    final Stream<ChatHeaderInfo> info = _headerInfoInteractor.infoStream.startWith(_headerInfoInteractor.current);
 
     final Stream<HeaderState> header = Rx.zip2(
       info,
@@ -108,12 +105,10 @@ class ProfileViewModel extends BaseViewModel {
       },
     );
 
-    final Stream<ProfileState> profileStateStream =
-        Rx.combineLatest2<BodyState, HeaderState, ProfileState>(
+    final Stream<ProfileState> profileStateStream = Rx.combineLatest2<BodyState, HeaderState, ProfileState>(
       body,
       header,
-      (BodyState body, HeaderState header) =>
-          ProfileState(headerState: header, bodyState: body),
+      (BodyState body, HeaderState header) => ProfileState(headerState: header, bodyState: body),
     );
 
     subscribe<ProfileState>(profileStateStream, _stateSubject.add);

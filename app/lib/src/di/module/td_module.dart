@@ -9,8 +9,7 @@ import 'package:td_client/td_client.dart';
 abstract class TdModule {
   @applicationScope
   @j.provides
-  static UpdatesProvider provideUpdatesProvider(TdClient client) =>
-      UpdatesProvider(client: client);
+  static UpdatesProvider provideUpdatesProvider(TdClient client) => UpdatesProvider(client: client);
 
   @applicationScope
   @j.binds
@@ -79,8 +78,7 @@ abstract class TdModule {
 
   @applicationScope
   @j.provides
-  static ITdFunctionExecutor provideTdFunctionExecutor(TdClient client) =>
-      TdFunctionExecutor(
+  static ITdFunctionExecutor provideTdFunctionExecutor(TdClient client) => TdFunctionExecutor(
         client: client,
       );
 

@@ -17,9 +17,7 @@ class SessionsScreenFactory implements ISessionsScreenFactory {
   Widget create() {
     return SessionsScreenScope(
       child: const SessionsPage(),
-      create: () => JuggerSessionsScreenComponentBuilder()
-          .dependencies(_dependencies)
-          .build(),
+      create: () => JuggerSessionsScreenComponentBuilder().dependencies(_dependencies).build(),
     );
   }
 }

@@ -20,20 +20,16 @@ class SettingsScreenWidgetModel {
 
   final FocusNode searchQueryFocusNode = FocusNode();
 
-  final ValueNotifier<ScreenState> screenState =
-      ValueNotifier<ScreenState>(ScreenState.settings);
+  final ValueNotifier<ScreenState> screenState = ValueNotifier<ScreenState>(ScreenState.settings);
 
-  late final GlobalObjectKey<tg.TgSwitchedAppBarState> appbarKey =
-      AppBarKey(hashCode);
+  late final GlobalObjectKey<tg.TgSwitchedAppBarState> appbarKey = AppBarKey(hashCode);
 
-  late final Widget searchWidget =
-      _settingsSearchScreenFactory.create(_settingsSearchScreenController);
+  late final Widget searchWidget = _settingsSearchScreenFactory.create(_settingsSearchScreenController);
 
   final ISettingsSearchScreenFactory _settingsSearchScreenFactory;
   final SettingViewModel _viewModel;
 
-  final SettingsSearchScreenController _settingsSearchScreenController =
-      SettingsSearchScreenController();
+  final SettingsSearchScreenController _settingsSearchScreenController = SettingsSearchScreenController();
 
   void init() {
     searchQueryController.addListener(_onSearchEvent);
@@ -77,6 +73,5 @@ class SettingsScreenWidgetModel {
     }
   }
 
-  void _onSearchEvent() =>
-      _settingsSearchScreenController.onQuery(searchQueryController.text);
+  void _onSearchEvent() => _settingsSearchScreenController.onQuery(searchQueryController.text);
 }

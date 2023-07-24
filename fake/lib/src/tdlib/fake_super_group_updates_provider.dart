@@ -5,6 +5,5 @@ class FakeSuperGroupUpdatesProvider implements ISuperGroupUpdatesProvider {
   const FakeSuperGroupUpdatesProvider();
 
   @override
-  Stream<td.UpdateSupergroup> get superGroupUpdates =>
-      const Stream<td.UpdateSupergroup>.empty();
+  Stream<td.UpdateSupergroup> get superGroupUpdates => const Stream<td.UpdateSupergroup>.empty();
 }

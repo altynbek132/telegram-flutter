@@ -49,8 +49,7 @@ class ChangeUsernameViewModel extends BaseViewModel {
   final OptionsManager _optionsManager;
   final ITdFunctionExecutor _functionExecutor;
 
-  final BehaviorSubject<CheckUsernameState> _stateSubject =
-      BehaviorSubject<CheckUsernameState>.seeded(
+  final BehaviorSubject<CheckUsernameState> _stateSubject = BehaviorSubject<CheckUsernameState>.seeded(
     const CheckUsernameState.loading(),
   );
 
@@ -62,8 +61,7 @@ class ChangeUsernameViewModel extends BaseViewModel {
         .then(_userInfoResolver.resolveAsFuture)
         // TODO handle multiple names
         .then(
-          (UserInfo info) =>
-              info.user.usernames?.activeUsernames.firstOrNull ?? '',
+          (UserInfo info) => info.user.usernames?.activeUsernames.firstOrNull ?? '',
         )
         .toCancelableOperation()
         .onValue(
@@ -91,15 +89,12 @@ class ChangeUsernameViewModel extends BaseViewModel {
 
   void _setUsername(String username) {
     _blockInteractionManager.setState(active: true);
-    final CancelableOperation<void> operation =
-        _checkUsernameFuture(username).toCancelableOperation().onTerminate(() {
+    final CancelableOperation<void> operation = _checkUsernameFuture(username).toCancelableOperation().onTerminate(() {
       _blockInteractionManager.setState(active: false);
     }).then((CheckResult result) {
       return result.map(
-        error: (CheckResultError value) =>
-            throw Exception(value.textForDisplay),
-        ok: (_) =>
-            _functionExecutor.send<td.Ok>(td.SetUsername(username: username)),
+        error: (CheckResultError value) => throw Exception(value.textForDisplay),
+        ok: (_) => _functionExecutor.send<td.Ok>(td.SetUsername(username: username)),
       );
     }).onValue((void result) {
       _router.close();
@@ -118,8 +113,7 @@ class ChangeUsernameViewModel extends BaseViewModel {
 
   Future<CheckResult> _checkUsernameFuture(String username) {
     return _usernameChecker.check(username).catchError(
-          (Object error) =>
-              CheckResult.error(_errorTransformer.transformToString(error)),
+          (Object error) => CheckResult.error(_errorTransformer.transformToString(error)),
         );
   }
 }

@@ -12,24 +12,20 @@ class FakeAuthenticationManager implements IAuthenticationManager {
 
   @override
   Future<td.Ok> checkAuthenticationCode(String code) {
-    return authenticationCode?.call(code).then((_) => const td.Ok()) ??
-        Future<td.Ok>.error('error');
+    return authenticationCode?.call(code).then((_) => const td.Ok()) ?? Future<td.Ok>.error('error');
   }
 
   @override
   // TODO: implement currentAuthorizationState
-  Future<td.AuthorizationState> get currentAuthorizationState =>
-      throw UnimplementedError();
+  Future<td.AuthorizationState> get currentAuthorizationState => throw UnimplementedError();
 
   @override
   // TODO: implement onAuthorizationStateChange
-  Stream<td.AuthorizationState> get onAuthorizationStateChange =>
-      throw UnimplementedError();
+  Stream<td.AuthorizationState> get onAuthorizationStateChange => throw UnimplementedError();
 
   @override
   Future<td.Ok> setAuthenticationPhoneNumber(String phoneNumber) =>
-      phoneNumberCallback?.call(phoneNumber).then((_) => const td.Ok()) ??
-      Future<td.Ok>.error('error');
+      phoneNumberCallback?.call(phoneNumber).then((_) => const td.Ok()) ?? Future<td.Ok>.error('error');
 
   @override
   Future<td.Ok> setTdlibParameters(td.SetTdlibParameters parameters) {

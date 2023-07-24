@@ -7,15 +7,13 @@ import 'utils.dart';
 Future<void> printDependenciesInfo(String workDirectory) async {
   final List<DartProject> projects = await getDartProjects(workDirectory);
 
-  final Map<String, Set<Dependency>> allDependencies = projects
-      .expand((DartProject element) => element.dependencies)
-      .groupSetsBy((Dependency element) => element.name);
+  final Map<String, Set<Dependency>> allDependencies =
+      projects.expand((DartProject element) => element.dependencies).groupSetsBy((Dependency element) => element.name);
 
   final String result = allDependencies.keys
       .sortedBy((String key) => key)
       .map(
-        (String dep) =>
-            '$dep: ${allDependencies[dep]!.map((Dependency d) => d.version).join(', ')}',
+        (String dep) => '$dep: ${allDependencies[dep]!.map((Dependency d) => d.version).join(', ')}',
       )
       .join('\n');
 

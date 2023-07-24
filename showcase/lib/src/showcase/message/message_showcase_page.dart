@@ -13,8 +13,7 @@ class MessageShowcasePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MessageShowcaseViewModel viewModel =
-        MessageShowcaseScope.getMessageShowcaseViewModel(context);
+    final MessageShowcaseViewModel viewModel = MessageShowcaseScope.getMessageShowcaseViewModel(context);
     return Scaffold(
       appBar: AppBar(
         title: StreamListener<String>(
@@ -40,8 +39,7 @@ class MessageShowcasePage extends StatelessWidget {
                       model: items[index],
                     );
                   },
-                  separatorBuilder: (BuildContext context, int index) =>
-                      const SizedBox(height: 8),
+                  separatorBuilder: (BuildContext context, int index) => const SizedBox(height: 8),
                   itemCount: items.length,
                 ),
               );
@@ -74,8 +72,7 @@ class _Required extends StatelessWidget {
         },
       ),
       child: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) =>
-            ChatContext(
+        builder: (BuildContext context, BoxConstraints constraints) => ChatContext(
           data: ChatContextData.desktop(
             maxWidth: constraints.maxWidth,
           ),

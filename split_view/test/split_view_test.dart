@@ -12,8 +12,7 @@ void main() {
     testWidgets('should not display empty navigator in compact mode', (
       WidgetTester tester,
     ) async {
-      final TestSplitViewController controller =
-          TestSplitViewController(tester: tester);
+      final TestSplitViewController controller = TestSplitViewController(tester: tester);
       await controller.setup();
       controller.compactScreen();
 
@@ -23,8 +22,7 @@ void main() {
     testWidgets('should display page if add to left container', (
       WidgetTester tester,
     ) async {
-      final TestSplitViewController controller =
-          TestSplitViewController(tester: tester);
+      final TestSplitViewController controller = TestSplitViewController(tester: tester);
       await controller.setup();
       controller.compactScreen();
       controller.addPage(container: ContainerType.left, pageId: 1);
@@ -40,8 +38,7 @@ void main() {
     testWidgets('should display page if add to right container', (
       WidgetTester tester,
     ) async {
-      final TestSplitViewController controller =
-          TestSplitViewController(tester: tester);
+      final TestSplitViewController controller = TestSplitViewController(tester: tester);
       await controller.setup();
       controller.compactScreen();
       controller.addPage(container: ContainerType.right, pageId: 1);
@@ -57,8 +54,7 @@ void main() {
     testWidgets('should display page if add to top container', (
       WidgetTester tester,
     ) async {
-      final TestSplitViewController controller =
-          TestSplitViewController(tester: tester);
+      final TestSplitViewController controller = TestSplitViewController(tester: tester);
       await controller.setup();
       controller.compactScreen();
       controller.addPage(container: ContainerType.top, pageId: 1);
@@ -79,8 +75,7 @@ void main() {
     testWidgets('should not display empty navigator in split mode', (
       WidgetTester tester,
     ) async {
-      final TestSplitViewController controller =
-          TestSplitViewController(tester: tester);
+      final TestSplitViewController controller = TestSplitViewController(tester: tester);
       await controller.setup();
       controller.largeScreen();
 
@@ -90,8 +85,7 @@ void main() {
     testWidgets('should display page if add to left container', (
       WidgetTester tester,
     ) async {
-      final TestSplitViewController controller =
-          TestSplitViewController(tester: tester);
+      final TestSplitViewController controller = TestSplitViewController(tester: tester);
       await controller.setup();
       controller.largeScreen();
       controller.addPage(container: ContainerType.left, pageId: 1);
@@ -107,8 +101,7 @@ void main() {
     testWidgets('should display page if add to right container', (
       WidgetTester tester,
     ) async {
-      final TestSplitViewController controller =
-          TestSplitViewController(tester: tester);
+      final TestSplitViewController controller = TestSplitViewController(tester: tester);
       await controller.setup();
       controller.largeScreen();
       controller.addPage(container: ContainerType.right, pageId: 1);
@@ -124,8 +117,7 @@ void main() {
     testWidgets('should display page if add to top container', (
       WidgetTester tester,
     ) async {
-      final TestSplitViewController controller =
-          TestSplitViewController(tester: tester);
+      final TestSplitViewController controller = TestSplitViewController(tester: tester);
       await controller.setup();
       controller.largeScreen();
       controller.addPage(container: ContainerType.top, pageId: 1);
@@ -154,8 +146,7 @@ void _removeByKeyGroup() {
   testWidgets('should not remove page is not exist in compact layout', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -178,8 +169,7 @@ void _removeByKeyGroup() {
   testWidgets('should not remove page is not exist in split layout', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -204,8 +194,7 @@ void _removeByKeySplitLayoutGroup() {
   testWidgets('should remove first page from left container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -229,8 +218,7 @@ void _removeByKeySplitLayoutGroup() {
   testWidgets('should remove last page from left container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -254,8 +242,7 @@ void _removeByKeySplitLayoutGroup() {
   testWidgets('should remove first page from right container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -279,8 +266,7 @@ void _removeByKeySplitLayoutGroup() {
   testWidgets('should remove last page from right container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -304,8 +290,7 @@ void _removeByKeySplitLayoutGroup() {
   testWidgets('should remove first page from top container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -329,8 +314,7 @@ void _removeByKeySplitLayoutGroup() {
   testWidgets('should remove last page from top container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -356,8 +340,7 @@ void _removeByKeyCompactLayoutGroup() {
   testWidgets('should remove first page from left container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -381,8 +364,7 @@ void _removeByKeyCompactLayoutGroup() {
   testWidgets('should remove last page from left container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -406,8 +388,7 @@ void _removeByKeyCompactLayoutGroup() {
   testWidgets('should remove first page from right container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -431,8 +412,7 @@ void _removeByKeyCompactLayoutGroup() {
   testWidgets('should remove last page from right container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -456,8 +436,7 @@ void _removeByKeyCompactLayoutGroup() {
   testWidgets('should remove first page from top container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -481,8 +460,7 @@ void _removeByKeyCompactLayoutGroup() {
   testWidgets('should remove last page from top container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -508,8 +486,7 @@ void _hasKeyCompactLayoutGroup() {
   testWidgets('should return true if page contains in left container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -524,8 +501,7 @@ void _hasKeyCompactLayoutGroup() {
   testWidgets('should return true if page contains in right container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -540,8 +516,7 @@ void _hasKeyCompactLayoutGroup() {
   testWidgets('should return true if page contains in top container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -553,12 +528,10 @@ void _hasKeyCompactLayoutGroup() {
     );
   });
 
-  testWidgets(
-      'should return false if page not contains in left container but right', (
+  testWidgets('should return false if page not contains in left container but right', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -570,12 +543,10 @@ void _hasKeyCompactLayoutGroup() {
     );
   });
 
-  testWidgets(
-      'should return false if page not contains in left container but top', (
+  testWidgets('should return false if page not contains in left container but top', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -587,12 +558,10 @@ void _hasKeyCompactLayoutGroup() {
     );
   });
 
-  testWidgets(
-      'should return false if page not contains in right container but left', (
+  testWidgets('should return false if page not contains in right container but left', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -604,12 +573,10 @@ void _hasKeyCompactLayoutGroup() {
     );
   });
 
-  testWidgets(
-      'should return false if page not contains in right container but top', (
+  testWidgets('should return false if page not contains in right container but top', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -621,12 +588,10 @@ void _hasKeyCompactLayoutGroup() {
     );
   });
 
-  testWidgets(
-      'should return false if page not contains in top container but left', (
+  testWidgets('should return false if page not contains in top container but left', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -638,12 +603,10 @@ void _hasKeyCompactLayoutGroup() {
     );
   });
 
-  testWidgets(
-      'should return false if page not contains in top container but right', (
+  testWidgets('should return false if page not contains in top container but right', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -657,12 +620,10 @@ void _hasKeyCompactLayoutGroup() {
 }
 
 void _observerEventsGroup() {
-  testWidgets('should call didRemove if remove page by key from left container',
-      (
+  testWidgets('should call didRemove if remove page by key from left container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -678,12 +639,10 @@ void _observerEventsGroup() {
     );
   });
 
-  testWidgets(
-      'should call didRemove if remove page by key from right container', (
+  testWidgets('should call didRemove if remove page by key from right container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -699,12 +658,10 @@ void _observerEventsGroup() {
     );
   });
 
-  testWidgets('should call didRemove if remove page by key from top container',
-      (
+  testWidgets('should call didRemove if remove page by key from top container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -723,8 +680,7 @@ void _observerEventsGroup() {
   testWidgets('should call didAdd if add page to left container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -742,8 +698,7 @@ void _observerEventsGroup() {
   testWidgets('should call didAdd if add page to right container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -761,8 +716,7 @@ void _observerEventsGroup() {
   testWidgets('should call didAdd if add page to top container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -780,8 +734,7 @@ void _observerEventsGroup() {
   testWidgets('should call didRemove if pop page from left container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -801,8 +754,7 @@ void _observerEventsGroup() {
   testWidgets('should call didRemove if pop page from right container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -822,8 +774,7 @@ void _observerEventsGroup() {
   testWidgets('should call didRemove if pop page from top container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -843,8 +794,7 @@ void _observerEventsGroup() {
   testWidgets('should call didAdd if add pages to left container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -876,8 +826,7 @@ void _observerEventsGroup() {
   testWidgets('should call didAdd if add pages to right container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -909,8 +858,7 @@ void _observerEventsGroup() {
   testWidgets('should call didAdd if add pages to top container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -939,12 +887,10 @@ void _observerEventsGroup() {
     );
   });
 
-  testWidgets('should call didAdd and didRemove if add pages to all containers',
-      (
+  testWidgets('should call didAdd and didRemove if add pages to all containers', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 0);
@@ -1002,12 +948,10 @@ void _observerEventsGroup() {
     );
   });
 
-  testWidgets('should call didRemove if remove until pages form left container',
-      (
+  testWidgets('should call didRemove if remove until pages form left container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -1060,12 +1004,10 @@ void _observerEventsGroup() {
     );
   });
 
-  testWidgets(
-      'should call didRemove if remove until pages form right container', (
+  testWidgets('should call didRemove if remove until pages form right container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -1118,12 +1060,10 @@ void _observerEventsGroup() {
     );
   });
 
-  testWidgets('should call didRemove if remove until pages form top container',
-      (
+  testWidgets('should call didRemove if remove until pages form top container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -1181,8 +1121,7 @@ void _rightPlaceholderGroup() {
   testWidgets('should display placeholder in large layout', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.setPlaceholder(const Text('hello'));
@@ -1194,8 +1133,7 @@ void _rightPlaceholderGroup() {
   testWidgets('should not display placeholder in compact layout', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.setPlaceholder(const Text('hello'));
@@ -1207,8 +1145,7 @@ void _rightPlaceholderGroup() {
   testWidgets('should display placeholder after switch layout to large', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.setPlaceholder(const Text('hello'));
@@ -1225,8 +1162,7 @@ void _willPopCompactGroup() {
   testWidgets('should pop right page by back press', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -1250,8 +1186,7 @@ void _willPopCompactGroup() {
   testWidgets('should pop top page by back press', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -1275,8 +1210,7 @@ void _willPopCompactGroup() {
   testWidgets('should pop left page by back press', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -1302,8 +1236,7 @@ void _willPopSplitModeGroup() {
   testWidgets('should pop left page by back press', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -1327,8 +1260,7 @@ void _willPopSplitModeGroup() {
   testWidgets('should pop right page by back press', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -1352,8 +1284,7 @@ void _willPopSplitModeGroup() {
   testWidgets('should pop top page by back press', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -1380,8 +1311,7 @@ void _willPopSplitModeGroup() {
   testWidgets('should not pop by back press if single left page', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -1404,8 +1334,7 @@ void _willPopSplitModeGroup() {
   testWidgets('should not pop by back press if single right page', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -1428,8 +1357,7 @@ void _willPopSplitModeGroup() {
   testWidgets('should not pop by back press if single top page', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -1449,12 +1377,10 @@ void _willPopSplitModeGroup() {
     );
   });
 
-  testWidgets(
-      'should not pop by back press if one page in left and right containers', (
+  testWidgets('should not pop by back press if one page in left and right containers', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -1488,8 +1414,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should remove until first page from left container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -1517,8 +1442,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should remove all pages from left container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -1543,8 +1467,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should remove all pages if page not found in left container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -1569,8 +1492,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should ignore remove until action if single page in container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -1596,8 +1518,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should ignore remove until action if left container is empty', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     await tester.pump();
@@ -1616,8 +1537,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should remove until first page from right container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -1645,8 +1565,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should remove all pages from right container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -1671,8 +1590,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should remove all pages if page not found in right container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -1697,8 +1615,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should ignore remove until action if single page in container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -1724,8 +1641,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should ignore remove until action if right container is empty', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     await tester.pump();
@@ -1744,8 +1660,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should remove until first page from top container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -1773,8 +1688,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should remove all pages from top container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -1799,8 +1713,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should remove all pages if page not found in top container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -1825,8 +1738,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should ignore remove until action if single page in container', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -1852,8 +1764,7 @@ void _removeUntilSplitModeGroup() {
   testWidgets('should ignore remove until action if top container is empty', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     await tester.pump();
@@ -1871,13 +1782,10 @@ void _removeUntilSplitModeGroup() {
 }
 
 void _defaultCompactLayoutMergeStrategyGroup() {
-  testWidgets(
-      'should display ordered pages if add to with order left -> right -> top',
-      (
+  testWidgets('should display ordered pages if add to with order left -> right -> top', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 3);
@@ -1892,13 +1800,10 @@ void _defaultCompactLayoutMergeStrategyGroup() {
     );
   });
 
-  testWidgets(
-      'should display ordered pages if add to with order left -> top -> right',
-      (
+  testWidgets('should display ordered pages if add to with order left -> top -> right', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 3);
@@ -1913,13 +1818,10 @@ void _defaultCompactLayoutMergeStrategyGroup() {
     );
   });
 
-  testWidgets(
-      'should display ordered pages if add to with order left -> right -> top',
-      (
+  testWidgets('should display ordered pages if add to with order left -> right -> top', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.left, pageId: 3);
@@ -1934,13 +1836,10 @@ void _defaultCompactLayoutMergeStrategyGroup() {
     );
   });
 
-  testWidgets(
-      'should display ordered pages if add to with order top -> left -> right',
-      (
+  testWidgets('should display ordered pages if add to with order top -> left -> right', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.top, pageId: 3);
@@ -1955,13 +1854,10 @@ void _defaultCompactLayoutMergeStrategyGroup() {
     );
   });
 
-  testWidgets(
-      'should display ordered pages if add to with order top -> right -> left',
-      (
+  testWidgets('should display ordered pages if add to with order top -> right -> left', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.top, pageId: 3);
@@ -1976,13 +1872,10 @@ void _defaultCompactLayoutMergeStrategyGroup() {
     );
   });
 
-  testWidgets(
-      'should display ordered pages if add to with order right -> top -> left',
-      (
+  testWidgets('should display ordered pages if add to with order right -> top -> left', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.right, pageId: 3);
@@ -1997,13 +1890,10 @@ void _defaultCompactLayoutMergeStrategyGroup() {
     );
   });
 
-  testWidgets(
-      'should display ordered pages if add to with order right -> left -> top',
-      (
+  testWidgets('should display ordered pages if add to with order right -> left -> top', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.compactScreen();
     controller.addPage(container: ContainerType.right, pageId: 3);
@@ -2020,12 +1910,10 @@ void _defaultCompactLayoutMergeStrategyGroup() {
 }
 
 void _topPagesGroup() {
-  testWidgets(
-      'should remove pages from top if barrier tapped and if added left page', (
+  testWidgets('should remove pages from top if barrier tapped and if added left page', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -2047,13 +1935,10 @@ void _topPagesGroup() {
     );
   });
 
-  testWidgets(
-      'should remove pages from top if barrier tapped and if added right page',
-      (
+  testWidgets('should remove pages from top if barrier tapped and if added right page', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.right, pageId: 1);
@@ -2075,13 +1960,10 @@ void _topPagesGroup() {
     );
   });
 
-  testWidgets(
-      'should not remove pages from top if barrier tapped and if displayed only top page',
-      (
+  testWidgets('should not remove pages from top if barrier tapped and if displayed only top page', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.top, pageId: 2);
@@ -2102,8 +1984,7 @@ void _topPagesGroup() {
   testWidgets('should display back button on second top page', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.top, pageId: 2);
@@ -2124,8 +2005,7 @@ void _topPagesGroup() {
   testWidgets('should not display back button on only single top page', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.top, pageId: 1);
@@ -2145,8 +2025,7 @@ void _topPagesGroup() {
   testWidgets('should display back button on single top page', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.left, pageId: 1);
@@ -2167,8 +2046,7 @@ void _topPagesGroup() {
   testWidgets('should remove from top if back button tapped', (
     WidgetTester tester,
   ) async {
-    final TestSplitViewController controller =
-        TestSplitViewController(tester: tester);
+    final TestSplitViewController controller = TestSplitViewController(tester: tester);
     await controller.setup();
     controller.largeScreen();
     controller.addPage(container: ContainerType.top, pageId: 2);

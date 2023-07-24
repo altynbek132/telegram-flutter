@@ -27,8 +27,7 @@ class StickersWidgetFactory implements IStickersWidgetFactory {
               delegates: <Type, ITileFactoryDelegate<ITileModel>>{
                 StickerSetTileModel: StickerSetTileFactoryDelegate(
                   tap: (BuildContext context, int setId) {
-                    Provider.of<StickersViewModel>(context)
-                        .onEvent(StickersEvent.stickerSetTap(setId));
+                    Provider.of<StickersViewModel>(context).onEvent(StickersEvent.stickerSetTap(setId));
                   },
                 ),
               },

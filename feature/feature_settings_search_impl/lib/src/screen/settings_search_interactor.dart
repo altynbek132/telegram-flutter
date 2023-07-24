@@ -11,8 +11,7 @@ class SettingsSearchInteractor {
 
   final sc.ISearchInteractor<List<ITileModel>> _searchInteractor;
 
-  Stream<SearchState> get state =>
-      _searchInteractor.result.map(_mapToPageState);
+  Stream<SearchState> get state => _searchInteractor.result.map(_mapToPageState);
 
   void onQuery(String value) {
     _searchInteractor.onQuery(value);

@@ -3,8 +3,7 @@ import 'package:feature_create_new_chat_impl/src/di/create_new_chat_component.da
 import 'package:feature_create_new_chat_impl/src/screen/new_secret_chat/new_secret_chat.dart';
 import 'package:flutter/widgets.dart';
 
-class CreateNewSecretChatScreenFactory
-    implements ICreateNewSecretChatScreenFactory {
+class CreateNewSecretChatScreenFactory implements ICreateNewSecretChatScreenFactory {
   CreateNewSecretChatScreenFactory({
     required ICreateNewChatComponent component,
   }) : _component = component;

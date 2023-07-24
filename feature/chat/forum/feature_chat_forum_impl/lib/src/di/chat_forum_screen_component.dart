@@ -13,5 +13,4 @@ import 'chat_forum_screen_component_builder.dart';
   builder: IChatForumScreenComponentBuilder,
 )
 @j.singleton
-abstract class IChatForumScreenComponent
-    implements IChatForumScreenScopeDelegate {}
+abstract class IChatForumScreenComponent implements IChatForumScreenScopeDelegate {}

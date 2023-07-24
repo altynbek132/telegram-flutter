@@ -35,8 +35,7 @@ class _AvatarState extends State<Avatar> {
             objectId: value.objectId,
           );
         },
-        savedMessages: (cp.SavedMessagesAvatar value) =>
-            const AvatarState.savedMessages(),
+        savedMessages: (cp.SavedMessagesAvatar value) => const AvatarState.savedMessages(),
       ),
       builder: (BuildContext context, AsyncSnapshot<AvatarState> snapshot) {
         return snapshot.data!.map(
@@ -99,8 +98,7 @@ class _DefaultAvatar extends StatelessWidget {
     return _BaseAvatar(
       child: child,
       // todo extract ext
-      backgroundColor: AvatarWidgetFactory
-          .colors[(objectId % AvatarWidgetFactory.colors.length).abs()],
+      backgroundColor: AvatarWidgetFactory.colors[(objectId % AvatarWidgetFactory.colors.length).abs()],
       radius: radius,
       borderRadius: borderRadius,
     );

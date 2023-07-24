@@ -17,9 +17,7 @@ class ContactsScreenFactory implements IContactsScreenFactory {
   Widget create() {
     return ContactsScreenScope(
       child: const ContactsPage(),
-      create: () => JuggerContactsScreenComponentBuilder()
-          .dependencies(_dependencies)
-          .build(),
+      create: () => JuggerContactsScreenComponentBuilder().dependencies(_dependencies).build(),
     );
   }
 }

@@ -11,8 +11,7 @@ import 'events_list_screen_scope_delegate.dart';
 )
 // TODO subcomponent?
 @j.singleton
-abstract class IEventsListScreenComponent
-    implements IEventsListScreenScopeDelegate {}
+abstract class IEventsListScreenComponent implements IEventsListScreenScopeDelegate {}
 
 @j.module
 abstract class EventsListScreenModule {

@@ -31,11 +31,9 @@ class MessageShowcaseScope extends StatefulWidget {
 class _MessageShowcaseScopeState extends State<MessageShowcaseScope> {
   late final IMessageShowcaseComponent _component = widget.create.call();
 
-  late final MessageShowcaseViewModel _messageShowcaseViewModel =
-      _component.getMessageShowcaseViewModel();
+  late final MessageShowcaseViewModel _messageShowcaseViewModel = _component.getMessageShowcaseViewModel();
 
-  late final IInteractableMessageFactory _interactableMessageFactory =
-      _component.getInteractableMessageFactory();
+  late final IInteractableMessageFactory _interactableMessageFactory = _component.getInteractableMessageFactory();
 
   @override
   Widget build(BuildContext context) {
@@ -61,10 +59,8 @@ class _InheritedScope extends InheritedWidget {
   final _MessageShowcaseScopeState _state;
 
   static _MessageShowcaseScopeState of(BuildContext context) {
-    final _MessageShowcaseScopeState? result = (context
-            .getElementForInheritedWidgetOfExactType<_InheritedScope>()
-            ?.widget as _InheritedScope?)
-        ?._state;
+    final _MessageShowcaseScopeState? result =
+        (context.getElementForInheritedWidgetOfExactType<_InheritedScope>()?.widget as _InheritedScope?)?._state;
     assert(result != null, 'No MessageShowcaseScope found in context');
     return result!;
   }

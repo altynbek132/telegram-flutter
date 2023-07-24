@@ -12,8 +12,7 @@ class SessionsFeatureImpl implements ISessionsFeatureApi {
 
   final SessionsFeatureDependencies _dependencies;
 
-  late final SessionsScreenFactory _sessionsScreenFactory =
-      SessionsScreenFactory(
+  late final SessionsScreenFactory _sessionsScreenFactory = SessionsScreenFactory(
     dependencies: _dependencies,
   );
 

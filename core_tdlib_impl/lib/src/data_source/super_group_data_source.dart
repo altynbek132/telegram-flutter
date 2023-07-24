@@ -8,9 +8,8 @@ class SuperGroupDataSource {
 
   final ITdFunctionExecutor _functionExecutor;
 
-  Future<td.Supergroup> getGroup(int id) =>
-      _functionExecutor.send<td.Supergroup>(td.GetSupergroup(supergroupId: id));
+  Future<td.Supergroup> getGroup(int id) => _functionExecutor.send<td.Supergroup>(td.GetSupergroup(supergroupId: id));
 
-  Future<td.SupergroupFullInfo> getGroupFullInfo(int id) => _functionExecutor
-      .send<td.SupergroupFullInfo>(td.GetSupergroupFullInfo(supergroupId: id));
+  Future<td.SupergroupFullInfo> getGroupFullInfo(int id) =>
+      _functionExecutor.send<td.SupergroupFullInfo>(td.GetSupergroupFullInfo(supergroupId: id));
 }

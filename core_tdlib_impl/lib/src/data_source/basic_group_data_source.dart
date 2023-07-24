@@ -8,9 +8,8 @@ class BasicGroupDataSource {
 
   final ITdFunctionExecutor _functionExecutor;
 
-  Future<td.BasicGroup> getGroup(int id) =>
-      _functionExecutor.send<td.BasicGroup>(td.GetBasicGroup(basicGroupId: id));
+  Future<td.BasicGroup> getGroup(int id) => _functionExecutor.send<td.BasicGroup>(td.GetBasicGroup(basicGroupId: id));
 
-  Future<td.BasicGroupFullInfo> getGroupFullInfo(int id) => _functionExecutor
-      .send<td.BasicGroupFullInfo>(td.GetBasicGroupFullInfo(basicGroupId: id));
+  Future<td.BasicGroupFullInfo> getGroupFullInfo(int id) =>
+      _functionExecutor.send<td.BasicGroupFullInfo>(td.GetBasicGroupFullInfo(basicGroupId: id));
 }

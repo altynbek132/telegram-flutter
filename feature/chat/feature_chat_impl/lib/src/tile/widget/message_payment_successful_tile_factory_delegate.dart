@@ -5,8 +5,7 @@ import 'package:tile/tile.dart';
 
 import 'not_implemented.dart';
 
-class MessagePaymentSuccessfulTileFactoryDelegate
-    implements ITileFactoryDelegate<MessagePaymentSuccessfulTileModel> {
+class MessagePaymentSuccessfulTileFactoryDelegate implements ITileFactoryDelegate<MessagePaymentSuccessfulTileModel> {
   MessagePaymentSuccessfulTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
   }) : _chatMessageFactory = chatMessageFactory;

@@ -10,8 +10,7 @@ import 'package:jugger/jugger.dart' as j;
   modules: <Type>[CreateNewChannelScreenModule],
 )
 @screenScope
-abstract class ICreateNewChannelScreenComponent
-    implements INewChannelScreenScopeDelegate {}
+abstract class ICreateNewChannelScreenComponent implements INewChannelScreenScopeDelegate {}
 
 @j.module
 abstract class CreateNewChannelScreenModule {

@@ -17,18 +17,15 @@ class SessionsPage extends StatefulWidget {
 class SessionsPageState extends State<SessionsPage> {
   @override
   Widget build(BuildContext context) {
-    final SessionsViewModel sessionsViewModel =
-        SessionsScreenScope.getSessionsViewModel(context);
+    final SessionsViewModel sessionsViewModel = SessionsScreenScope.getSessionsViewModel(context);
 
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
         child: Builder(
           builder: (BuildContext context) {
-            final tg.TgAppBarFactory factory =
-                SessionsScreenScope.getTgAppBarFactory(context);
-            final IStringsProvider stringsProvider =
-                SessionsScreenScope.getStringsProvider(context);
+            final tg.TgAppBarFactory factory = SessionsScreenScope.getTgAppBarFactory(context);
+            final IStringsProvider stringsProvider = SessionsScreenScope.getStringsProvider(context);
 
             return factory.createDefaultTitle(
               context,
@@ -75,10 +72,8 @@ class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TileFactory tileFactory = SessionsScreenScope.getTileFactory(context);
-    final IStringsProvider stringsProvider =
-        SessionsScreenScope.getStringsProvider(context);
-    final SessionsViewModel viewModel =
-        SessionsScreenScope.getSessionsViewModel(context);
+    final IStringsProvider stringsProvider = SessionsScreenScope.getStringsProvider(context);
+    final SessionsViewModel viewModel = SessionsScreenScope.getSessionsViewModel(context);
 
     // TODO extract text to stings
     final ThemeData theme = Theme.of(context);

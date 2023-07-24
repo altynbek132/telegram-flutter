@@ -22,28 +22,22 @@ class MessageAnimationScope extends StatefulWidget {
   @override
   State<MessageAnimationScope> createState() => _MessageAnimationScopeState();
 
-  static MessageAnimationBloc getBloc(BuildContext context) =>
-      _InheritedScope.of(context)._bloc;
+  static MessageAnimationBloc getBloc(BuildContext context) => _InheritedScope.of(context)._bloc;
 
   static ChatMessageFactory getChatMessageFactory(BuildContext context) =>
       _InheritedScope.of(context)._chatMessageFactory;
 
-  static ShortInfoFactory getShortInfoFactory(BuildContext context) =>
-      _InheritedScope.of(context)._shortInfoFactory;
+  static ShortInfoFactory getShortInfoFactory(BuildContext context) => _InheritedScope.of(context)._shortInfoFactory;
 
-  static ReplyInfoFactory getReplyInfoFactory(BuildContext context) =>
-      _InheritedScope.of(context)._replyInfoFactory;
+  static ReplyInfoFactory getReplyInfoFactory(BuildContext context) => _InheritedScope.of(context)._replyInfoFactory;
 }
 
 class _MessageAnimationScopeState extends State<MessageAnimationScope> {
   late final MessageAnimationDependencies _dependencies = widget.create.call();
   late final MessageAnimationBloc _bloc = _dependencies.bloc;
-  late final ChatMessageFactory _chatMessageFactory =
-      _dependencies.chatMessageFactory;
-  late final ReplyInfoFactory _replyInfoFactory =
-      _dependencies.replyInfoFactory;
-  late final ShortInfoFactory _shortInfoFactory =
-      _dependencies.shortInfoFactory;
+  late final ChatMessageFactory _chatMessageFactory = _dependencies.chatMessageFactory;
+  late final ReplyInfoFactory _replyInfoFactory = _dependencies.replyInfoFactory;
+  late final ShortInfoFactory _shortInfoFactory = _dependencies.shortInfoFactory;
 
   @override
   void initState() {
@@ -83,10 +77,8 @@ class _InheritedScope extends InheritedWidget {
   final _MessageAnimationScopeState _state;
 
   static _MessageAnimationScopeState of(BuildContext context) {
-    final _MessageAnimationScopeState? result = (context
-            .getElementForInheritedWidgetOfExactType<_InheritedScope>()
-            ?.widget as _InheritedScope?)
-        ?._state;
+    final _MessageAnimationScopeState? result =
+        (context.getElementForInheritedWidgetOfExactType<_InheritedScope>()?.widget as _InheritedScope?)?._state;
     assert(result != null, 'No MessageAnimationScope found in context');
     return result!;
   }

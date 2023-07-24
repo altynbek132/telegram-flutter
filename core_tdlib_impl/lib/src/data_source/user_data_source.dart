@@ -35,8 +35,7 @@ class UserDataSource {
         .where((td.UpdateUser event) => event.user.id == id)
         .map((td.UpdateUser event) => event.user);
 
-    return Stream<td.User>.fromFuture(getUser(id))
-        .concatWith(<Stream<td.User>>[updates]);
+    return Stream<td.User>.fromFuture(getUser(id)).concatWith(<Stream<td.User>>[updates]);
   }
 
   void dispose() {
@@ -45,9 +44,8 @@ class UserDataSource {
   }
 
   void _init() {
-    _userUpdatesSubscription = _userUpdatesProvider.userUpdates
-        .map((td.UpdateUser event) => event.user)
-        .listen((td.User user) {
+    _userUpdatesSubscription =
+        _userUpdatesProvider.userUpdates.map((td.UpdateUser event) => event.user).listen((td.User user) {
       _cache[user.id] = Future<td.User>.value(user);
     });
   }

@@ -15,9 +15,7 @@ class MessageContent extends MultiChildRenderObjectWidget {
 }
 
 class _ContentRenderBox extends RenderBox
-    with
-        ContainerRenderObjectMixin<RenderBox, _ParentData>,
-        RenderBoxContainerDefaultsMixin<RenderBox, _ParentData> {
+    with ContainerRenderObjectMixin<RenderBox, _ParentData>, RenderBoxContainerDefaultsMixin<RenderBox, _ParentData> {
   @override
   void setupParentData(RenderBox child) {
     if (child.parentData is! _ParentData) {

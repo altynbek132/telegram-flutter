@@ -17,8 +17,7 @@ class ConnectionStateWidgetFactory {
   ) {
     return StreamBuilder<td.ConnectionState>(
       stream: _connectionStateProvider.connectionStateAsStream,
-      builder:
-          (BuildContext context, AsyncSnapshot<td.ConnectionState> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<td.ConnectionState> snapshot) {
         final td.ConnectionState? state = snapshot.data;
 
         if (state != null) {

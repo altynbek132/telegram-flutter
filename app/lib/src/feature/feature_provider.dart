@@ -36,77 +36,55 @@ class FeatureProvider {
 
   final FeatureFactory _featureFactory;
 
-  late final IAuthFeatureApi authFeatureApi =
-      _featureFactory.createAuthFeatureApi();
+  late final IAuthFeatureApi authFeatureApi = _featureFactory.createAuthFeatureApi();
 
-  late final IMainScreenFeatureApi mainScreenFeatureApi =
-      _featureFactory.createMainScreenFeature();
+  late final IMainScreenFeatureApi mainScreenFeatureApi = _featureFactory.createMainScreenFeature();
 
-  late final IFileFeatureApi fileFeatureApi =
-      _featureFactory.createFileFeatureApi();
+  late final IFileFeatureApi fileFeatureApi = _featureFactory.createFileFeatureApi();
 
-  late final ICountryFeatureApi countryFeatureApi =
-      _featureFactory.createCountryFeatureApi();
+  late final ICountryFeatureApi countryFeatureApi = _featureFactory.createCountryFeatureApi();
 
-  late final IChatFeatureApi chatFeatureApi =
-      _featureFactory.createChatFeatureApi();
+  late final IChatFeatureApi chatFeatureApi = _featureFactory.createChatFeatureApi();
 
-  late final IProfileFeatureApi profileFeatureApi =
-      _featureFactory.createProfileFeatureApi();
+  late final IProfileFeatureApi profileFeatureApi = _featureFactory.createProfileFeatureApi();
 
-  late final ISharedMediaFeatureApi sharedMediaFeatureApi =
-      _featureFactory.createSharedMediaFeatureApi();
+  late final ISharedMediaFeatureApi sharedMediaFeatureApi = _featureFactory.createSharedMediaFeatureApi();
 
   late final INotificationsSettingsFeatureApi notificationsSettingsFeatureApi =
       _featureFactory.createNotificationsSettingsFeatureApi();
 
-  late final IStickersFeatureApi stickersFeatureApi =
-      _featureFactory.createStickersFeatureApi();
+  late final IStickersFeatureApi stickersFeatureApi = _featureFactory.createStickersFeatureApi();
 
-  late final IFoldersFeatureApi foldersFeatureApi =
-      _featureFactory.createFoldersFeatureApi();
+  late final IFoldersFeatureApi foldersFeatureApi = _featureFactory.createFoldersFeatureApi();
 
-  late final ISessionsFeatureApi sessionsFeatureApi =
-      _featureFactory.createSessionsFeatureApi();
+  late final ISessionsFeatureApi sessionsFeatureApi = _featureFactory.createSessionsFeatureApi();
 
-  late final IPrivacySettingsFeatureApi privacySettingsFeatureApi =
-      _featureFactory.createPrivacySettingsFeatureApi();
+  late final IPrivacySettingsFeatureApi privacySettingsFeatureApi = _featureFactory.createPrivacySettingsFeatureApi();
 
-  late final IDataSettingsFeatureApi dataSettingsFeatureApi =
-      _featureFactory.createDataSettingsFeatureApi();
+  late final IDataSettingsFeatureApi dataSettingsFeatureApi = _featureFactory.createDataSettingsFeatureApi();
 
-  late final IChatSettingsFeatureApi chatSettingsFeatureApi =
-      _featureFactory.createChatSettingsFeatureApi();
+  late final IChatSettingsFeatureApi chatSettingsFeatureApi = _featureFactory.createChatSettingsFeatureApi();
 
-  late final ILogoutFeatureApi logoutFeatureApi =
-      _featureFactory.createLogoutFeatureApi();
+  late final ILogoutFeatureApi logoutFeatureApi = _featureFactory.createLogoutFeatureApi();
 
-  late final IWallpapersFeatureApi wallpapersFeatureApi =
-      _featureFactory.createWallpapersFeatureApi();
+  late final IWallpapersFeatureApi wallpapersFeatureApi = _featureFactory.createWallpapersFeatureApi();
 
   late final DevFeature devFeature = _featureFactory.createDevFeature();
 
-  late final ISettingsFeatureApi settingsFeatureApi =
-      _featureFactory.createSettingsFeatureApi();
+  late final ISettingsFeatureApi settingsFeatureApi = _featureFactory.createSettingsFeatureApi();
 
-  late final ICreateNewChatFeatureApi newChatFeatureApi =
-      _featureFactory.createCreateNewChatFeatureApi();
+  late final ICreateNewChatFeatureApi newChatFeatureApi = _featureFactory.createCreateNewChatFeatureApi();
 
-  late final IContactsFeatureApi contactsFeatureApi =
-      _featureFactory.createContactsFeatureApi();
+  late final IContactsFeatureApi contactsFeatureApi = _featureFactory.createContactsFeatureApi();
 
-  late final INewContactFeatureApi newContactFeatureApi =
-      _featureFactory.createNewContactFeatureApi();
+  late final INewContactFeatureApi newContactFeatureApi = _featureFactory.createNewContactFeatureApi();
 
   late final IChatAdministrationFeatureApi chatAdministrationFeatureApi =
       _featureFactory.createChatAdministrationFeatureApi();
 
-  late final IChangeUsernameFeatureApi changeUsernameFeatureApi =
-      _featureFactory.createChangeUsernameFeatureApi();
+  late final IChangeUsernameFeatureApi changeUsernameFeatureApi = _featureFactory.createChangeUsernameFeatureApi();
 
-  late final IChangeBioFeatureApi changeBioFeatureApi =
-      _featureFactory.createChangeBioFeatureApi();
+  late final IChangeBioFeatureApi changeBioFeatureApi = _featureFactory.createChangeBioFeatureApi();
 
-  late final IChatForumFeatureApi chatForumFeatureApi =
-      _featureFactory.createChatForumFeatureApi();
+  late final IChatForumFeatureApi chatForumFeatureApi = _featureFactory.createChatForumFeatureApi();
 }

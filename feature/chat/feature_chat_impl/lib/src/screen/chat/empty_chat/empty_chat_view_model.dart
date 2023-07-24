@@ -29,8 +29,7 @@ class EmptyChatViewModel extends BaseViewModel {
   final IChatRepository _chatRepository;
   final OptionsManager _optionsManager;
 
-  final BehaviorSubject<EmptyState> _stateSubject =
-      BehaviorSubject<EmptyState>();
+  final BehaviorSubject<EmptyState> _stateSubject = BehaviorSubject<EmptyState>();
 
   Stream<EmptyState> get state => _stateSubject;
 
@@ -41,8 +40,7 @@ class EmptyChatViewModel extends BaseViewModel {
   }
 
   void _init() {
-    final CancelableOperation<EmptyState> operation =
-        _chatRepository.getChat(_chatId).toCancelableOperation().map(
+    final CancelableOperation<EmptyState> operation = _chatRepository.getChat(_chatId).toCancelableOperation().map(
       (td.Chat value) {
         // TODO: implement others states: admin of channel, greeting state...
         return value.type.maybeMap<FutureOr<EmptyState>>(

@@ -10,5 +10,4 @@ import 'stickers_set_screen_module.dart';
   builder: IStickersSetScreenComponentBuilder,
 )
 @screenScope
-abstract class IStickersSetScreenComponent
-    implements IStickersSetScreenScopeDelegate {}
+abstract class IStickersSetScreenComponent implements IStickersSetScreenScopeDelegate {}

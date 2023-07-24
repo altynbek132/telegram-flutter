@@ -15,15 +15,13 @@ class SettingsScreenShowcaseFactory {
   final IStringsProvider _stringsProvider;
 
   Widget create(BuildContext context) {
-    final FakeTdFunctionExecutor fakeTdFunctionExecutor =
-        FakeTdFunctionExecutor(
+    final FakeTdFunctionExecutor fakeTdFunctionExecutor = FakeTdFunctionExecutor(
       resultFactory: (td.TdFunction object) {
         throw Exception('todo');
       },
     );
 
-    final SettingsFeatureDependencies dependencies =
-        SettingsFeatureDependencies(
+    final SettingsFeatureDependencies dependencies = SettingsFeatureDependencies(
       router: const _Router(),
       stringsProvider: _stringsProvider,
       userRepository: FakeUserRepository(

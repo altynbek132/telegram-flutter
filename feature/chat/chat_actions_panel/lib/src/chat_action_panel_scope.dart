@@ -22,15 +22,13 @@ class ChatActionPanelScope extends StatefulWidget {
   ) =>
       _InheritedScope.of(context)._chatActionsPanelViewModel;
 
-  static IStringsProvider getStringsProvider(BuildContext context) =>
-      _InheritedScope.of(context)._stringsProvider;
+  static IStringsProvider getStringsProvider(BuildContext context) => _InheritedScope.of(context)._stringsProvider;
 }
 
 class _ChatActionPanelScopeState extends State<ChatActionPanelScope> {
   late final IChatActionsPanelComponent _component = widget.create.call();
 
-  late final ChatActionsPanelViewModel _chatActionsPanelViewModel =
-      _component.chatActionsPanelViewModel;
+  late final ChatActionsPanelViewModel _chatActionsPanelViewModel = _component.chatActionsPanelViewModel;
 
   late final IStringsProvider _stringsProvider = _component.stringsProvider;
 
@@ -52,10 +50,8 @@ class _InheritedScope extends InheritedWidget {
   final _ChatActionPanelScopeState _state;
 
   static _ChatActionPanelScopeState of(BuildContext context) {
-    final _ChatActionPanelScopeState? result = (context
-            .getElementForInheritedWidgetOfExactType<_InheritedScope>()
-            ?.widget as _InheritedScope?)
-        ?._state;
+    final _ChatActionPanelScopeState? result =
+        (context.getElementForInheritedWidgetOfExactType<_InheritedScope>()?.widget as _InheritedScope?)?._state;
     assert(result != null, 'No ChatActionPanelScope found in context');
     return result!;
   }

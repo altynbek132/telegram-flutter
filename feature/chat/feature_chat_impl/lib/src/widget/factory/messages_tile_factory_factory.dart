@@ -41,8 +41,7 @@ class MessagesTileFactoryFactory {
           shortInfoFactory: shortInfoFactory,
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageBasicGroupChatCreateTileModel:
-            MessageBasicGroupChatCreateTileFactoryDelegate(
+        MessageBasicGroupChatCreateTileModel: MessageBasicGroupChatCreateTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
         MessageCallTileModel: MessageCallTileFactoryDelegate(
@@ -50,35 +49,28 @@ class MessagesTileFactoryFactory {
           replyInfoFactory: replyInfoFactory,
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageChatAddMembersTileModel:
-            MessageChatAddMembersTileFactoryDelegate(
+        MessageChatAddMembersTileModel: MessageChatAddMembersTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageChatChangePhotoTileModel:
-            MessageChatChangePhotoTileFactoryDelegate(
+        MessageChatChangePhotoTileModel: MessageChatChangePhotoTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageChatChangeTitleTileModel:
-            MessageChatChangeTitleTileFactoryDelegate(
+        MessageChatChangeTitleTileModel: MessageChatChangeTitleTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageChatDeleteMemberTileModel:
-            MessageChatDeleteMemberTileFactoryDelegate(
+        MessageChatDeleteMemberTileModel: MessageChatDeleteMemberTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageChatDeletePhotoTileModel:
-            MessageChatDeletePhotoTileFactoryDelegate(
+        MessageChatDeletePhotoTileModel: MessageChatDeletePhotoTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageChatJoinByLinkTileModel:
-            MessageChatJoinByLinkTileFactoryDelegate(
+        MessageChatJoinByLinkTileModel: MessageChatJoinByLinkTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
         MessageChatSetTtlTileModel: MessageChatSetTtlTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageChatUpgradeFromTileModel:
-            MessageChatUpgradeFromTileFactoryDelegate(
+        MessageChatUpgradeFromTileModel: MessageChatUpgradeFromTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
         MessageChatUpgradeToTileModel: MessageChatUpgradeToTileFactoryDelegate(
@@ -91,12 +83,10 @@ class MessagesTileFactoryFactory {
           shortInfoFactory: shortInfoFactory,
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageContactRegisteredTileModel:
-            MessageContactRegisteredTileFactoryDelegate(
+        MessageContactRegisteredTileModel: MessageContactRegisteredTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageCustomServiceActionTileModel:
-            MessageCustomServiceActionTileFactoryDelegate(
+        MessageCustomServiceActionTileModel: MessageCustomServiceActionTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
         MessageDiceTileModel: MessageDiceTileFactoryDelegate(
@@ -117,8 +107,7 @@ class MessagesTileFactoryFactory {
         MessageGameTileModel: MessageGameTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageVideoChatStartedTileModel:
-            MessageVideoChatStartedTileFactoryDelegate(
+        MessageVideoChatStartedTileModel: MessageVideoChatStartedTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
         MessageInvoiceTileModel: MessageInvoiceTileFactoryDelegate(
@@ -127,20 +116,16 @@ class MessagesTileFactoryFactory {
         MessageLocationTileModel: MessageLocationTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessagePassportDataReceivedTileModel:
-            MessagePassportDataReceivedTileFactoryDelegate(
+        MessagePassportDataReceivedTileModel: MessagePassportDataReceivedTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessagePassportDataSentTileModel:
-            MessagePassportDataSentTileFactoryDelegate(
+        MessagePassportDataSentTileModel: MessagePassportDataSentTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessagePaymentSuccessfulBotTileModel:
-            MessagePaymentSuccessfulBotTileFactoryDelegate(
+        MessagePaymentSuccessfulBotTileModel: MessagePaymentSuccessfulBotTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessagePaymentSuccessfulTileModel:
-            MessagePaymentSuccessfulTileFactoryDelegate(
+        MessagePaymentSuccessfulTileModel: MessagePaymentSuccessfulTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
         MessagePhotoTileModel: MessagePhotoTileFactoryDelegate(
@@ -156,20 +141,17 @@ class MessagesTileFactoryFactory {
         MessagePollTileModel: MessagePollTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageProximityAlertTriggeredTileModel:
-            MessageProximityAlertTriggeredTileFactoryDelegate(
+        MessageProximityAlertTriggeredTileModel: MessageProximityAlertTriggeredTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageScreenshotTakenTileModel:
-            MessageScreenshotTakenTileFactoryDelegate(
+        MessageScreenshotTakenTileModel: MessageScreenshotTakenTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
         MessageStickerTileModel: MessageStickerTileFactoryDelegate(
           blocProvider: messageBlocProvider.messageStickerBlocProvider,
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageSupergroupChatCreateTileModel:
-            MessageSupergroupChatCreateTileFactoryDelegate(
+        MessageSupergroupChatCreateTileModel: MessageSupergroupChatCreateTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
         MessageTextTileModel: MessageTextTileFactoryDelegate(
@@ -197,15 +179,13 @@ class MessagesTileFactoryFactory {
         MessageChatSetThemeTileModel: MessageChatSetThemeTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageVoiceChatStartedTileModel:
-            MessageVoiceChatStartedTileFactoryDelegate(
+        MessageVoiceChatStartedTileModel: MessageVoiceChatStartedTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
         MessageVoiceNoteTileModel: MessageVoiceNoteTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageWebsiteConnectedTileModel:
-            MessageWebsiteConnectedTileFactoryDelegate(
+        MessageWebsiteConnectedTileModel: MessageWebsiteConnectedTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
         UnknownMessageTileModel: UnknownMessageTileFactoryDelegate(
@@ -216,47 +196,37 @@ class MessagesTileFactoryFactory {
           customEmojiWidgetFactory: customEmojiWidgetFactory,
           shortInfoFactory: shortInfoFactory,
         ),
-        MessageInviteVideoChatParticipantsTileModel:
-            MessageInviteVideoChatParticipantsTileFactoryDelegate(
+        MessageInviteVideoChatParticipantsTileModel: MessageInviteVideoChatParticipantsTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageVideoChatScheduledTileModel:
-            MessageVideoChatScheduledTileFactoryDelegate(
+        MessageVideoChatScheduledTileModel: MessageVideoChatScheduledTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageVideoChatEndedTileModel:
-            MessageVideoChatEndedTileFactoryDelegate(
+        MessageVideoChatEndedTileModel: MessageVideoChatEndedTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageChatJoinByRequestTileModel:
-            MessageChatJoinByRequestTileFactoryDelegate(
+        MessageChatJoinByRequestTileModel: MessageChatJoinByRequestTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageWebAppDataSentTileModel:
-            MessageWebAppDataSentTileFactoryDelegate(
+        MessageWebAppDataSentTileModel: MessageWebAppDataSentTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageWebAppDataReceivedTileModel:
-            MessageWebAppDataReceivedTileFactoryDelegate(
+        MessageWebAppDataReceivedTileModel: MessageWebAppDataReceivedTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
         MessageGiftedPremiumTileModel: MessageGiftedPremiumTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageForumTopicCreatedTileModel:
-            MessageForumTopicCreatedTileFactoryDelegate(
+        MessageForumTopicCreatedTileModel: MessageForumTopicCreatedTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageForumTopicEditedTileModel:
-            MessageForumTopicEditedTileFactoryDelegate(
+        MessageForumTopicEditedTileModel: MessageForumTopicEditedTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageForumTopicClosedTileModel:
-            MessageForumTopicClosedTileFactoryDelegate(
+        MessageForumTopicClosedTileModel: MessageForumTopicClosedTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         ),
-        MessageForumTopicIsHiddenTileModel:
-            MessageForumTopicIsHiddenTileFactoryDelegate(
+        MessageForumTopicIsHiddenTileModel: MessageForumTopicIsHiddenTileFactoryDelegate(
           chatMessageFactory: chatMessageFactory,
         )
       },

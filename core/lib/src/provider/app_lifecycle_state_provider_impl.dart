@@ -3,15 +3,13 @@ import 'package:rxdart/rxdart.dart';
 
 import 'app_lifecycle_state_provider.dart';
 
-class AppLifecycleStateProviderImpl extends WidgetsBindingObserver
-    implements IAppLifecycleStateProvider {
+class AppLifecycleStateProviderImpl extends WidgetsBindingObserver implements IAppLifecycleStateProvider {
   AppLifecycleStateProviderImpl() {
     WidgetsBinding.instance.addObserver(this);
   }
 
   // ignore: close_sinks
-  final PublishSubject<LifecycleState> _onStateChangeSubject =
-      PublishSubject<LifecycleState>();
+  final PublishSubject<LifecycleState> _onStateChangeSubject = PublishSubject<LifecycleState>();
 
   LifecycleState _currentState = LifecycleState.inactive;
 

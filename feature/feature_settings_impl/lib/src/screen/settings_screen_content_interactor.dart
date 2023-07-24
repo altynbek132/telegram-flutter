@@ -45,9 +45,7 @@ class SettingsScreenContentInteractor with SubscriptionMixin {
 
     return ContentState.data(
       appBarState: AppBarState(
-        name: <String>[info.user.firstName, info.user.lastName]
-            .where((String s) => s.isNotEmpty)
-            .join(' '),
+        name: <String>[info.user.firstName, info.user.lastName].where((String s) => s.isNotEmpty).join(' '),
         onlineStatus: info.statusHumanString,
         avatar: Avatar.simple(
           abbreviation: getAvatarAbbreviation(
@@ -68,8 +66,7 @@ class SettingsScreenContentInteractor with SubscriptionMixin {
   }
 
   Stream<UserInfo> _userInfoStream() =>
-      Stream<int>.fromFuture(_optionsManager.getMyId())
-          .flatMap(_userInfoResolver.resolveAsStream);
+      Stream<int>.fromFuture(_optionsManager.getMyId()).flatMap(_userInfoResolver.resolveAsStream);
 
   @override
   void dispose() {

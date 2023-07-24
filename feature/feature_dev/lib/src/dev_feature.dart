@@ -24,8 +24,7 @@ class DevFeature {
 
   final DevDependencies _dependencies;
 
-  late final IDevComponent _devComponent =
-      JuggerDevComponentBuilder().devDependencies(_dependencies).build();
+  late final IDevComponent _devComponent = JuggerDevComponentBuilder().devDependencies(_dependencies).build();
 
   void init() {
     _devComponent.getEventsRepository();
@@ -36,8 +35,7 @@ class DevFeature {
         child: const DevRootPage(),
       );
 
-  late final EventsListScreenFactory eventsListScreenFactory =
-      _devComponent.getEventsListScreenFactory();
+  late final EventsListScreenFactory eventsListScreenFactory = _devComponent.getEventsListScreenFactory();
 
   void dispose() {
     _devComponent.getEventsRepository().dispose();

@@ -36,8 +36,7 @@ class _Content extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamListener<PanelState>(
-      stream: ChatActionPanelScope.getChatActionsPanelViewModel(context)
-          .actionsPanelState,
+      stream: ChatActionPanelScope.getChatActionsPanelViewModel(context).actionsPanelState,
       builder: (BuildContext context, PanelState state) {
         return state.map(
           join: (JoinState value) {

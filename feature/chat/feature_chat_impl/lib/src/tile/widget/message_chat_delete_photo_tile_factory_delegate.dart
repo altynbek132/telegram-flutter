@@ -3,8 +3,7 @@ import 'package:feature_chat_impl/src/widget/chat_message/chat_message_factory.d
 import 'package:flutter/material.dart';
 import 'package:tile/tile.dart';
 
-class MessageChatDeletePhotoTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageChatDeletePhotoTileModel> {
+class MessageChatDeletePhotoTileFactoryDelegate implements ITileFactoryDelegate<MessageChatDeletePhotoTileModel> {
   MessageChatDeletePhotoTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
   }) : _chatMessageFactory = chatMessageFactory;

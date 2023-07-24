@@ -21,8 +21,7 @@ class EventsListWidgetModel {
 
   int _totalEventsCount = 0;
 
-  Stream<List<td.TdObject>> get events =>
-      _vieModel.events.doOnData((List<td.TdObject> events) {
+  Stream<List<td.TdObject>> get events => _vieModel.events.doOnData((List<td.TdObject> events) {
         _totalEventsCount = events.length;
         if (scrollToTop.value) {
           WidgetsBinding.instance.addPostFrameCallback((_) {

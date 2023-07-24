@@ -42,8 +42,7 @@ class _Background extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.lightGreen,
               image: DecorationImage(
-                colorFilter:
-                    const ColorFilter.mode(Colors.black26, BlendMode.srcIn),
+                colorFilter: const ColorFilter.mode(Colors.black26, BlendMode.srcIn),
                 repeat: ImageRepeat.repeat,
                 image: FileImage(value.file),
               ),

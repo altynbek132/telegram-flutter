@@ -41,8 +41,7 @@ class ChatMessageUpdatesHandler {
     _actualMessages = actualMessages;
     _updatedMessages = onUpdated;
 
-    _updatesSubscription =
-        _chatMessagesUpdatesProvider.chatMessageUpdates.listen(_handleUpdate);
+    _updatesSubscription = _chatMessagesUpdatesProvider.chatMessageUpdates.listen(_handleUpdate);
   }
 
   void dispose() {
@@ -70,10 +69,8 @@ class ChatMessageUpdatesHandler {
               List<ITileModel> actualMessages,
             ) async {
               debugPrint(value.toString());
-              final ITileModel newTileModel =
-                  await _messageTileMapper.mapToTileModel(value.message);
-              updatedMessagesCallback
-                  .call(actualMessages..insert(0, newTileModel));
+              final ITileModel newTileModel = await _messageTileMapper.mapToTileModel(value.message);
+              updatedMessagesCallback.call(actualMessages..insert(0, newTileModel));
             });
           });
         }
@@ -90,9 +87,7 @@ class ChatMessageUpdatesHandler {
           ) async {
             final List<ITileModel> newList = actualMessages
               ..removeWhere(
-                (ITileModel element) =>
-                    element is BaseMessageTileModel &&
-                    value.messageIds.contains(element.id),
+                (ITileModel element) => element is BaseMessageTileModel && value.messageIds.contains(element.id),
               );
             updatedMessagesCallback.call(newList);
           });

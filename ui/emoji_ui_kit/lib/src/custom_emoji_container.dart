@@ -78,8 +78,7 @@ class _BodyRenderBox extends RenderBox
     return defaultHitTestChildren(result, position: position);
   }
 
-  _EmojiParentData getParentData(RenderBox box) =>
-      box.parentData as _EmojiParentData;
+  _EmojiParentData getParentData(RenderBox box) => box.parentData as _EmojiParentData;
 }
 
 class _EmojiParentData extends ContainerBoxParentData<RenderBox> {}

@@ -17,9 +17,7 @@ class GlobalSearchScreenFactory implements IGlobalSearchScreenFactory {
   Widget create(GlobalSearchScreenController controller) {
     return GlobalSearchScreenScope(
       child: GlobalSearchPage(controller: controller),
-      create: () => JuggerGlobalSearchScreenComponentBuilder()
-          .dependencies(_dependencies)
-          .build(),
+      create: () => JuggerGlobalSearchScreenComponentBuilder().dependencies(_dependencies).build(),
     );
   }
 }

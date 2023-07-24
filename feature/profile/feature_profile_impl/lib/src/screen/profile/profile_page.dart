@@ -15,8 +15,7 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ProfileViewModel viewModel =
-        ProfileScreenScope.getProfileViewModel(context);
+    final ProfileViewModel viewModel = ProfileScreenScope.getProfileViewModel(context);
 
     return StreamListener<ProfileState>(
       stream: viewModel.state,
@@ -39,8 +38,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ProfileViewModel viewModel =
-        ProfileScreenScope.getProfileViewModel(context);
+    final ProfileViewModel viewModel = ProfileScreenScope.getProfileViewModel(context);
 
     return state.map(
       info: (Info value) {
@@ -129,11 +127,9 @@ class _Content extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ProfileViewModel viewModel =
-        ProfileScreenScope.getProfileViewModel(context);
+    final ProfileViewModel viewModel = ProfileScreenScope.getProfileViewModel(context);
 
-    final IStringsProvider stringsProvider =
-        ProfileScreenScope.getStringProvider(context);
+    final IStringsProvider stringsProvider = ProfileScreenScope.getStringProvider(context);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -151,9 +147,7 @@ class _Content extends StatelessWidget {
           onTap: viewModel.onNotificationTap,
           value: !state.content.isMuted,
           title: stringsProvider.notifications,
-          subtitle: state.content.isMuted
-              ? stringsProvider.notificationsOff
-              : stringsProvider.notificationsOn,
+          subtitle: state.content.isMuted ? stringsProvider.notificationsOff : stringsProvider.notificationsOn,
           onChanged: (bool v) {
             viewModel.onNotificationToggleTap();
           },
@@ -163,8 +157,7 @@ class _Content extends StatelessWidget {
           Expanded(
             child: ListView.separated(
               itemBuilder: (BuildContext context, int index) {
-                final SharedContentInfo info =
-                    state.content.sharedContent[index];
+                final SharedContentInfo info = state.content.sharedContent[index];
                 return tg.TextCell.textValue(
                   onTap: () {
                     viewModel.onMessagesTap(info.type);
@@ -195,8 +188,7 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final IChatHeaderInfoFactory chatHeaderInfoFactory =
-        ProfileScreenScope.getChatHeaderInfoFactory(context);
+    final IChatHeaderInfoFactory chatHeaderInfoFactory = ProfileScreenScope.getChatHeaderInfoFactory(context);
     return chatHeaderInfoFactory.create(
       context: context,
       info: info,

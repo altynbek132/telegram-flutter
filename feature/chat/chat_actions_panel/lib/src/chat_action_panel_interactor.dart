@@ -35,8 +35,7 @@ class ChatActionPanelInteractor {
   final IChatUpdatesProvider _chatUpdatesProvider;
   StreamSubscription<PanelState>? _subscription;
 
-  final BehaviorSubject<PanelState> _stateSubject =
-      BehaviorSubject<PanelState>.seeded(const PanelState.empty());
+  final BehaviorSubject<PanelState> _stateSubject = BehaviorSubject<PanelState>.seeded(const PanelState.empty());
 
   Stream<PanelState> get panelStateStream => _stateSubject;
 
@@ -47,8 +46,7 @@ class ChatActionPanelInteractor {
 
   void _beginListen() {
     final Stream<PanelState> stateStream =
-        Stream<td.Chat>.fromFuture(_chatRepository.getChat(_chatId))
-            .flatMap((td.Chat chat) {
+        Stream<td.Chat>.fromFuture(_chatRepository.getChat(_chatId)).flatMap((td.Chat chat) {
       return chat.type.map(
         private: (td.ChatTypePrivate value) {
           return _getPrivateChatState(chat);
@@ -112,23 +110,17 @@ class ChatActionPanelInteractor {
   }
 
   Stream<PanelState> _supergroupState(td.Chat chat, td.Supergroup group) {
-    final Stream<td.Supergroup> groupUpdates =
-        _getSuperGroupUpdatesStream(group.id).startWith(group);
+    final Stream<td.Supergroup> groupUpdates = _getSuperGroupUpdatesStream(group.id).startWith(group);
 
     final Stream<td.ChatNotificationSettings> notificationSettingsUpdates =
-        _getNotificationSettingsUpdatesStream(chat.id)
-            .startWith(chat.notificationSettings);
+        _getNotificationSettingsUpdatesStream(chat.id).startWith(chat.notificationSettings);
 
     final Stream<td.ChatPermissions> chatPermissionsUpdates =
         _getChatPermissionsUpdatesStream(chat.id).startWith(chat.permissions);
 
-    final Stream<
-        Tuple3<td.Supergroup, td.ChatNotificationSettings,
-            td.ChatPermissions>> groupInfoUpdates = Rx.combineLatest3<
-        td.Supergroup,
-        td.ChatNotificationSettings,
-        td.ChatPermissions,
-        Tuple3<td.Supergroup, td.ChatNotificationSettings, td.ChatPermissions>>(
+    final Stream<Tuple3<td.Supergroup, td.ChatNotificationSettings, td.ChatPermissions>> groupInfoUpdates =
+        Rx.combineLatest3<td.Supergroup, td.ChatNotificationSettings, td.ChatPermissions,
+            Tuple3<td.Supergroup, td.ChatNotificationSettings, td.ChatPermissions>>(
       groupUpdates,
       notificationSettingsUpdates,
       chatPermissionsUpdates,
@@ -137,8 +129,7 @@ class ChatActionPanelInteractor {
         td.ChatNotificationSettings notificationSettings,
         td.ChatPermissions chatPermissions,
       ) {
-        return Tuple3<td.Supergroup, td.ChatNotificationSettings,
-            td.ChatPermissions>(
+        return Tuple3<td.Supergroup, td.ChatNotificationSettings, td.ChatPermissions>(
           group,
           notificationSettings,
           chatPermissions,
@@ -148,8 +139,7 @@ class ChatActionPanelInteractor {
 
     return groupInfoUpdates.flatMap(
       (
-        Tuple3<td.Supergroup, td.ChatNotificationSettings, td.ChatPermissions>
-            data,
+        Tuple3<td.Supergroup, td.ChatNotificationSettings, td.ChatPermissions> data,
       ) {
         final td.Supergroup group = data.item1;
         final td.ChatNotificationSettings notificationSettings = data.item2;
@@ -165,23 +155,17 @@ class ChatActionPanelInteractor {
   }
 
   Stream<PanelState> _basicGroupState(td.Chat chat, td.BasicGroup group) {
-    final Stream<td.BasicGroup> groupUpdates =
-        _getBasicGroupUpdatesStream(group.id).startWith(group);
+    final Stream<td.BasicGroup> groupUpdates = _getBasicGroupUpdatesStream(group.id).startWith(group);
 
     final Stream<td.ChatNotificationSettings> notificationSettingsUpdates =
-        _getNotificationSettingsUpdatesStream(chat.id)
-            .startWith(chat.notificationSettings);
+        _getNotificationSettingsUpdatesStream(chat.id).startWith(chat.notificationSettings);
 
     final Stream<td.ChatPermissions> chatPermissionsUpdates =
         _getChatPermissionsUpdatesStream(chat.id).startWith(chat.permissions);
 
-    final Stream<
-        Tuple3<td.BasicGroup, td.ChatNotificationSettings,
-            td.ChatPermissions>> groupInfoUpdates = Rx.combineLatest3<
-        td.BasicGroup,
-        td.ChatNotificationSettings,
-        td.ChatPermissions,
-        Tuple3<td.BasicGroup, td.ChatNotificationSettings, td.ChatPermissions>>(
+    final Stream<Tuple3<td.BasicGroup, td.ChatNotificationSettings, td.ChatPermissions>> groupInfoUpdates =
+        Rx.combineLatest3<td.BasicGroup, td.ChatNotificationSettings, td.ChatPermissions,
+            Tuple3<td.BasicGroup, td.ChatNotificationSettings, td.ChatPermissions>>(
       groupUpdates,
       notificationSettingsUpdates,
       chatPermissionsUpdates,
@@ -190,8 +174,7 @@ class ChatActionPanelInteractor {
         td.ChatNotificationSettings notificationSettings,
         td.ChatPermissions chatPermissions,
       ) {
-        return Tuple3<td.BasicGroup, td.ChatNotificationSettings,
-            td.ChatPermissions>(
+        return Tuple3<td.BasicGroup, td.ChatNotificationSettings, td.ChatPermissions>(
           group,
           notificationSettings,
           chatPermissions,
@@ -201,8 +184,7 @@ class ChatActionPanelInteractor {
 
     return groupInfoUpdates.flatMap(
       (
-        Tuple3<td.BasicGroup, td.ChatNotificationSettings, td.ChatPermissions>
-            data,
+        Tuple3<td.BasicGroup, td.ChatNotificationSettings, td.ChatPermissions> data,
       ) {
         final td.BasicGroup group = data.item1;
         final td.ChatNotificationSettings notificationSettings = data.item2;
@@ -223,12 +205,10 @@ class ChatActionPanelInteractor {
       _chatUpdatesProvider.chatUpdates
           .whereType<td.UpdateChatNotificationSettings>()
           .where(
-            (td.UpdateChatNotificationSettings update) =>
-                update.chatId == chatId,
+            (td.UpdateChatNotificationSettings update) => update.chatId == chatId,
           )
           .map(
-            (td.UpdateChatNotificationSettings update) =>
-                update.notificationSettings,
+            (td.UpdateChatNotificationSettings update) => update.notificationSettings,
           );
 
   Stream<td.ChatPermissions> _getChatPermissionsUpdatesStream(
@@ -239,19 +219,15 @@ class ChatActionPanelInteractor {
           .where((td.UpdateChatPermissions update) => update.chatId == chatId)
           .map((td.UpdateChatPermissions update) => update.permissions);
 
-  Stream<td.Supergroup> _getSuperGroupUpdatesStream(int supergroupId) =>
-      _superGroupUpdatesProvider.superGroupUpdates
-          .where(
-            (td.UpdateSupergroup update) =>
-                update.supergroup.id == supergroupId,
-          )
-          .map((td.UpdateSupergroup update) => update.supergroup);
+  Stream<td.Supergroup> _getSuperGroupUpdatesStream(int supergroupId) => _superGroupUpdatesProvider.superGroupUpdates
+      .where(
+        (td.UpdateSupergroup update) => update.supergroup.id == supergroupId,
+      )
+      .map((td.UpdateSupergroup update) => update.supergroup);
 
-  Stream<td.BasicGroup> _getBasicGroupUpdatesStream(int basicGroupId) =>
-      _basicGroupUpdatesProvider.basicGroupUpdates
-          .where(
-            (td.UpdateBasicGroup update) =>
-                update.basicGroup.id == basicGroupId,
-          )
-          .map((td.UpdateBasicGroup update) => update.basicGroup);
+  Stream<td.BasicGroup> _getBasicGroupUpdatesStream(int basicGroupId) => _basicGroupUpdatesProvider.basicGroupUpdates
+      .where(
+        (td.UpdateBasicGroup update) => update.basicGroup.id == basicGroupId,
+      )
+      .map((td.UpdateBasicGroup update) => update.basicGroup);
 }

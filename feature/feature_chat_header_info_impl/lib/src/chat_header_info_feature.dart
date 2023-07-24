@@ -16,8 +16,7 @@ class ChatHeaderInfoFeature implements IChatHeaderInfoFeatureApi {
   final ChatHeaderInfoFeatureDependencies _dependencies;
 
   @override
-  IChatHeaderInfoInteractor getChatHeaderInfoInteractor(int chatId) =>
-      ChatHeaderInfoInteractor(
+  IChatHeaderInfoInteractor getChatHeaderInfoInteractor(int chatId) => ChatHeaderInfoInteractor(
         chatId: chatId,
         basicGroupRepository: _dependencies.basicGroupRepository,
         superGroupRepository: _dependencies.superGroupRepository,

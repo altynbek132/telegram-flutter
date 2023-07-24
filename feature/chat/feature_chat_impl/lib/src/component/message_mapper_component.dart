@@ -37,8 +37,7 @@ class MessageMapperComponent {
   final MessageMapperDependencies _dependencies;
 
   MessageTileMapper create() {
-    final MessageReplyInfoMapper messageReplyInfoMapper =
-        MessageReplyInfoMapper(
+    final MessageReplyInfoMapper messageReplyInfoMapper = MessageReplyInfoMapper(
       messagePreviewResolver: _dependencies.messagePreviewResolver,
       chatRepository: _dependencies.chatRepository,
       userRepository: _dependencies.userRepository,

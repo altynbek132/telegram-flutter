@@ -7,6 +7,5 @@ class FakeMessagePreviewResolver implements IMessagePreviewResolver {
   const FakeMessagePreviewResolver();
 
   @override
-  Future<MessagePreviewData> resolve(td.Message message) =>
-      Completer<MessagePreviewData>().future;
+  Future<MessagePreviewData> resolve(td.Message message) => Completer<MessagePreviewData>().future;
 }

@@ -42,8 +42,7 @@ class _PopupMenuAreaState<T> extends State<PopupMenuArea<T>> {
     List<PopupMenuEntry<T>> items,
   ) {
     final PopupMenuThemeData popupMenuTheme = PopupMenuTheme.of(context);
-    final RenderBox overlay =
-        Navigator.of(context).overlay!.context.findRenderObject()! as RenderBox;
+    final RenderBox overlay = Navigator.of(context).overlay!.context.findRenderObject()! as RenderBox;
     final RelativeRect position = RelativeRect.fromLTRB(
       tapPosition.dx,
       tapPosition.dy,

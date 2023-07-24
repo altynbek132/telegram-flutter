@@ -14,8 +14,7 @@ class MessageSticker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final MessageStickerBloc bloc = MessageStickerScope.getBloc(context);
-    final ChatMessageFactory chatMessageFactory =
-        MessageStickerScope.getChatMessageFactory(context);
+    final ChatMessageFactory chatMessageFactory = MessageStickerScope.getChatMessageFactory(context);
 
     return chatMessageFactory.createFromBlocks(
       context: context,

@@ -2,8 +2,7 @@ import 'package:feature_global_search_impl/src/screen/global_search/tile/model/m
 import 'package:flutter/material.dart';
 import 'package:tile/tile.dart';
 
-class VoiceResultTileFactoryDelegate
-    implements ITileFactoryDelegate<VoiceResultTileModel> {
+class VoiceResultTileFactoryDelegate implements ITileFactoryDelegate<VoiceResultTileModel> {
   const VoiceResultTileFactoryDelegate();
 
   @override

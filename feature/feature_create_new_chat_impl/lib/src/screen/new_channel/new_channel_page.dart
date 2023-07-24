@@ -23,11 +23,9 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final IStringsProvider stringsProvider =
-        NewChannelScreenScope.getStringsProvider(context);
+    final IStringsProvider stringsProvider = NewChannelScreenScope.getStringsProvider(context);
 
-    final NewChannelWidgetModel newChannelWidgetModel =
-        NewChannelScreenScope.getNewChannelWidgetModel(context);
+    final NewChannelWidgetModel newChannelWidgetModel = NewChannelScreenScope.getNewChannelWidgetModel(context);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,11 +71,9 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final IStringsProvider stringsProvider =
-        NewChannelScreenScope.getStringsProvider(context);
+    final IStringsProvider stringsProvider = NewChannelScreenScope.getStringsProvider(context);
 
-    final NewChannelWidgetModel newChannelController =
-        NewChannelScreenScope.getNewChannelWidgetModel(context);
+    final NewChannelWidgetModel newChannelController = NewChannelScreenScope.getNewChannelWidgetModel(context);
 
     return AppBar(
       title: Text(stringsProvider.newChannel),

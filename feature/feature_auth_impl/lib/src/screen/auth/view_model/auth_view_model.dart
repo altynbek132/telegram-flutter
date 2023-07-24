@@ -33,10 +33,8 @@ class AuthViewModel extends BaseViewModel {
   final IAuthFeatureRouter _router;
   final ICountryRepository _countryRepository;
   final IAuthenticationManager _authenticationManager;
-  final PublishSubject<AuthAction> _actionSubject =
-      PublishSubject<AuthAction>();
-  late final BehaviorSubject<AuthState> _stateSubject =
-      BehaviorSubject<AuthState>.seeded(
+  final PublishSubject<AuthAction> _actionSubject = PublishSubject<AuthAction>();
+  late final BehaviorSubject<AuthState> _stateSubject = BehaviorSubject<AuthState>.seeded(
     AuthState.phoneNumber(
       title: _stringsProvider.yourPhone,
       countryTitle: _stringsProvider.chooseCountry,

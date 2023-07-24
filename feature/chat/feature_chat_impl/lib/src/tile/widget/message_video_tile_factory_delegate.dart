@@ -5,8 +5,7 @@ import 'package:feature_chat_impl/src/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:tile/tile.dart';
 
-class MessageVideoTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageVideoTileModel> {
+class MessageVideoTileFactoryDelegate implements ITileFactoryDelegate<MessageVideoTileModel> {
   MessageVideoTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
     required MessageComponentResolver messageComponentResolver,

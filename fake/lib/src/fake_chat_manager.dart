@@ -5,8 +5,7 @@ import 'package:chat_manager_api/chat_manager_api.dart';
 class FakeChatManager implements IChatManager {
   const FakeChatManager({this.createChannelFunction});
 
-  final Future<int> Function(String name, String description)?
-      createChannelFunction;
+  final Future<int> Function(String name, String description)? createChannelFunction;
 
   @override
   Future<void> delete(int chatId) => Completer<void>().future;

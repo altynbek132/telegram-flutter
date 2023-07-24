@@ -17,10 +17,7 @@ class ChatsListScreenFactory implements IChatsListScreenFactory {
   Widget create(ChatListType type) {
     return ChatsListScreenScope(
       child: const ChatsListPage(),
-      create: () => JuggerChatsListScreenComponentBuilder()
-          .dependencies(_dependencies)
-          .chatListType(type)
-          .build(),
+      create: () => JuggerChatsListScreenComponentBuilder().dependencies(_dependencies).chatListType(type).build(),
     );
   }
 }

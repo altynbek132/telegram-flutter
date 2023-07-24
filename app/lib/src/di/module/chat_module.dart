@@ -26,6 +26,5 @@ abstract class ChatModuleModule {
       );
 
   @j.provides
-  static PatternBackgroundFileResolver providePatternBackgroundFileResolver() =>
-      const PatternBackgroundFileResolver();
+  static PatternBackgroundFileResolver providePatternBackgroundFileResolver() => const PatternBackgroundFileResolver();
 }

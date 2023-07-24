@@ -15,8 +15,7 @@ class UnreadMessagesCount extends StatefulWidget {
   State<UnreadMessagesCount> createState() => _UnreadMessagesCountState();
 }
 
-class _UnreadMessagesCountState extends State<UnreadMessagesCount>
-    with TickerProviderStateMixin {
+class _UnreadMessagesCountState extends State<UnreadMessagesCount> with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 
@@ -30,13 +29,11 @@ class _UnreadMessagesCountState extends State<UnreadMessagesCount>
     _animation = TweenSequence<double>(
       <TweenSequenceItem<double>>[
         TweenSequenceItem<double>(
-          tween: Tween<double>(begin: 1.0, end: 1.1)
-              .chain(CurveTween(curve: Curves.bounceInOut)),
+          tween: Tween<double>(begin: 1.0, end: 1.1).chain(CurveTween(curve: Curves.bounceInOut)),
           weight: 50.0,
         ),
         TweenSequenceItem<double>(
-          tween: Tween<double>(begin: 1.1, end: 1.0)
-              .chain(CurveTween(curve: Curves.bounceInOut)),
+          tween: Tween<double>(begin: 1.1, end: 1.0).chain(CurveTween(curve: Curves.bounceInOut)),
           weight: 50.0,
         ),
       ],
@@ -74,9 +71,7 @@ class _UnreadMessagesCountState extends State<UnreadMessagesCount>
           '${widget.count}',
           style: const TextStyle(color: Colors.white),
         ),
-        badgeColor: widget.isMuted
-            ? Colors.blueGrey
-            : Theme.of(context).colorScheme.secondary,
+        badgeColor: widget.isMuted ? Colors.blueGrey : Theme.of(context).colorScheme.secondary,
       ),
     );
   }

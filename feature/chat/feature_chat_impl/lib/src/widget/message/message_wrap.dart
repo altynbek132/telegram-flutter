@@ -25,9 +25,7 @@ class MessageWrap extends MultiChildRenderObjectWidget {
 }
 
 class _BodyRenderBox extends RenderBox
-    with
-        ContainerRenderObjectMixin<RenderBox, _ParentData>,
-        RenderBoxContainerDefaultsMixin<RenderBox, _ParentData> {
+    with ContainerRenderObjectMixin<RenderBox, _ParentData>, RenderBoxContainerDefaultsMixin<RenderBox, _ParentData> {
   _BodyRenderBox({
     required WrapGravity wrapGravity,
   }) : _wrapGravity = wrapGravity;

@@ -16,8 +16,7 @@ class SettingsPage extends StatefulWidget {
   SettingsPageState createState() => SettingsPageState();
 }
 
-class SettingsPageState extends State<SettingsPage>
-    with TickerProviderStateMixin {
+class SettingsPageState extends State<SettingsPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final SettingsScreenWidgetModel settingsScreenWidgetModel =
@@ -38,8 +37,7 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final SettingViewModel settingsScreenViewModel =
-        SettingsScreenScope.getSettingViewModel(context);
+    final SettingViewModel settingsScreenViewModel = SettingsScreenScope.getSettingViewModel(context);
 
     return Stack(
       children: <Widget>[
@@ -100,14 +98,12 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
           return tg.SearchAppBar(
             focusNode: settingsScreenWidgetModel.searchQueryFocusNode,
             isOverrideLeading: false,
-            searchQueryController:
-                settingsScreenWidgetModel.searchQueryController,
+            searchQueryController: settingsScreenWidgetModel.searchQueryController,
             animationController: animationController,
             onLeadingTap: settingsScreenWidgetModel.onLeadingTap,
           );
         } else {
-          final SettingViewModel settingsScreenViewModel =
-              SettingsScreenScope.getSettingViewModel(context);
+          final SettingViewModel settingsScreenViewModel = SettingsScreenScope.getSettingViewModel(context);
 
           return StreamListener<ContentState>(
             stream: settingsScreenViewModel.stateStream,
@@ -251,11 +247,9 @@ class _SettingsBodyContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color accentColor = Theme.of(context).colorScheme.secondary;
 
-    final SettingViewModel viewModel =
-        SettingsScreenScope.getSettingViewModel(context);
+    final SettingViewModel viewModel = SettingsScreenScope.getSettingViewModel(context);
 
-    final IStringsProvider stringsProvider =
-        SettingsScreenScope.getStringsProvider(context);
+    final IStringsProvider stringsProvider = SettingsScreenScope.getStringsProvider(context);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

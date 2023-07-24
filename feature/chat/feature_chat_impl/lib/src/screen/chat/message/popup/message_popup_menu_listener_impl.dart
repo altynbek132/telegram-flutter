@@ -26,6 +26,5 @@ class MessagePopupMenuListenerImpl implements IMessagePopupMenuListener {
   }
 
   @override
-  void onItemSelected(int messageId, ItemAction item) =>
-      _actionHandler.handleAction(messageId, item);
+  void onItemSelected(int messageId, ItemAction item) => _actionHandler.handleAction(messageId, item);
 }

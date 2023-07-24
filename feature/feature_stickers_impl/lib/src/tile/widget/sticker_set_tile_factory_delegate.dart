@@ -4,10 +4,8 @@ import 'package:tile/tile.dart';
 
 typedef StickerSetTapCallback = void Function(BuildContext context, int setId);
 
-class StickerSetTileFactoryDelegate
-    implements ITileFactoryDelegate<StickerSetTileModel> {
-  StickerSetTileFactoryDelegate({required StickerSetTapCallback tap})
-      : _tap = tap;
+class StickerSetTileFactoryDelegate implements ITileFactoryDelegate<StickerSetTileModel> {
+  StickerSetTileFactoryDelegate({required StickerSetTapCallback tap}) : _tap = tap;
 
   final StickerSetTapCallback _tap;
 

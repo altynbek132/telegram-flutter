@@ -32,12 +32,9 @@ class ShortInfoFactory {
   ) {
     final TgThemeData theme = TgTheme.of(context);
     final ChatThemeData chatThemeData = theme.themeOf();
-    final TextStyle caption =
-        Theme.of(context).extension<TgTextTheme>()!.caption.copyWith(
-              color: isOutgoing
-                  ? chatThemeData.bubbleShortInfoOutgoingColor
-                  : chatThemeData.bubbleShortInfoIncomingColor,
-            );
+    final TextStyle caption = Theme.of(context).extension<TgTextTheme>()!.caption.copyWith(
+          color: isOutgoing ? chatThemeData.bubbleShortInfoOutgoingColor : chatThemeData.bubbleShortInfoIncomingColor,
+        );
     final double iconSize = caption.fontSize! * 1.4;
     return RichText(
       text: TextSpan(
@@ -59,8 +56,7 @@ class ShortInfoFactory {
                 TextSpan(text: ' ${additionalInfo.viewCount}\u0009\u0009'),
               ],
             ),
-          if (additionalInfo.authorSignature != null)
-            TextSpan(text: '${additionalInfo.authorSignature}, '),
+          if (additionalInfo.authorSignature != null) TextSpan(text: '${additionalInfo.authorSignature}, '),
           if (additionalInfo.isEdited)
             TextSpan(
               text: '${_stringsProvider.editedMessage} ',

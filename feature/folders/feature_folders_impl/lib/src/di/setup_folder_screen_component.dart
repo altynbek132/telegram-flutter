@@ -9,8 +9,7 @@ import 'package:jugger/jugger.dart' as j;
   modules: <Type>[SetupFolderScreenModule],
 )
 @screenScope
-abstract class ISetupFolderScreenComponent
-    implements ISetupFolderScreenScopeDelegate {}
+abstract class ISetupFolderScreenComponent implements ISetupFolderScreenScopeDelegate {}
 
 @j.module
 abstract class SetupFolderScreenModule {

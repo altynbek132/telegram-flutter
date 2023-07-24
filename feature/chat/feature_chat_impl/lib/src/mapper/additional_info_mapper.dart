@@ -13,8 +13,7 @@ class AdditionalInfoMapper {
   final NumberFormat compatNumberFormat = NumberFormat.compact();
 
   Future<AdditionalInfo> map(td.Message message) async {
-    final DateTime dateTime =
-        _dateParser.parseUnixTimeStampToDate(message.date);
+    final DateTime dateTime = _dateParser.parseUnixTimeStampToDate(message.date);
     return AdditionalInfo(
       sentDate: _format.format(dateTime),
       viewCount: getViewCount(message),

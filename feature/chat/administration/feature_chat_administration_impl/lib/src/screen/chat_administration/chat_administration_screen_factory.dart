@@ -7,8 +7,7 @@ import 'args.dart';
 import 'chat_administration_page.dart';
 import 'chat_administration_screen_scope_delegate.scope.dart';
 
-class ChatAdministrationScreenFactory
-    implements IChatAdministrationScreenFactory {
+class ChatAdministrationScreenFactory implements IChatAdministrationScreenFactory {
   ChatAdministrationScreenFactory({
     required ChatAdministrationFeatureDependencies dependencies,
   }) : _dependencies = dependencies;

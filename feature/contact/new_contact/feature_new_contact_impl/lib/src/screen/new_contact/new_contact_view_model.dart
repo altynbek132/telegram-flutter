@@ -100,9 +100,7 @@ class NewContactViewModel extends BaseViewModel {
             imageFileId: info.user.profilePhoto?.small.id,
           ),
           onlineStatus: info.statusHumanString,
-          phoneNumber: info.user.phoneNumber.isNotEmpty
-              ? info.user.phoneNumber
-              : _stringsProvider.mobileHidden,
+          phoneNumber: info.user.phoneNumber.isNotEmpty ? info.user.phoneNumber : _stringsProvider.mobileHidden,
         ),
       ),
     );

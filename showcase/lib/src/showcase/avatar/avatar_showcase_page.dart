@@ -15,8 +15,7 @@ class _AvatarShowcasePageState extends State<AvatarShowcasePage> {
 
   @override
   void initState() {
-    _avatarsFuture =
-        AvatarShowcaseScope.getAvatarsRepository(context).getAvatars();
+    _avatarsFuture = AvatarShowcaseScope.getAvatarsRepository(context).getAvatars();
     super.initState();
   }
 

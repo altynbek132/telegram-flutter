@@ -31,8 +31,7 @@ class _WriterState extends State<Writer> with TickerProviderStateMixin {
       duration: const Duration(milliseconds: 100),
     );
 
-    _clearIconTween = SizeTween(begin: Size.zero, end: const Size(1, 1))
-        .animate(_animationController);
+    _clearIconTween = SizeTween(begin: Size.zero, end: const Size(1, 1)).animate(_animationController);
 
     _messageController.addListener(_onTextChange);
     super.initState();
@@ -46,10 +45,8 @@ class _WriterState extends State<Writer> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    final ChatActionsPanelViewModel viewModel =
-        ChatActionPanelScope.getChatActionsPanelViewModel(context);
-    final IStringsProvider stringsProvider =
-        ChatActionPanelScope.getStringsProvider(context);
+    final ChatActionsPanelViewModel viewModel = ChatActionPanelScope.getChatActionsPanelViewModel(context);
+    final IStringsProvider stringsProvider = ChatActionPanelScope.getStringsProvider(context);
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,

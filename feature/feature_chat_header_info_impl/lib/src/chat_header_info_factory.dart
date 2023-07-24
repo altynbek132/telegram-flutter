@@ -35,10 +35,7 @@ class ChatHeaderInfoFactory implements IChatHeaderInfoFactory {
         child: _connectionStateWidgetFactory.create(context, (_) {
           return Text(
             info.subtitle,
-            style: Theme.of(context)
-                .textTheme
-                .caption!
-                .copyWith(color: Colors.white54),
+            style: Theme.of(context).textTheme.caption!.copyWith(color: Colors.white54),
           );
         }),
       ),

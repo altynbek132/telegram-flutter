@@ -13,15 +13,12 @@ class FoldersFeatureImpl implements IFoldersFeatureApi {
 
   final FoldersFeatureDependencies _dependencies;
 
-  late final FoldersScreenFactory _foldersScreenFactory =
-      FoldersScreenFactory(foldersComponent: _foldersComponent);
-  late final ISetupFolderScreenFactory _setupFolderScreenFactory =
-      SetupFolderScreenFactory(
+  late final FoldersScreenFactory _foldersScreenFactory = FoldersScreenFactory(foldersComponent: _foldersComponent);
+  late final ISetupFolderScreenFactory _setupFolderScreenFactory = SetupFolderScreenFactory(
     foldersComponent: _foldersComponent,
   );
 
-  late final IFoldersComponent _component =
-      JuggerFoldersComponentBuilder().dependencies(_dependencies).build();
+  late final IFoldersComponent _component = JuggerFoldersComponentBuilder().dependencies(_dependencies).build();
 
   IFoldersComponent get _foldersComponent => _component;
 
@@ -29,6 +26,5 @@ class FoldersFeatureImpl implements IFoldersFeatureApi {
   IFoldersScreenFactory get foldersScreenFactory => _foldersScreenFactory;
 
   @override
-  ISetupFolderScreenFactory get setupFolderScreenFactory =>
-      _setupFolderScreenFactory;
+  ISetupFolderScreenFactory get setupFolderScreenFactory => _setupFolderScreenFactory;
 }

@@ -26,8 +26,7 @@ class ChatRouterDelegate implements IChatRouter {
 
   @override
   void toChat(int chatId) {
-    final ValueKey<dynamic> chatScreenKey =
-        _keyGenerator.generateForChat(chatId);
+    final ValueKey<dynamic> chatScreenKey = _keyGenerator.generateForChat(chatId);
 
     if (_splitNavigationInfoProvider.hasKey(
       chatScreenKey,
@@ -38,8 +37,7 @@ class ChatRouterDelegate implements IChatRouter {
         (LocalKey key) => key == chatScreenKey,
       );
     } else {
-      final Widget widget =
-          _featureProvider.chatFeatureApi.chatScreenFactory.create(chatId);
+      final Widget widget = _featureProvider.chatFeatureApi.chatScreenFactory.create(chatId);
       _navigationDelegate.add(
         key: chatScreenKey,
         builder: (BuildContext context) => widget,

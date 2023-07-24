@@ -27,11 +27,9 @@ class CreateNewChatFeature implements ICreateNewChatFeatureApi {
       CreateNewGroupScreenFactory(component: _component);
 
   @override
-  late final ICreateNewSecretChatScreenFactory
-      createNewSecretChatScreenFactory =
+  late final ICreateNewSecretChatScreenFactory createNewSecretChatScreenFactory =
       CreateNewSecretChatScreenFactory(component: _component);
 
   @override
-  late final INewChatScreenFactory newChatScreenFactory =
-      NewChatScreenFactory(component: _component);
+  late final INewChatScreenFactory newChatScreenFactory = NewChatScreenFactory(component: _component);
 }

@@ -13,6 +13,5 @@ class NewContactFeature implements INewContactFeatureApi {
   final NewContactFeatureDependencies _dependencies;
 
   @override
-  late final INewContactScreenFactory newContactScreenFactory =
-      NewContactScreenFactory(dependencies: _dependencies);
+  late final INewContactScreenFactory newContactScreenFactory = NewContactScreenFactory(dependencies: _dependencies);
 }

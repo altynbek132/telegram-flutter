@@ -11,8 +11,7 @@ class FoldersInteractor with SubscriptionMixin {
     subscribe<List<Folder>>(
       _chatFilterRepository.chatFiltersStream
           .map(
-            (List<td.ChatFilterInfo> event) =>
-                event.map((td.ChatFilterInfo info) {
+            (List<td.ChatFilterInfo> event) => event.map((td.ChatFilterInfo info) {
               return Folder.id(id: info.id, title: info.title);
             }).toList(growable: false),
           )
@@ -28,8 +27,7 @@ class FoldersInteractor with SubscriptionMixin {
 
   final IChatFilterRepository _chatFilterRepository;
 
-  final BehaviorSubject<List<Folder>> _foldersSubject =
-      BehaviorSubject<List<Folder>>();
+  final BehaviorSubject<List<Folder>> _foldersSubject = BehaviorSubject<List<Folder>>();
 
   Stream<List<Folder>> get foldersStream => _foldersSubject;
 

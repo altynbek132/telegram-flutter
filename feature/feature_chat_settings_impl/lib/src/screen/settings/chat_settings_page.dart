@@ -34,8 +34,7 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ILocalizationManager localizationManager =
-        Provider.of(context, listen: false);
+    final ILocalizationManager localizationManager = Provider.of(context, listen: false);
     final ChatSettingsViewModel bloc = Provider.of(context, listen: false);
     final ThemeData theme = Theme.of(context);
     final Color accentColor = theme.colorScheme.secondary;

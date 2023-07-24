@@ -9,5 +9,4 @@ import 'shared_media_component_builder.dart';
   builder: ISharedMediaComponentBuilder,
 )
 @j.singleton
-abstract class ISharedMediaComponent
-    implements ISharedMediaScreenScopeDelegate {}
+abstract class ISharedMediaComponent implements ISharedMediaScreenScopeDelegate {}

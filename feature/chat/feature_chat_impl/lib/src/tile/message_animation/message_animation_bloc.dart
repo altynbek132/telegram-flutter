@@ -4,8 +4,7 @@ import 'package:feature_chat_impl/src/tile/message_animation/message_animation_t
 import 'package:feature_file_api/feature_file_api.dart';
 import 'package:jugger/jugger.dart' as j;
 
-class MessageAnimationBloc extends MessageBloc<MessageAnimationTileModel>
-    with MediaMixin<MessageAnimationTileModel> {
+class MessageAnimationBloc extends MessageBloc<MessageAnimationTileModel> with MediaMixin<MessageAnimationTileModel> {
   @j.inject
   MessageAnimationBloc({
     required IFileDownloader fileDownloader,

@@ -32,8 +32,7 @@ class WallpapersListScreenFactory implements IWallpapersListScreenFactory {
           create: (BuildContext context) {
             return TileFactory(
               delegates: <Type, ITileFactoryDelegate<ITileModel>>{
-                BackgroundWallpaperTileModel:
-                    BackgroundWallpaperTileFactoryDelegate(
+                BackgroundWallpaperTileModel: BackgroundWallpaperTileFactoryDelegate(
                   imageWidgetFactory: tg.ImageWidgetFactory(
                     fileDownloader: _dependencies.fileDownloader,
                   ),
@@ -44,15 +43,13 @@ class WallpapersListScreenFactory implements IWallpapersListScreenFactory {
                   ),
                   onTap: (PatternWallpaperTileModel model) {
                     // TODO temporary
-                    _dependencies.chatBackgroundManager
-                        .setActiveBackground(model.backgroundId);
+                    _dependencies.chatBackgroundManager.setActiveBackground(model.backgroundId);
                   },
                 ),
                 FillWallpaperTileModel: FillWallpaperTileFactoryDelegate(
                   onTap: (FillWallpaperTileModel model) {
                     // TODO temporary
-                    _dependencies.chatBackgroundManager
-                        .setActiveBackground(model.backgroundId);
+                    _dependencies.chatBackgroundManager.setActiveBackground(model.backgroundId);
                   },
                 ),
                 TopGroupTileModel: TopGroupTileFactoryDelegate(
@@ -66,8 +63,7 @@ class WallpapersListScreenFactory implements IWallpapersListScreenFactory {
           },
         ),
         Provider<tg.TgAppBarFactory>(
-          create: (BuildContext context) =>
-              tg.TgAppBarFactory.withConnectionStateProvider(
+          create: (BuildContext context) => tg.TgAppBarFactory.withConnectionStateProvider(
             _dependencies.connectionStateProvider,
           ),
         ),

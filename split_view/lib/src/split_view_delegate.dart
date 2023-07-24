@@ -23,25 +23,20 @@ class DefaultSplitViewDelegate implements SplitViewDelegate {
   const DefaultSplitViewDelegate();
 
   @override
-  CompactLayoutMergeStrategy get compactLayoutMergeStrategy =>
-      const CompactLayoutMergeStrategy.create();
+  CompactLayoutMergeStrategy get compactLayoutMergeStrategy => const CompactLayoutMergeStrategy.create();
 
   @override
-  CompactLayoutStrategy get compactLayoutStrategy =>
-      const CompactLayoutStrategy.create();
+  CompactLayoutStrategy get compactLayoutStrategy => const CompactLayoutStrategy.create();
 
   @override
-  PageAnimationStrategy get pageAnimationStrategy =>
-      const PageAnimationStrategy.create();
+  PageAnimationStrategy get pageAnimationStrategy => const PageAnimationStrategy.create();
 
   @override
   PagePopStrategy get pagePopStrategy => const PagePopStrategy.create();
 
   @override
-  SplitLayoutDelegate get splitLayoutDelegate =>
-      const SplitLayoutDelegate.create();
+  SplitLayoutDelegate get splitLayoutDelegate => const SplitLayoutDelegate.create();
 
   @override
-  PageRouteConfigurator get pageRouteConfigurator =>
-      const PageRouteConfigurator.create();
+  PageRouteConfigurator get pageRouteConfigurator => const PageRouteConfigurator.create();
 }

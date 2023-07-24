@@ -22,8 +22,7 @@ class LogoutScreenFactory implements ILogoutScreenFactory {
           create: (BuildContext context) => _dependencies.stringsProvider,
         ),
         Provider<tg.TgAppBarFactory>(
-          create: (BuildContext context) =>
-              tg.TgAppBarFactory.withConnectionStateProvider(
+          create: (BuildContext context) => tg.TgAppBarFactory.withConnectionStateProvider(
             _dependencies.connectionStateProvider,
           ),
         ),

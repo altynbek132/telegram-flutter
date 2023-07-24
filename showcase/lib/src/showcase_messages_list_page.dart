@@ -13,8 +13,7 @@ class ShowcaseMessageListPage extends StatefulWidget {
   const ShowcaseMessageListPage({super.key});
 
   @override
-  _ShowcaseMessageListPageState createState() =>
-      _ShowcaseMessageListPageState();
+  _ShowcaseMessageListPageState createState() => _ShowcaseMessageListPageState();
 }
 
 class _ShowcaseMessageListPageState extends State<ShowcaseMessageListPage> {
@@ -41,8 +40,7 @@ class _ShowcaseMessageListPageState extends State<ShowcaseMessageListPage> {
           return ListTile(
             title: Text('${index + 1}: ${bundle.name}'),
             onTap: () {
-              final Widget widget =
-                  ShowcaseScope.getMessageShowcaseFactory(context).create(
+              final Widget widget = ShowcaseScope.getMessageShowcaseFactory(context).create(
                 bundle,
               );
 
@@ -105,8 +103,7 @@ class _ShowcaseMessageListPageState extends State<ShowcaseMessageListPage> {
         messages: <MessageData>[
           MessageData(
             name: 'outgoing hang up',
-            messageFactory: () =>
-                _getMessage('message_call_incoming_hang_up').then(
+            messageFactory: () => _getMessage('message_call_incoming_hang_up').then(
               (td.Message value) => value.copyWith(
                 isOutgoing: true,
                 content: (value.content as td.MessageCall).copyWith(
@@ -122,8 +119,7 @@ class _ShowcaseMessageListPageState extends State<ShowcaseMessageListPage> {
           ),
           MessageData(
             name: 'incoming missed',
-            messageFactory: () =>
-                _getMessage('message_call_incoming_hang_up').then(
+            messageFactory: () => _getMessage('message_call_incoming_hang_up').then(
               (td.Message value) => value.copyWith(
                 isOutgoing: false,
                 content: (value.content as td.MessageCall).copyWith(
@@ -135,8 +131,7 @@ class _ShowcaseMessageListPageState extends State<ShowcaseMessageListPage> {
           ),
           MessageData(
             name: 'outgoing declined',
-            messageFactory: () =>
-                _getMessage('message_call_incoming_hang_up').then(
+            messageFactory: () => _getMessage('message_call_incoming_hang_up').then(
               (td.Message value) => value.copyWith(
                 isOutgoing: true,
                 content: (value.content as td.MessageCall).copyWith(
@@ -147,8 +142,7 @@ class _ShowcaseMessageListPageState extends State<ShowcaseMessageListPage> {
           ),
           MessageData(
             name: 'outgoing missed',
-            messageFactory: () =>
-                _getMessage('message_call_incoming_hang_up').then(
+            messageFactory: () => _getMessage('message_call_incoming_hang_up').then(
               (td.Message value) => value.copyWith(
                 isOutgoing: true,
                 content: (value.content as td.MessageCall).copyWith(
@@ -217,8 +211,7 @@ class _ShowcaseMessageListPageState extends State<ShowcaseMessageListPage> {
             name: 'multiple',
             messageFactory: () => _getMessage('message_chat_add_members').then(
               (td.Message value) => value.copyWith(
-                content: (value.content as td.MessageChatAddMembers)
-                    .copyWith(memberUserIds: <int>[1, 2, 3]),
+                content: (value.content as td.MessageChatAddMembers).copyWith(memberUserIds: <int>[1, 2, 3]),
               ),
             ),
           ),
@@ -334,15 +327,13 @@ class _ShowcaseMessageListPageState extends State<ShowcaseMessageListPage> {
     ];
   }
 
-  Future<td.Message> _getMessage(String fileName) =>
-      _fakeMessagesProvider.getMessageByFileName(fileName);
+  Future<td.Message> _getMessage(String fileName) => _fakeMessagesProvider.getMessageByFileName(fileName);
 
   td.FormattedText _fakeFormattedText() {
     return const td.FormattedText(text: fakeText, entities: <td.TextEntity>[]);
   }
 
-  static const String fakeText =
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod '
+  static const String fakeText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod '
       'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim '
       'veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex '
       'ea commodo consequat. Duis aute irure dolor in reprehenderit in '

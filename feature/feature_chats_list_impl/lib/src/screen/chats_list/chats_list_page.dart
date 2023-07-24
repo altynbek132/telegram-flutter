@@ -12,15 +12,13 @@ class ChatsListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ChatsListViewModel chatsListViewModel =
-        ChatsListScreenScope.getChatsListViewModel(context);
+    final ChatsListViewModel chatsListViewModel = ChatsListScreenScope.getChatsListViewModel(context);
 
     return Scaffold(
       body: StreamBuilder<ChatsListState>(
         stream: chatsListViewModel.chatsListState,
         initialData: const ChatsListState.loading(),
-        builder:
-            (BuildContext context, AsyncSnapshot<ChatsListState> snapshot) {
+        builder: (BuildContext context, AsyncSnapshot<ChatsListState> snapshot) {
           return AnimatedSwitcher(
             duration: const Duration(milliseconds: 200),
             child: snapshot.data!.when(
@@ -110,8 +108,7 @@ class _Data extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TileFactory tileFactory =
-        ChatsListScreenScope.getTileFactory(context);
+    final TileFactory tileFactory = ChatsListScreenScope.getTileFactory(context);
 
     final ListView listView = ListView.separated(
       separatorBuilder: (BuildContext context, int index) {

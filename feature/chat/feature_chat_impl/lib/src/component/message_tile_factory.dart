@@ -11,9 +11,6 @@ class MessageTileFactory {
   final MessageTileFactoryDependencies _dependencies;
 
   TileFactory create() {
-    return JuggerMessageTileFactoryComponentBuilder()
-        .dependencies(_dependencies)
-        .build()
-        .getTileFactory();
+    return JuggerMessageTileFactoryComponentBuilder().dependencies(_dependencies).build().getTileFactory();
   }
 }

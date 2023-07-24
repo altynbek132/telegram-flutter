@@ -12,13 +12,11 @@ class CountryRepository implements ICountryRepository {
 
   @override
   Future<Country?> findByCode({required int code}) => getCountries().then(
-        (List<Country> value) =>
-            value.firstWhereOrNull((Country element) => element.code == code),
+        (List<Country> value) => value.firstWhereOrNull((Country element) => element.code == code),
       );
 
   Future<List<Country>> _readFromAssets() async {
-    final String raw = await rootBundle
-        .loadString('packages/feature_country_impl/assets/countries.txt');
+    final String raw = await rootBundle.loadString('packages/feature_country_impl/assets/countries.txt');
 
     return LineSplitter.split(raw).map((String line) {
       final List<String> parts = line.split(';');

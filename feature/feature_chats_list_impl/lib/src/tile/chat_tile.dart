@@ -32,8 +32,7 @@ class ChatTileFactory implements ITileFactoryDelegate<ChatTileModel> {
     return Provider<AvatarWidgetFactory>.value(
       value: _avatarWidgetFactory,
       child: InkWell(
-        onLongPress: () =>
-            _showContextAlertDialog(context: context, chat: chat),
+        onLongPress: () => _showContextAlertDialog(context: context, chat: chat),
         key: ObjectKey(chat.id),
         onTap: () => _listener.onChatTap(chat.id),
         child: Ink(

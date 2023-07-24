@@ -12,8 +12,7 @@ class CustomEmojiShowcaseScope extends StatefulWidget {
   final ScopeData Function() create;
 
   @override
-  State<CustomEmojiShowcaseScope> createState() =>
-      _CustomEmojiShowcaseScopeState();
+  State<CustomEmojiShowcaseScope> createState() => _CustomEmojiShowcaseScopeState();
 
   static CustomEmojiWidgetFactory getCustomEmojiWidgetFactory(
     BuildContext context,
@@ -48,10 +47,8 @@ class _InheritedScope extends InheritedWidget {
   final _CustomEmojiShowcaseScopeState _state;
 
   static _CustomEmojiShowcaseScopeState of(BuildContext context) {
-    final _CustomEmojiShowcaseScopeState? result = (context
-            .getElementForInheritedWidgetOfExactType<_InheritedScope>()
-            ?.widget as _InheritedScope?)
-        ?._state;
+    final _CustomEmojiShowcaseScopeState? result =
+        (context.getElementForInheritedWidgetOfExactType<_InheritedScope>()?.widget as _InheritedScope?)?._state;
     assert(result != null, 'No CustomEmojiShowcaseScope found in context');
     return result!;
   }

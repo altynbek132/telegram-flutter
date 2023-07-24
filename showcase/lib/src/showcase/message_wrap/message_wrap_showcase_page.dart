@@ -73,9 +73,7 @@ class Example1 extends StatelessWidget {
               ),
             ],
           ),
-          style: DefaultTextStyle.of(context)
-              .style
-              .copyWith(backgroundColor: Colors.amber),
+          style: DefaultTextStyle.of(context).style.copyWith(backgroundColor: Colors.amber),
         ),
         shortInfo: Container(
           width: 150,
@@ -98,9 +96,7 @@ class Example2 extends StatelessWidget {
         wrapGravity: WrapGravity.top,
         content: Text(
           '[Gravity Top] The text style to apply to descendant [Text] widgets which do not have an explicit style',
-          style: DefaultTextStyle.of(context)
-              .style
-              .copyWith(backgroundColor: Colors.amber),
+          style: DefaultTextStyle.of(context).style.copyWith(backgroundColor: Colors.amber),
         ),
         shortInfo: Container(
           width: 150,
@@ -122,9 +118,7 @@ class Example10 extends StatelessWidget {
       child: MessageWrap(
         content: Text(
           '[Gravity Top] The text style to apply to descendant [Text] widgets which do not have an explicit style',
-          style: DefaultTextStyle.of(context)
-              .style
-              .copyWith(backgroundColor: Colors.amber),
+          style: DefaultTextStyle.of(context).style.copyWith(backgroundColor: Colors.amber),
         ),
         shortInfo: Container(
           width: 150,
@@ -167,9 +161,7 @@ class Example4 extends StatelessWidget {
       child: MessageWrap(
         content: Text(
           '🤯',
-          style: DefaultTextStyle.of(context)
-              .style
-              .copyWith(backgroundColor: Colors.amber, fontSize: 30),
+          style: DefaultTextStyle.of(context).style.copyWith(backgroundColor: Colors.amber, fontSize: 30),
         ),
         shortInfo: Container(
           width: 150,
@@ -242,9 +234,7 @@ class Example7 extends StatelessWidget {
             const Text('Gravity bottom'),
             Text(
               'Support column',
-              style: DefaultTextStyle.of(context)
-                  .style
-                  .copyWith(backgroundColor: Colors.amber, fontSize: 20),
+              style: DefaultTextStyle.of(context).style.copyWith(backgroundColor: Colors.amber, fontSize: 20),
             )
           ],
         ),
@@ -277,9 +267,7 @@ class Example11 extends StatelessWidget {
             const Text('Gravity top'),
             Text(
               'Support column',
-              style: DefaultTextStyle.of(context)
-                  .style
-                  .copyWith(backgroundColor: Colors.amber, fontSize: 20),
+              style: DefaultTextStyle.of(context).style.copyWith(backgroundColor: Colors.amber, fontSize: 20),
             )
           ],
         ),
@@ -329,9 +317,7 @@ class Example9 extends StatelessWidget {
         wrapGravity: WrapGravity.top,
         content: Text(
           'TEXT',
-          style: DefaultTextStyle.of(context)
-              .style
-              .copyWith(backgroundColor: Colors.amber, fontSize: 30),
+          style: DefaultTextStyle.of(context).style.copyWith(backgroundColor: Colors.amber, fontSize: 30),
         ),
         shortInfo: Container(
           width: 150,

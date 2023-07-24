@@ -27,8 +27,7 @@ class AppControllerComponent {
     authorizationStateDelegate: AuthorizationStateDelegate(
       deviceInfoProvider: DeviceInfoProvider(),
       functionExecutor: _dependencies.functionExecutor,
-      authenticationStateUpdatesProvider:
-          _dependencies.authenticationStateUpdatesProvider,
+      authenticationStateUpdatesProvider: _dependencies.authenticationStateUpdatesProvider,
       tdConfigProvider: _dependencies.tdConfigProvider,
       router: _dependencies.router,
     ),

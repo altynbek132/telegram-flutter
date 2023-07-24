@@ -5,11 +5,9 @@ import 'package:td_api/td_api.dart' as td;
 class AuthenticationManager implements IAuthenticationManager {
   const AuthenticationManager({
     required ITdFunctionExecutor functionExecutor,
-    required IAuthenticationStateUpdatesProvider
-        authenticationStateUpdatesProvider,
+    required IAuthenticationStateUpdatesProvider authenticationStateUpdatesProvider,
   })  : _functionExecutor = functionExecutor,
-        _authenticationStateUpdatesProvider =
-            authenticationStateUpdatesProvider;
+        _authenticationStateUpdatesProvider = authenticationStateUpdatesProvider;
 
   final ITdFunctionExecutor _functionExecutor;
   final IAuthenticationStateUpdatesProvider _authenticationStateUpdatesProvider;
@@ -19,8 +17,7 @@ class AuthenticationManager implements IAuthenticationManager {
       _functionExecutor.send<td.Ok>(td.CheckAuthenticationCode(code: code));
 
   @override
-  Future<td.AuthorizationState> get currentAuthorizationState =>
-      _functionExecutor.send<td.AuthorizationState>(
+  Future<td.AuthorizationState> get currentAuthorizationState => _functionExecutor.send<td.AuthorizationState>(
         const td.GetAuthorizationState(),
       );
 
@@ -30,8 +27,7 @@ class AuthenticationManager implements IAuthenticationManager {
           .map((td.UpdateAuthorizationState event) => event.authorizationState);
 
   @override
-  Future<td.Ok> setAuthenticationPhoneNumber(String phoneNumber) =>
-      _functionExecutor.send<td.Ok>(
+  Future<td.Ok> setAuthenticationPhoneNumber(String phoneNumber) => _functionExecutor.send<td.Ok>(
         td.SetAuthenticationPhoneNumber(
           phoneNumber: phoneNumber,
           settings: const td.PhoneNumberAuthenticationSettings(
@@ -45,6 +41,5 @@ class AuthenticationManager implements IAuthenticationManager {
       );
 
   @override
-  Future<td.Ok> setTdlibParameters(td.SetTdlibParameters parameters) =>
-      _functionExecutor.send<td.Ok>(parameters);
+  Future<td.Ok> setTdlibParameters(td.SetTdlibParameters parameters) => _functionExecutor.send<td.Ok>(parameters);
 }

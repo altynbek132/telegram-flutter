@@ -34,8 +34,7 @@ class MessageCallTileModelMapper {
     required td.Message message,
     required td.MessageCall content,
   }) async {
-    final DateTime callDate =
-        _dateParser.parseUnixTimeStampToDate(message.date);
+    final DateTime callDate = _dateParser.parseUnixTimeStampToDate(message.date);
     // todo handle video calls
     return MessageCallTileModel(
       id: message.id,

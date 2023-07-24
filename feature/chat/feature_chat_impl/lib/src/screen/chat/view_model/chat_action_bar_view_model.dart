@@ -44,8 +44,7 @@ class ChatActionBarViewModel extends BaseViewModel {
   final IChatManager _chatManager;
   final IChatScreenRouter _router;
 
-  Stream<HeaderState> get headerStateStream =>
-      Rx.combineLatest2<ChatHeaderInfo, List<HeaderActionData>, HeaderState>(
+  Stream<HeaderState> get headerStateStream => Rx.combineLatest2<ChatHeaderInfo, List<HeaderActionData>, HeaderState>(
         _headerInfoInteractor.infoStream,
         _headerActionsInteractor.actionsStream,
         HeaderState.data,
@@ -89,10 +88,8 @@ class ChatActionBarViewModel extends BaseViewModel {
 
   void onOpenSelfProfileTap() {
     // todo handle errors or do not use future
-    final CancelableOperation<td.Chat> getChatOperation = _chatRepository
-        .getChat(_args.chatId)
-        .toCancelableOperation()
-        .onValue((td.Chat value) {
+    final CancelableOperation<td.Chat> getChatOperation =
+        _chatRepository.getChat(_args.chatId).toCancelableOperation().onValue((td.Chat value) {
       // todo extract extension
       final ProfileType profileType = value.type.map(
         private: (td.ChatTypePrivate _) => ProfileType.user,

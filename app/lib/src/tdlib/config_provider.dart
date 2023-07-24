@@ -17,12 +17,10 @@ class TdConfigProvider implements ITdConfigProvider {
   Future<String> getApiHash() async => (await _cache)['apiHash']!;
 
   Future<Map<String, String>> _readFromAssets() async {
-    final String raw =
-        await rootBundle.loadString('packages/app/assets/tdlib/config.txt');
+    final String raw = await rootBundle.loadString('packages/app/assets/tdlib/config.txt');
 
-    final List<MapEntry<String, String>> entries = LineSplitter.split(raw)
-        .where((String line) => line.isNotEmpty)
-        .map((String line) {
+    final List<MapEntry<String, String>> entries =
+        LineSplitter.split(raw).where((String line) => line.isNotEmpty).map((String line) {
       final List<String> parts = line.split(':');
       final String key = parts[0];
       final String value = parts[1];

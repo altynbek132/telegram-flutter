@@ -11,6 +11,5 @@ class MainScreenFeature implements IMainScreenFeatureApi {
   final MainScreenFeatureDependencies _dependencies;
 
   @override
-  late final IMainScreenFactory mainScreenFactory =
-      MainScreenFactory(dependencies: _dependencies);
+  late final IMainScreenFactory mainScreenFactory = MainScreenFactory(dependencies: _dependencies);
 }

@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:rich_text_format_flutter/rich_text_format_flutter.dart';
 import 'package:tile/tile.dart';
 
-class MessageChatChangePhotoTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageChatChangePhotoTileModel> {
+class MessageChatChangePhotoTileFactoryDelegate implements ITileFactoryDelegate<MessageChatChangePhotoTileModel> {
   MessageChatChangePhotoTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
   }) : _chatMessageFactory = chatMessageFactory;

@@ -13,10 +13,8 @@ class SetupFolderPage extends StatefulWidget {
 class _SetupFolderPageState extends State<SetupFolderPage> {
   @override
   Widget build(BuildContext context) {
-    final tg.TgAppBarFactory appBarFactory =
-        SetupFolderScreenScope.getTgAppBarFactory(context);
-    final IStringsProvider stringsProvider =
-        SetupFolderScreenScope.getStringsProvider(context);
+    final tg.TgAppBarFactory appBarFactory = SetupFolderScreenScope.getTgAppBarFactory(context);
+    final IStringsProvider stringsProvider = SetupFolderScreenScope.getStringsProvider(context);
 
     return Scaffold(
       appBar: appBarFactory.createDefaultTitle(

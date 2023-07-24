@@ -2,8 +2,7 @@ import 'package:feature_global_search_impl/src/screen/global_search/tile/model/m
 import 'package:flutter/material.dart';
 import 'package:tile/tile.dart';
 
-class LinkResultTileFactoryDelegate
-    implements ITileFactoryDelegate<LinkResultTileModel> {
+class LinkResultTileFactoryDelegate implements ITileFactoryDelegate<LinkResultTileModel> {
   const LinkResultTileFactoryDelegate();
 
   @override

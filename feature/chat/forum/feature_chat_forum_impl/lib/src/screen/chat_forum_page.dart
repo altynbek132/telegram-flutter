@@ -26,8 +26,7 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ChatForumViewModel viewModel =
-        ChatForumScreenScope.getChatForumViewModel(context);
+    final ChatForumViewModel viewModel = ChatForumScreenScope.getChatForumViewModel(context);
 
     return StreamListener<BodyState>(
       stream: viewModel.state,
@@ -56,8 +55,7 @@ class _Content extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TileFactory tileFactory =
-        ChatForumScreenScope.getTopicsTileFactory(context);
+    final TileFactory tileFactory = ChatForumScreenScope.getTopicsTileFactory(context);
 
     return ListView.separated(
       padding: const EdgeInsets.only(bottom: 90),
@@ -77,8 +75,7 @@ class _EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final IStringsProvider stringsProvider =
-        ChatForumScreenScope.getStringsProvider(context);
+    final IStringsProvider stringsProvider = ChatForumScreenScope.getStringsProvider(context);
 
     return Center(
       child: Column(
@@ -115,8 +112,7 @@ class _FloatingNewTopicButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ChatForumViewModel viewModel =
-        ChatForumScreenScope.getChatForumViewModel(context);
+    final ChatForumViewModel viewModel = ChatForumScreenScope.getChatForumViewModel(context);
 
     return StreamListener<BodyState>(
       stream: viewModel.state,
@@ -125,8 +121,7 @@ class _FloatingNewTopicButton extends StatelessWidget {
           empty: () => true,
           orElse: () => false,
         );
-        final IStringsProvider stringsProvider =
-            ChatForumScreenScope.getStringsProvider(context);
+        final IStringsProvider stringsProvider = ChatForumScreenScope.getStringsProvider(context);
 
         return Row(
           mainAxisSize: MainAxisSize.min,

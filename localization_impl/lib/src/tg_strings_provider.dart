@@ -131,8 +131,7 @@ class TgStringsProvider implements IStringsProvider {
   String get changeChatBackground => _get('ChangeChatBackground');
 
   @override
-  String actionCreateGroup(List<dynamic> args) =>
-      _getFormatted('ActionCreateGroup', args);
+  String actionCreateGroup(List<dynamic> args) => _getFormatted('ActionCreateGroup', args);
 
   @override
   String get callMessageIncomingMissed => _get('CallMessageIncomingMissed');
@@ -150,40 +149,31 @@ class TgStringsProvider implements IStringsProvider {
   String get callMessageOutgoingMissed => _get('CallMessageOutgoingMissed');
 
   @override
-  String eventLogGroupJoined(List<dynamic> args) =>
-      _getFormatted('EventLogGroupJoined', args);
+  String eventLogGroupJoined(List<dynamic> args) => _getFormatted('EventLogGroupJoined', args);
 
   @override
-  String actionChangedPhoto(List<dynamic> args) =>
-      _getFormatted('ActionChangedPhoto', args);
+  String actionChangedPhoto(List<dynamic> args) => _getFormatted('ActionChangedPhoto', args);
 
   @override
-  String actionMigrateFromGroupNotify(List<dynamic> args) =>
-      _getFormatted('ActionMigrateFromGroupNotify', args);
+  String actionMigrateFromGroupNotify(List<dynamic> args) => _getFormatted('ActionMigrateFromGroupNotify', args);
 
   @override
-  String actionChangedTitle(List<dynamic> args) =>
-      _getFormatted('ActionChangedTitle', args);
+  String actionChangedTitle(List<dynamic> args) => _getFormatted('ActionChangedTitle', args);
 
   @override
-  String actionKickUser(List<dynamic> args) =>
-      _getFormatted('ActionKickUser', args);
+  String actionKickUser(List<dynamic> args) => _getFormatted('ActionKickUser', args);
 
   @override
-  String actionRemovedPhoto(List<dynamic> args) =>
-      _getFormatted('ActionRemovedPhoto', args);
+  String actionRemovedPhoto(List<dynamic> args) => _getFormatted('ActionRemovedPhoto', args);
 
   @override
-  String actionInviteUser(List<dynamic> args) =>
-      _getFormatted('ActionInviteUser', args);
+  String actionInviteUser(List<dynamic> args) => _getFormatted('ActionInviteUser', args);
 
   @override
-  String messageLifetimeChanged(List<dynamic> args) =>
-      _getFormatted('MessageLifetimeChanged', args);
+  String messageLifetimeChanged(List<dynamic> args) => _getFormatted('MessageLifetimeChanged', args);
 
   @override
-  String messageLifetimeChangedOutgoing(List<dynamic> args) =>
-      _getFormatted('MessageLifetimeChangedOutgoing', args);
+  String messageLifetimeChangedOutgoing(List<dynamic> args) => _getFormatted('MessageLifetimeChangedOutgoing', args);
 
   @override
   String get actionMigrateFromGroup => _get('ActionMigrateFromGroup');
@@ -354,12 +344,10 @@ class TgStringsProvider implements IStringsProvider {
   String get leaveChannelMenu => _get('LeaveChannelMenu');
 
   @override
-  String megaLeaveAlertWithName(List<dynamic> args) =>
-      _getFormatted('MegaLeaveAlertWithName', args);
+  String megaLeaveAlertWithName(List<dynamic> args) => _getFormatted('MegaLeaveAlertWithName', args);
 
   @override
-  String channelLeaveAlertWithName(List<dynamic> args) =>
-      _getFormatted('ChannelLeaveAlertWithName', args);
+  String channelLeaveAlertWithName(List<dynamic> args) => _getFormatted('ChannelLeaveAlertWithName', args);
 
   @override
   String get filters => _get('Filters');
@@ -554,12 +542,10 @@ class TgStringsProvider implements IStringsProvider {
   String get lastName => _get('LastName');
 
   @override
-  String mobileHiddenExceptionInfo(List<dynamic> args) =>
-      _getFormatted('MobileHiddenExceptionInfo', args);
+  String mobileHiddenExceptionInfo(List<dynamic> args) => _getFormatted('MobileHiddenExceptionInfo', args);
 
   @override
-  String sharePhoneNumberWith(List<dynamic> args) =>
-      _getFormatted('SharePhoneNumberWith', args);
+  String sharePhoneNumberWith(List<dynamic> args) => _getFormatted('SharePhoneNumberWith', args);
 
   @override
   String get mobileHidden => _get('MobileHidden');
@@ -589,12 +575,10 @@ class TgStringsProvider implements IStringsProvider {
   String get usernameHelp => _get('UsernameHelp');
 
   @override
-  String usernameHelpLink(List<dynamic> args) =>
-      _getFormatted('UsernameHelpLink', args);
+  String usernameHelpLink(List<dynamic> args) => _getFormatted('UsernameHelpLink', args);
 
   @override
-  String usernameAvailable(List<dynamic> args) =>
-      _getFormatted('UsernameAvailable', args);
+  String usernameAvailable(List<dynamic> args) => _getFormatted('UsernameAvailable', args);
 
   @override
   String get usernamePlaceholder => _get('UsernamePlaceholder');
@@ -621,8 +605,7 @@ class TgStringsProvider implements IStringsProvider {
   String get deleteSingleMessagesTitle => _get('DeleteSingleMessagesTitle');
 
   @override
-  String get areYouSureDeleteSingleMessage =>
-      _get('AreYouSureDeleteSingleMessage');
+  String get areYouSureDeleteSingleMessage => _get('AreYouSureDeleteSingleMessage');
 
   @override
   String get chatYourSelfTitle => _get('ChatYourSelfTitle');
@@ -634,8 +617,7 @@ class TgStringsProvider implements IStringsProvider {
   String get savedMessages => _get('SavedMessages');
 
   @override
-  String noTopicsDescription(List<dynamic> args) =>
-      _getFormatted('NoTopicsDescription', args);
+  String noTopicsDescription(List<dynamic> args) => _getFormatted('NoTopicsDescription', args);
 
   @override
   String get noTopics => _get('NoTopics');
@@ -654,6 +636,5 @@ class TgStringsProvider implements IStringsProvider {
 
   String _get(String key) => _stringGetter.call(key);
 
-  String _getFormatted(String key, List<dynamic> args) =>
-      _stringFormattedGetter.call(key, args);
+  String _getFormatted(String key, List<dynamic> args) => _stringFormattedGetter.call(key, args);
 }

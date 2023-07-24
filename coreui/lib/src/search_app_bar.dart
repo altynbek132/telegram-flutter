@@ -20,14 +20,12 @@ class SearchAppBar extends StatefulWidget {
   State<SearchAppBar> createState() => _SearchAppBarState();
 }
 
-class _SearchAppBarState extends State<SearchAppBar>
-    with TickerProviderStateMixin {
+class _SearchAppBarState extends State<SearchAppBar> with TickerProviderStateMixin {
   bool _showClearButtonQuery = false;
   late Animation<Size?> _clearIconTween;
   late AnimationController _animationController;
 
-  TextEditingController get _searchQueryController =>
-      widget.searchQueryController;
+  TextEditingController get _searchQueryController => widget.searchQueryController;
 
   @override
   void initState() {
@@ -38,8 +36,7 @@ class _SearchAppBarState extends State<SearchAppBar>
       duration: const Duration(milliseconds: 200),
     );
 
-    _clearIconTween = SizeTween(begin: Size.zero, end: const Size(1, 1))
-        .animate(_animationController);
+    _clearIconTween = SizeTween(begin: Size.zero, end: const Size(1, 1)).animate(_animationController);
   }
 
   void _onSearchEvent() {

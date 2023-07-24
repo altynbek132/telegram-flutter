@@ -17,9 +17,7 @@ class ChangeBioScreenFactory implements IChangeBioScreenFactory {
   Widget create() {
     return ChangeBioScreenScope(
       child: const ChangeBioPage(),
-      create: () => JuggerChangeBioScreenComponentBuilder()
-          .dependencies(_dependencies)
-          .build(),
+      create: () => JuggerChangeBioScreenComponentBuilder().dependencies(_dependencies).build(),
     );
   }
 }

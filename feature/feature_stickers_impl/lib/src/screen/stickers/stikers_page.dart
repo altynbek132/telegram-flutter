@@ -96,8 +96,7 @@ class _DefaultWidget extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: state.tiles.length,
-          itemBuilder: (BuildContext context, int index) =>
-              tileFactory.create(context, state.tiles[index]),
+          itemBuilder: (BuildContext context, int index) => tileFactory.create(context, state.tiles[index]),
           separatorBuilder: (BuildContext context, int index) => const Divider(
             height: 1,
           ),

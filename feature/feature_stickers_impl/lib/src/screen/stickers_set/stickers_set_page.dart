@@ -64,8 +64,7 @@ class _Grid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TileFactory tileFactory =
-        StickersSetScreenScope.getTileFactory(context);
+    final TileFactory tileFactory = StickersSetScreenScope.getTileFactory(context);
 
     return GridView.builder(
       itemCount: tileModels.length,

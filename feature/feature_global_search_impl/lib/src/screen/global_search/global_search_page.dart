@@ -21,8 +21,7 @@ class GlobalSearchPage extends StatefulWidget {
   _GlobalSearchPageState createState() => _GlobalSearchPageState();
 }
 
-class _GlobalSearchPageState extends State<GlobalSearchPage>
-    with SingleTickerProviderStateMixin {
+class _GlobalSearchPageState extends State<GlobalSearchPage> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     GlobalSearchScreenScope.getGlobalSearchWidgetModel(context).init(
@@ -44,8 +43,7 @@ class _GlobalSearchPageState extends State<GlobalSearchPage>
   void didUpdateWidget(covariant GlobalSearchPage oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.controller != widget.controller) {
-      GlobalSearchScreenScope.getGlobalSearchWidgetModel(context)
-          .onNewController(widget.controller);
+      GlobalSearchScreenScope.getGlobalSearchWidgetModel(context).onNewController(widget.controller);
     }
   }
 }
@@ -55,8 +53,7 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalSearchWidgetModel widgetModel =
-        GlobalSearchScreenScope.getGlobalSearchWidgetModel(context);
+    final GlobalSearchWidgetModel widgetModel = GlobalSearchScreenScope.getGlobalSearchWidgetModel(context);
 
     return StreamListener<GlobalSearchState>(
       stream: widgetModel.state,
@@ -76,8 +73,7 @@ class _Tabs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalSearchWidgetModel widgetModel =
-        GlobalSearchScreenScope.getGlobalSearchWidgetModel(context);
+    final GlobalSearchWidgetModel widgetModel = GlobalSearchScreenScope.getGlobalSearchWidgetModel(context);
 
     return Column(
       children: <Widget>[
@@ -104,8 +100,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalSearchWidgetModel widgetModel =
-        GlobalSearchScreenScope.getGlobalSearchWidgetModel(context);
+    final GlobalSearchWidgetModel widgetModel = GlobalSearchScreenScope.getGlobalSearchWidgetModel(context);
 
     return Container(
       constraints: const BoxConstraints(minWidth: double.infinity),
@@ -165,11 +160,9 @@ class _SearchPage extends StatelessWidget {
         return const Center(child: Text('empty'));
       },
       data: (List<ITileModel> models) {
-        final TileFactory tileFactory =
-            GlobalSearchScreenScope.getTileFactory(context);
+        final TileFactory tileFactory = GlobalSearchScreenScope.getTileFactory(context);
         return ListView.separated(
-          separatorBuilder: (BuildContext context, int index) =>
-              const tg.Divider(
+          separatorBuilder: (BuildContext context, int index) => const tg.Divider(
             indent: tg.DividerIndent.large,
           ),
           itemCount: models.length,

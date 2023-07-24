@@ -9,9 +9,7 @@ part 'message_sticker_state.freezed.dart';
 class MessageStickerState with _$MessageStickerState {
   const factory MessageStickerState.loading() = MessageStickerStateLoading;
 
-  const factory MessageStickerState.loadedStatic(File file) =
-      MessageStickerStateLoadedStatic;
+  const factory MessageStickerState.loadedStatic(File file) = MessageStickerStateLoadedStatic;
 
-  const factory MessageStickerState.loadedAnimated(File file) =
-      MessageStickerStateLoadedAnimated;
+  const factory MessageStickerState.loadedAnimated(File file) = MessageStickerStateLoadedAnimated;
 }

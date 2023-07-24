@@ -70,8 +70,7 @@ class ContentInteractor {
         {
           return _getContentForUser(
             messagesInfo,
-            await _userRepository
-                .getUserFullInfo((chat.type as td.ChatTypeSecret).userId),
+            await _userRepository.getUserFullInfo((chat.type as td.ChatTypeSecret).userId),
             chat,
           );
         }
@@ -79,8 +78,7 @@ class ContentInteractor {
         {
           return _getContentForUser(
             messagesInfo,
-            await _userRepository
-                .getUserFullInfo((chat.type as td.ChatTypePrivate).userId),
+            await _userRepository.getUserFullInfo((chat.type as td.ChatTypePrivate).userId),
             chat,
           );
         }
@@ -110,16 +108,14 @@ class ContentInteractor {
   }
 
   Future<List<Tuple2<SharedContentType, int>>> _getMessagesCount() async {
-    final List<Future<Tuple2<SharedContentType, int>>> countsFuture =
-        <Future<Tuple2<SharedContentType, int>>>[
+    final List<Future<Tuple2<SharedContentType, int>>> countsFuture = <Future<Tuple2<SharedContentType, int>>>[
       _messageRepository
           .getMessagesCount(
             chatId: _args.id,
             filter: const td.SearchMessagesFilterPhotoAndVideo(),
           )
           .then(
-            (int value) =>
-                Tuple2<SharedContentType, int>(SharedContentType.media, value),
+            (int value) => Tuple2<SharedContentType, int>(SharedContentType.media, value),
           ),
       _messageRepository
           .getMessagesCount(
@@ -127,8 +123,7 @@ class ContentInteractor {
             filter: const td.SearchMessagesFilterDocument(),
           )
           .then(
-            (int value) =>
-                Tuple2<SharedContentType, int>(SharedContentType.files, value),
+            (int value) => Tuple2<SharedContentType, int>(SharedContentType.files, value),
           ),
       _messageRepository
           .getMessagesCount(
@@ -136,8 +131,7 @@ class ContentInteractor {
             filter: const td.SearchMessagesFilterUrl(),
           )
           .then(
-            (int value) =>
-                Tuple2<SharedContentType, int>(SharedContentType.links, value),
+            (int value) => Tuple2<SharedContentType, int>(SharedContentType.links, value),
           ),
       _messageRepository
           .getMessagesCount(
@@ -145,8 +139,7 @@ class ContentInteractor {
             filter: const td.SearchMessagesFilterAudio(),
           )
           .then(
-            (int value) =>
-                Tuple2<SharedContentType, int>(SharedContentType.music, value),
+            (int value) => Tuple2<SharedContentType, int>(SharedContentType.music, value),
           ),
       _messageRepository
           .getMessagesCount(
@@ -154,8 +147,7 @@ class ContentInteractor {
             filter: const td.SearchMessagesFilterVoiceNote(),
           )
           .then(
-            (int value) =>
-                Tuple2<SharedContentType, int>(SharedContentType.voice, value),
+            (int value) => Tuple2<SharedContentType, int>(SharedContentType.voice, value),
           ),
       _messageRepository
           .getMessagesCount(
@@ -163,8 +155,7 @@ class ContentInteractor {
             filter: const td.SearchMessagesFilterAnimation(),
           )
           .then(
-            (int value) =>
-                Tuple2<SharedContentType, int>(SharedContentType.gif, value),
+            (int value) => Tuple2<SharedContentType, int>(SharedContentType.gif, value),
           ),
     ];
 

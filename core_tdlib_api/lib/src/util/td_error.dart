@@ -10,6 +10,5 @@ class TdError extends Error {
   final td.TdError error;
 
   @override
-  String toString() =>
-      'TdError(function: ${function.toJson()}, error: ${error.toJson()})';
+  String toString() => 'TdError(function: ${function.toJson()}, error: ${error.toJson()})';
 }

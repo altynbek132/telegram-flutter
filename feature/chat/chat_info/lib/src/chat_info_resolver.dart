@@ -33,27 +33,22 @@ class ChatInfoResolver {
         }
       case td.ChatTypeSupergroup.constructor:
         {
-          supergroup = await _superGroupRepository
-              .getGroup((chat.type as td.ChatTypeSupergroup).supergroupId);
+          supergroup = await _superGroupRepository.getGroup((chat.type as td.ChatTypeSupergroup).supergroupId);
           break;
         }
       case td.ChatTypeBasicGroup.constructor:
         {
-          basicGroup = await _basicGroupRepository
-              .getGroup((chat.type as td.ChatTypeBasicGroup).basicGroupId);
+          basicGroup = await _basicGroupRepository.getGroup((chat.type as td.ChatTypeBasicGroup).basicGroupId);
           break;
         }
     }
 
     return ChatInfo(
       isGroup: supergroup != null || basicGroup != null,
-      isMember: (supergroup?.status.isMember ?? false) ||
-          (basicGroup?.status.isMember ?? false),
+      isMember: (supergroup?.status.isMember ?? false) || (basicGroup?.status.isMember ?? false),
       isChannel: supergroup?.isChannel ?? false,
-      isCreator: (supergroup?.status.isCreator ?? false) ||
-          (basicGroup?.status.isCreator ?? false),
-      isAdmin: (supergroup?.status.isAdmin ?? false) ||
-          (basicGroup?.status.isAdmin ?? false),
+      isCreator: (supergroup?.status.isCreator ?? false) || (basicGroup?.status.isCreator ?? false),
+      isAdmin: (supergroup?.status.isAdmin ?? false) || (basicGroup?.status.isAdmin ?? false),
     );
   }
 }

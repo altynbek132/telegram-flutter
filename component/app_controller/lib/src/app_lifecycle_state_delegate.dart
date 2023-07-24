@@ -15,8 +15,7 @@ class AppLifecycleStateDelegate {
   StreamSubscription<dynamic>? _appLifecycleStateSubscription;
 
   void onInit() {
-    _appLifecycleStateSubscription =
-        _appLifecycleStateProvider.onStateChange.listen((LifecycleState state) {
+    _appLifecycleStateSubscription = _appLifecycleStateProvider.onStateChange.listen((LifecycleState state) {
       _optionsManager.setOnline(online: state == LifecycleState.active);
     });
   }

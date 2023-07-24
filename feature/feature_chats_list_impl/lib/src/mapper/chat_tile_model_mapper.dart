@@ -31,14 +31,12 @@ class ChatTileModelMapper {
     required td.Chat chat,
     required td.ChatList chatList,
   }) async {
-    final MessagePreviewData preview =
-        await _messagePreviewResolver.resolveFromChatOrEmpty(chat);
+    final MessagePreviewData preview = await _messagePreviewResolver.resolveFromChatOrEmpty(chat);
 
     final td.ChatPosition? position = chat.getPositionByChatList(chatList);
     assert(position != null);
 
-    final bool isSecret =
-        chat.type.getConstructor() == td.ChatTypeSecret.constructor;
+    final bool isSecret = chat.type.getConstructor() == td.ChatTypeSecret.constructor;
     return ChatTileModel(
       isMuted: chat.notificationSettings.muteFor > 0,
       isVerified: await getVerified(chat),
@@ -61,10 +59,8 @@ class ChatTileModelMapper {
 
   Future<bool> getVerified(td.Chat chat) async {
     if (chat.type.getConstructor() == td.ChatTypeSupergroup.constructor) {
-      final td.ChatTypeSupergroup supergroupType =
-          chat.type as td.ChatTypeSupergroup;
-      return (await _superGroupRepository.getGroup(supergroupType.supergroupId))
-          .isVerified;
+      final td.ChatTypeSupergroup supergroupType = chat.type as td.ChatTypeSupergroup;
+      return (await _superGroupRepository.getGroup(supergroupType.supergroupId)).isVerified;
     }
     return false;
   }

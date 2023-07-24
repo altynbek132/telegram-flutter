@@ -21,12 +21,9 @@ class MessageAnimation extends StatelessWidget {
 
     final MessageAnimationTileModel model = bloc.model;
 
-    final ChatMessageFactory chatMessageFactory =
-        MessageAnimationScope.getChatMessageFactory(context);
-    final ReplyInfoFactory replyInfoFactory =
-        MessageAnimationScope.getReplyInfoFactory(context);
-    final ShortInfoFactory shortInfoFactory =
-        MessageAnimationScope.getShortInfoFactory(context);
+    final ChatMessageFactory chatMessageFactory = MessageAnimationScope.getChatMessageFactory(context);
+    final ReplyInfoFactory replyInfoFactory = MessageAnimationScope.getReplyInfoFactory(context);
+    final ShortInfoFactory shortInfoFactory = MessageAnimationScope.getShortInfoFactory(context);
 
     final ChatContextData chatContextData = ChatContext.of(context);
 
@@ -85,9 +82,7 @@ class _MediaBody extends StatelessWidget {
           return Container(
             constraints: const BoxConstraints.expand(),
             color: Colors.black,
-            child: minithumbnail != null
-                ? Minithumbnail(minithumbnail: minithumbnail)
-                : null,
+            child: minithumbnail != null ? Minithumbnail(minithumbnail: minithumbnail) : null,
           );
         },
         loaded: (MediaStateLoaded loaded) {

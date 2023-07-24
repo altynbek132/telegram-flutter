@@ -4,8 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:jugger/jugger.dart' as j;
 
 @applicationScope
-class BlockInteractionManager extends ValueNotifier<bool>
-    implements IBlockInteractionManager {
+class BlockInteractionManager extends ValueNotifier<bool> implements IBlockInteractionManager {
   @j.inject
   BlockInteractionManager() : super(false);
 

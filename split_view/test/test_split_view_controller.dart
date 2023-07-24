@@ -50,11 +50,9 @@ class TestSplitViewController implements SplitViewNavigatorObserver {
 
   final WidgetTester tester;
 
-  final TestWidgetsFlutterBinding binding =
-      TestWidgetsFlutterBinding.ensureInitialized();
+  final TestWidgetsFlutterBinding binding = TestWidgetsFlutterBinding.ensureInitialized();
 
-  final GlobalKey<SplitViewState> splitViewNavigatorKey =
-      GlobalKey<SplitViewState>();
+  final GlobalKey<SplitViewState> splitViewNavigatorKey = GlobalKey<SplitViewState>();
 
   final List<_ObserverEventInfo> observerHistory = <_ObserverEventInfo>[];
 
@@ -89,8 +87,7 @@ class TestSplitViewController implements SplitViewNavigatorObserver {
   }
 
   void setPlaceholder(Widget placeholder) {
-    splitViewNavigatorKey.currentState!
-        .setRightContainerPlaceholder(placeholder);
+    splitViewNavigatorKey.currentState!.setRightContainerPlaceholder(placeholder);
   }
 
   void compactScreen() {
@@ -119,14 +116,10 @@ class TestSplitViewController implements SplitViewNavigatorObserver {
 
   void expectDisplayedNavigators(List<NavigatorLocation> navigators) {
     final List<NavigatorLocation> existNavigators = <NavigatorLocation>[
-      if (_findNavigatorByLocation(NavigatorLocation.left) != null)
-        NavigatorLocation.left,
-      if (_findNavigatorByLocation(NavigatorLocation.right) != null)
-        NavigatorLocation.right,
-      if (_findNavigatorByLocation(NavigatorLocation.top) != null)
-        NavigatorLocation.top,
-      if (_findNavigatorByLocation(NavigatorLocation.compact) != null)
-        NavigatorLocation.compact,
+      if (_findNavigatorByLocation(NavigatorLocation.left) != null) NavigatorLocation.left,
+      if (_findNavigatorByLocation(NavigatorLocation.right) != null) NavigatorLocation.right,
+      if (_findNavigatorByLocation(NavigatorLocation.top) != null) NavigatorLocation.top,
+      if (_findNavigatorByLocation(NavigatorLocation.compact) != null) NavigatorLocation.compact,
     ];
 
     for (final NavigatorLocation value in navigators) {
@@ -184,10 +177,7 @@ class TestSplitViewController implements SplitViewNavigatorObserver {
     required int count,
   }) {
     expect(
-      tester
-          .widgetList(_pagesFinder(navigatorLocation: navigatorLocation))
-          .toList()
-          .length,
+      tester.widgetList(_pagesFinder(navigatorLocation: navigatorLocation)).toList().length,
       count,
     );
   }
@@ -196,9 +186,7 @@ class TestSplitViewController implements SplitViewNavigatorObserver {
     required bool displayed,
     required NavigatorLocation navigatorLocation,
   }) {
-    final List<Widget> pages = tester
-        .widgetList(_pagesFinder(navigatorLocation: navigatorLocation))
-        .toList();
+    final List<Widget> pages = tester.widgetList(_pagesFinder(navigatorLocation: navigatorLocation)).toList();
     expect(pages.length, greaterThanOrEqualTo(1));
 
     final Finder iconButtonFinder = find.descendant(
@@ -214,9 +202,7 @@ class TestSplitViewController implements SplitViewNavigatorObserver {
   Future<void> tapBackButtonAtTopPage({
     required NavigatorLocation navigatorLocation,
   }) async {
-    final List<Widget> pages = tester
-        .widgetList(_pagesFinder(navigatorLocation: navigatorLocation))
-        .toList();
+    final List<Widget> pages = tester.widgetList(_pagesFinder(navigatorLocation: navigatorLocation)).toList();
     expect(pages.length, greaterThanOrEqualTo(1));
 
     final Finder iconButtonFinder = find.descendant(
@@ -252,8 +238,7 @@ class TestSplitViewController implements SplitViewNavigatorObserver {
     expect(
       observerHistory.length,
       count,
-      reason:
-          'order: ${observerHistory.map((_ObserverEventInfo e) => '${e.event.name}-${e.key}').join(',')}',
+      reason: 'order: ${observerHistory.map((_ObserverEventInfo e) => '${e.event.name}-${e.key}').join(',')}',
     );
   }
 
@@ -276,17 +261,12 @@ class TestSplitViewController implements SplitViewNavigatorObserver {
       case NavigatorLocation.right:
         return navigators.firstWhereOrNull(
           (Element element) =>
-              element.size!.width ==
-              binding.window.physicalSize.width -
-                  leftContainerWidth -
-                  _dividerWidth,
+              element.size!.width == binding.window.physicalSize.width - leftContainerWidth - _dividerWidth,
         );
       case NavigatorLocation.top:
         return navigators.firstWhereOrNull((Element element) {
-          final Size topContainerSize =
-              _splitView.config.topContainerConfig.size;
-          return element.size!.height == topContainerSize.height &&
-              element.size!.width == topContainerSize.width;
+          final Size topContainerSize = _splitView.config.topContainerConfig.size;
+          return element.size!.height == topContainerSize.height && element.size!.width == topContainerSize.width;
         });
       case NavigatorLocation.compact:
         return navigators.firstWhereOrNull(

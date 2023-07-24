@@ -37,8 +37,7 @@ class ChatPreviewDelegate implements IPreviewDelegate {
     switch (sender.getConstructor()) {
       case td.MessageSenderUser.constructor:
         {
-          final td.User user = await _userRepository
-              .getUser((sender as td.MessageSenderUser).userId);
+          final td.User user = await _userRepository.getUser((sender as td.MessageSenderUser).userId);
           return '${user.firstName} ${user.lastName}';
         }
     }

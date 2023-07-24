@@ -16,10 +16,8 @@ class MessageShowcaseFactory {
   Widget create(MessageBundle bundle) {
     return MessageShowcaseScope(
       child: const MessageShowcasePage(),
-      create: () => JuggerMessageShowcaseComponentBuilder()
-          .stringsProvider(_stringsProvider)
-          .messageBundle(bundle)
-          .build(),
+      create: () =>
+          JuggerMessageShowcaseComponentBuilder().stringsProvider(_stringsProvider).messageBundle(bundle).build(),
     );
   }
 }

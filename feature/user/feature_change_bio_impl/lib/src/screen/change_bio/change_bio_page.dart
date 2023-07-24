@@ -8,8 +8,7 @@ class ChangeBioPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final IStringsProvider stringsProvider =
-        ChangeBioScreenScope.getStringsProvider(context);
+    final IStringsProvider stringsProvider = ChangeBioScreenScope.getStringsProvider(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(stringsProvider.userBio),

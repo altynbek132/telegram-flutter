@@ -35,20 +35,14 @@ class FeatureFactory {
   FeatureFactory({
     required j.IProvider<IMainScreenFeatureApi> mainScreenFeatureApiProvider,
     required j.IProvider<IChatsListFeatureApi> chatsListFeatureApiProvider,
-    required j.IProvider<IGlobalSearchFeatureApi>
-        globalSearchFeatureApiProvider,
+    required j.IProvider<IGlobalSearchFeatureApi> globalSearchFeatureApiProvider,
     required j.IProvider<IChatFeatureApi> chatFeatureApiProvider,
     required j.IProvider<ISettingsFeatureApi> settingsFeatureApiProvider,
-    required j.IProvider<ISettingsSearchFeatureApi>
-        settingsSearchFeatureApiProvider,
-    required j.IProvider<IPrivacySettingsFeatureApi>
-        privacySettingsFeatureApiProvider,
-    required j.IProvider<INotificationsSettingsFeatureApi>
-        notificationsSettingsFeatureApiProvider,
-    required j.IProvider<IDataSettingsFeatureApi>
-        dataSettingsFeatureApiProvider,
-    required j.IProvider<IChatSettingsFeatureApi>
-        chatSettingsFeatureApiProvider,
+    required j.IProvider<ISettingsSearchFeatureApi> settingsSearchFeatureApiProvider,
+    required j.IProvider<IPrivacySettingsFeatureApi> privacySettingsFeatureApiProvider,
+    required j.IProvider<INotificationsSettingsFeatureApi> notificationsSettingsFeatureApiProvider,
+    required j.IProvider<IDataSettingsFeatureApi> dataSettingsFeatureApiProvider,
+    required j.IProvider<IChatSettingsFeatureApi> chatSettingsFeatureApiProvider,
     required j.IProvider<IWallpapersFeatureApi> wallpapersFeatureApiProvider,
     required j.IProvider<IStickersFeatureApi> stickersFeatureApiProvider,
     required j.IProvider<IFoldersFeatureApi> foldersFeatureApiProvider,
@@ -60,14 +54,11 @@ class FeatureFactory {
     required j.IProvider<ILogoutFeatureApi> logoutFeatureApiProvider,
     required j.IProvider<IFileFeatureApi> fileFeatureApiProvider,
     required j.IProvider<ISessionsFeatureApi> sessionsFeatureApiProvider,
-    required j.IProvider<ICreateNewChatFeatureApi>
-        createNewChatFeatureApiProvider,
+    required j.IProvider<ICreateNewChatFeatureApi> createNewChatFeatureApiProvider,
     required j.IProvider<IContactsFeatureApi> contactsFeatureApiProvider,
     required j.IProvider<INewContactFeatureApi> newContactFeatureApiProvider,
-    required j.IProvider<IChatAdministrationFeatureApi>
-        chatAdministrationFeatureApiProvider,
-    required j.IProvider<IChangeUsernameFeatureApi>
-        changeUsernameFeatureApiProvider,
+    required j.IProvider<IChatAdministrationFeatureApi> chatAdministrationFeatureApiProvider,
+    required j.IProvider<IChangeUsernameFeatureApi> changeUsernameFeatureApiProvider,
     required j.IProvider<IChangeBioFeatureApi> changeBioFeatureApiProvider,
     required j.IProvider<IChatForumFeatureApi> chatForumFeatureApiProvider,
   })  : _mainScreenFeatureApiProvider = mainScreenFeatureApiProvider,
@@ -76,8 +67,7 @@ class FeatureFactory {
         _settingsFeatureApiProvider = settingsFeatureApiProvider,
         _settingsSearchFeatureApiProvider = settingsSearchFeatureApiProvider,
         _privacySettingsFeatureApiProvider = privacySettingsFeatureApiProvider,
-        _notificationsSettingsFeatureApiProvider =
-            notificationsSettingsFeatureApiProvider,
+        _notificationsSettingsFeatureApiProvider = notificationsSettingsFeatureApiProvider,
         _dataSettingsFeatureApiProvider = dataSettingsFeatureApiProvider,
         _chatSettingsFeatureApiProvider = chatSettingsFeatureApiProvider,
         _wallpapersFeatureApiProvider = wallpapersFeatureApiProvider,
@@ -94,8 +84,7 @@ class FeatureFactory {
         _createNewChatFeatureApiProvider = createNewChatFeatureApiProvider,
         _contactsFeatureApiProvider = contactsFeatureApiProvider,
         _newContactFeatureApiProvider = newContactFeatureApiProvider,
-        _chatAdministrationFeatureApiProvider =
-            chatAdministrationFeatureApiProvider,
+        _chatAdministrationFeatureApiProvider = chatAdministrationFeatureApiProvider,
         _changeUsernameFeatureApiProvider = changeUsernameFeatureApiProvider,
         _changeBioFeatureApiProvider = changeBioFeatureApiProvider,
         _chatForumFeatureApiProvider = chatForumFeatureApiProvider,
@@ -106,12 +95,9 @@ class FeatureFactory {
   final j.IProvider<IGlobalSearchFeatureApi> _globalSearchFeatureApiProvider;
   final j.IProvider<IChatFeatureApi> _chatFeatureApiProvider;
   final j.IProvider<ISettingsFeatureApi> _settingsFeatureApiProvider;
-  final j.IProvider<ISettingsSearchFeatureApi>
-      _settingsSearchFeatureApiProvider;
-  final j.IProvider<IPrivacySettingsFeatureApi>
-      _privacySettingsFeatureApiProvider;
-  final j.IProvider<INotificationsSettingsFeatureApi>
-      _notificationsSettingsFeatureApiProvider;
+  final j.IProvider<ISettingsSearchFeatureApi> _settingsSearchFeatureApiProvider;
+  final j.IProvider<IPrivacySettingsFeatureApi> _privacySettingsFeatureApiProvider;
+  final j.IProvider<INotificationsSettingsFeatureApi> _notificationsSettingsFeatureApiProvider;
   final j.IProvider<IDataSettingsFeatureApi> _dataSettingsFeatureApiProvider;
   final j.IProvider<IChatSettingsFeatureApi> _chatSettingsFeatureApiProvider;
   final j.IProvider<IWallpapersFeatureApi> _wallpapersFeatureApiProvider;
@@ -128,61 +114,45 @@ class FeatureFactory {
   final j.IProvider<ICreateNewChatFeatureApi> _createNewChatFeatureApiProvider;
   final j.IProvider<IContactsFeatureApi> _contactsFeatureApiProvider;
   final j.IProvider<INewContactFeatureApi> _newContactFeatureApiProvider;
-  final j.IProvider<IChatAdministrationFeatureApi>
-      _chatAdministrationFeatureApiProvider;
-  final j.IProvider<IChangeUsernameFeatureApi>
-      _changeUsernameFeatureApiProvider;
+  final j.IProvider<IChatAdministrationFeatureApi> _chatAdministrationFeatureApiProvider;
+  final j.IProvider<IChangeUsernameFeatureApi> _changeUsernameFeatureApiProvider;
   final j.IProvider<IChangeBioFeatureApi> _changeBioFeatureApiProvider;
   final j.IProvider<IChatForumFeatureApi> _chatForumFeatureApiProvider;
 
-  IMainScreenFeatureApi createMainScreenFeature() =>
-      _mainScreenFeatureApiProvider.get();
+  IMainScreenFeatureApi createMainScreenFeature() => _mainScreenFeatureApiProvider.get();
 
-  IChatsListFeatureApi createChatsListFeatureApi() =>
-      _chatsListFeatureApiProvider.get();
+  IChatsListFeatureApi createChatsListFeatureApi() => _chatsListFeatureApiProvider.get();
 
-  IGlobalSearchFeatureApi createGlobalSearchFeatureApi() =>
-      _globalSearchFeatureApiProvider.get();
+  IGlobalSearchFeatureApi createGlobalSearchFeatureApi() => _globalSearchFeatureApiProvider.get();
 
   IChatFeatureApi createChatFeatureApi() => _chatFeatureApiProvider.get();
 
-  ISettingsFeatureApi createSettingsFeatureApi() =>
-      _settingsFeatureApiProvider.get();
+  ISettingsFeatureApi createSettingsFeatureApi() => _settingsFeatureApiProvider.get();
 
-  ISettingsSearchFeatureApi createSettingsSearchFeatureApi() =>
-      _settingsSearchFeatureApiProvider.get();
+  ISettingsSearchFeatureApi createSettingsSearchFeatureApi() => _settingsSearchFeatureApiProvider.get();
 
-  IPrivacySettingsFeatureApi createPrivacySettingsFeatureApi() =>
-      _privacySettingsFeatureApiProvider.get();
+  IPrivacySettingsFeatureApi createPrivacySettingsFeatureApi() => _privacySettingsFeatureApiProvider.get();
 
   INotificationsSettingsFeatureApi createNotificationsSettingsFeatureApi() =>
       _notificationsSettingsFeatureApiProvider.get();
 
-  IDataSettingsFeatureApi createDataSettingsFeatureApi() =>
-      _dataSettingsFeatureApiProvider.get();
+  IDataSettingsFeatureApi createDataSettingsFeatureApi() => _dataSettingsFeatureApiProvider.get();
 
-  IChatSettingsFeatureApi createChatSettingsFeatureApi() =>
-      _chatSettingsFeatureApiProvider.get();
+  IChatSettingsFeatureApi createChatSettingsFeatureApi() => _chatSettingsFeatureApiProvider.get();
 
-  IWallpapersFeatureApi createWallpapersFeatureApi() =>
-      _wallpapersFeatureApiProvider.get();
+  IWallpapersFeatureApi createWallpapersFeatureApi() => _wallpapersFeatureApiProvider.get();
 
-  IStickersFeatureApi createStickersFeatureApi() =>
-      _stickersFeatureApiProvider.get();
+  IStickersFeatureApi createStickersFeatureApi() => _stickersFeatureApiProvider.get();
 
-  IFoldersFeatureApi createFoldersFeatureApi() =>
-      _foldersFeatureApiProvider.get();
+  IFoldersFeatureApi createFoldersFeatureApi() => _foldersFeatureApiProvider.get();
 
-  IProfileFeatureApi createProfileFeatureApi() =>
-      _profileFeatureApiProvider.get();
+  IProfileFeatureApi createProfileFeatureApi() => _profileFeatureApiProvider.get();
 
-  ISharedMediaFeatureApi createSharedMediaFeatureApi() =>
-      _sharedMediaFeatureApiProvider.get();
+  ISharedMediaFeatureApi createSharedMediaFeatureApi() => _sharedMediaFeatureApiProvider.get();
 
   DevFeature createDevFeature() => _devFeatureProvider.get();
 
-  ICountryFeatureApi createCountryFeatureApi() =>
-      _countryFeatureApiProvider.get();
+  ICountryFeatureApi createCountryFeatureApi() => _countryFeatureApiProvider.get();
 
   IAuthFeatureApi createAuthFeatureApi() => _authFeatureApiProvider.get();
 
@@ -190,27 +160,19 @@ class FeatureFactory {
 
   IFileFeatureApi createFileFeatureApi() => _fileFeatureApiProvider.get();
 
-  ISessionsFeatureApi createSessionsFeatureApi() =>
-      _sessionsFeatureApiProvider.get();
+  ISessionsFeatureApi createSessionsFeatureApi() => _sessionsFeatureApiProvider.get();
 
-  ICreateNewChatFeatureApi createCreateNewChatFeatureApi() =>
-      _createNewChatFeatureApiProvider.get();
+  ICreateNewChatFeatureApi createCreateNewChatFeatureApi() => _createNewChatFeatureApiProvider.get();
 
-  IContactsFeatureApi createContactsFeatureApi() =>
-      _contactsFeatureApiProvider.get();
+  IContactsFeatureApi createContactsFeatureApi() => _contactsFeatureApiProvider.get();
 
-  INewContactFeatureApi createNewContactFeatureApi() =>
-      _newContactFeatureApiProvider.get();
+  INewContactFeatureApi createNewContactFeatureApi() => _newContactFeatureApiProvider.get();
 
-  IChatAdministrationFeatureApi createChatAdministrationFeatureApi() =>
-      _chatAdministrationFeatureApiProvider.get();
+  IChatAdministrationFeatureApi createChatAdministrationFeatureApi() => _chatAdministrationFeatureApiProvider.get();
 
-  IChangeUsernameFeatureApi createChangeUsernameFeatureApi() =>
-      _changeUsernameFeatureApiProvider.get();
+  IChangeUsernameFeatureApi createChangeUsernameFeatureApi() => _changeUsernameFeatureApiProvider.get();
 
-  IChangeBioFeatureApi createChangeBioFeatureApi() =>
-      _changeBioFeatureApiProvider.get();
+  IChangeBioFeatureApi createChangeBioFeatureApi() => _changeBioFeatureApiProvider.get();
 
-  IChatForumFeatureApi createChatForumFeatureApi() =>
-      _chatForumFeatureApiProvider.get();
+  IChatForumFeatureApi createChatForumFeatureApi() => _chatForumFeatureApiProvider.get();
 }

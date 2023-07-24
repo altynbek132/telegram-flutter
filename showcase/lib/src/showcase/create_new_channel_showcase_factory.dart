@@ -27,8 +27,7 @@ class CreateNewChannelShowcaseFactory {
   final GlobalKey<NavigatorState> _navigatorKey;
 
   Widget create(BuildContext context) {
-    final CreateNewChatFeatureDependencies dependencies =
-        CreateNewChatFeatureDependencies(
+    final CreateNewChatFeatureDependencies dependencies = CreateNewChatFeatureDependencies(
       errorTransformer: const FakeErrorTransformer(),
       blockInteractionManager: _blockInteractionManager,
       chatManager: FakeChatManager(
@@ -37,8 +36,7 @@ class CreateNewChannelShowcaseFactory {
             await Future<void>.delayed(const Duration(milliseconds: 200));
             throw Exception('invalid name');
           }
-          return Future<void>.delayed(const Duration(milliseconds: 1000))
-              .then((_) {
+          return Future<void>.delayed(const Duration(milliseconds: 1000)).then((_) {
             return 0;
           });
         },

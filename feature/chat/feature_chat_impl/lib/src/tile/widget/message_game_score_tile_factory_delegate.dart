@@ -5,8 +5,7 @@ import 'package:tile/tile.dart';
 
 import 'not_implemented.dart';
 
-class MessageGameScoreTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageGameScoreTileModel> {
+class MessageGameScoreTileFactoryDelegate implements ITileFactoryDelegate<MessageGameScoreTileModel> {
   MessageGameScoreTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
   }) : _chatMessageFactory = chatMessageFactory;

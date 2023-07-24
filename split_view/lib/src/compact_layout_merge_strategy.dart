@@ -7,8 +7,7 @@ abstract class CompactLayoutMergeStrategy {
     List<PageInfo> topPages,
   );
 
-  const factory CompactLayoutMergeStrategy.create() =
-      _DefaultCompactLayoutMergeStrategy;
+  const factory CompactLayoutMergeStrategy.create() = _DefaultCompactLayoutMergeStrategy;
 }
 
 class _DefaultCompactLayoutMergeStrategy implements CompactLayoutMergeStrategy {
@@ -28,8 +27,7 @@ class _DefaultCompactLayoutMergeStrategy implements CompactLayoutMergeStrategy {
   ) {
     return (leftPages + rightPages + topPages)
       ..sort((PageInfo a, PageInfo b) {
-        final int containerCompare =
-            _priority[a.container]!.compareTo(_priority[b.container]!);
+        final int containerCompare = _priority[a.container]!.compareTo(_priority[b.container]!);
         if (containerCompare != 0) {
           return containerCompare;
         }

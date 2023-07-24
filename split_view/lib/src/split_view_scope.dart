@@ -15,14 +15,12 @@ class SplitViewScope extends InheritedWidget {
   final int _version;
 
   static SplitViewState of(BuildContext context) {
-    final SplitViewScope? result =
-        context.dependOnInheritedWidgetOfExactType<SplitViewScope>();
+    final SplitViewScope? result = context.dependOnInheritedWidgetOfExactType<SplitViewScope>();
     assert(result != null, 'No SplitViewScope found in context');
     return result!._state;
   }
 
   // todo: handle update
   @override
-  bool updateShouldNotify(SplitViewScope oldWidget) =>
-      oldWidget._version != _version;
+  bool updateShouldNotify(SplitViewScope oldWidget) => oldWidget._version != _version;
 }

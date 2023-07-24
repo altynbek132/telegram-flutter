@@ -48,8 +48,7 @@ class AuthShowcaseFactory {
               await Future<void>.delayed(const Duration(milliseconds: 200));
               throw Exception('invalid code');
             }
-            return Future<void>.delayed(const Duration(milliseconds: 1000))
-                .then((_) {
+            return Future<void>.delayed(const Duration(milliseconds: 1000)).then((_) {
               splitView.removeUntil(ContainerType.top, (_) => false);
               return null;
             });

@@ -7,8 +7,7 @@ abstract class ISearchResultTapListener {
   void onSearchResultTap(SearchItem item);
 }
 
-class SearchResultTileFactoryDelegate
-    implements ITileFactoryDelegate<SearchResultTileModel> {
+class SearchResultTileFactoryDelegate implements ITileFactoryDelegate<SearchResultTileModel> {
   SearchResultTileFactoryDelegate({
     required ISearchResultTapListener listener,
   }) : _listener = listener;

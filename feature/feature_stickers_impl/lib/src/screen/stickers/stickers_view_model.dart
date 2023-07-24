@@ -22,8 +22,7 @@ class StickersViewModel extends BaseViewModel {
 
   Stream<StickersState> get state => _stateSubject;
 
-  final BehaviorSubject<StickersState> _stateSubject =
-      BehaviorSubject<StickersState>.seeded(
+  final BehaviorSubject<StickersState> _stateSubject = BehaviorSubject<StickersState>.seeded(
     const StickersState.data(<ITileModel>[]),
   );
 
@@ -55,15 +54,11 @@ class StickersViewModel extends BaseViewModel {
 
   Future<void> _onInit() async {
     final CancelableOperation<List<td.StickerSetInfo>> operation =
-        _stickerRepository
-            .getInstalledStickers()
-            .toCancelableOperation()
-            .onValue(
+        _stickerRepository.getInstalledStickers().toCancelableOperation().onValue(
       (List<td.StickerSetInfo> stickerSets) {
         final List<StickerSetTileModel> tiles = stickerSets
             .map(
-              (td.StickerSetInfo e) =>
-                  StickerSetTileModel(id: e.id, title: e.title, name: e.name),
+              (td.StickerSetInfo e) => StickerSetTileModel(id: e.id, title: e.title, name: e.name),
             )
             .toList();
         _stateSubject.add(StickersState.data(tiles));

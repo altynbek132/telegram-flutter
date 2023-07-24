@@ -45,10 +45,8 @@ class _InheritedScope extends InheritedWidget {
   final _AvatarShowcaseScopeState _state;
 
   static _AvatarShowcaseScopeState of(BuildContext context) {
-    final _AvatarShowcaseScopeState? result = (context
-            .getElementForInheritedWidgetOfExactType<_InheritedScope>()
-            ?.widget as _InheritedScope?)
-        ?._state;
+    final _AvatarShowcaseScopeState? result =
+        (context.getElementForInheritedWidgetOfExactType<_InheritedScope>()?.widget as _InheritedScope?)?._state;
     assert(result != null, 'No AvatarShowcaseScope found in context');
     return result!;
   }

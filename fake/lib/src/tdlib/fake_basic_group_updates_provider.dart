@@ -5,6 +5,5 @@ class FakeBasicGroupUpdatesProvider implements IBasicGroupUpdatesProvider {
   const FakeBasicGroupUpdatesProvider();
 
   @override
-  Stream<td.UpdateBasicGroup> get basicGroupUpdates =>
-      const Stream<td.UpdateBasicGroup>.empty();
+  Stream<td.UpdateBasicGroup> get basicGroupUpdates => const Stream<td.UpdateBasicGroup>.empty();
 }

@@ -5,8 +5,7 @@ import 'package:tile/tile.dart';
 
 import 'not_implemented.dart';
 
-class MessageForumTopicClosedTileFactoryDelegate
-    implements ITileFactoryDelegate<MessageForumTopicClosedTileModel> {
+class MessageForumTopicClosedTileFactoryDelegate implements ITileFactoryDelegate<MessageForumTopicClosedTileModel> {
   MessageForumTopicClosedTileFactoryDelegate({
     required ChatMessageFactory chatMessageFactory,
   }) : _chatMessageFactory = chatMessageFactory;

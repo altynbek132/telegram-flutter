@@ -6,8 +6,7 @@ import 'package:theme_manager_api/theme_manager_api.dart';
 class ThemeManager extends ValueNotifier<Theme> implements IThemeManager {
   ThemeManager() : super(const Theme.classic());
 
-  late final BehaviorSubject<Theme> _themeSubject =
-      BehaviorSubject<Theme>.seeded(value);
+  late final BehaviorSubject<Theme> _themeSubject = BehaviorSubject<Theme>.seeded(value);
 
   @override
   Theme get theme => value;
